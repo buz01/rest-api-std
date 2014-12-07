@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="google-code-prettify/prettify.js"></script>
+  </head>
+  <body>
+    <div class="row"> <!--Nav Bar -->
+      <nav class="col-xs-3 bs-docs-sidebar">
+        <ul id="sidebar" class="nav nav-stacked fixed">
+          <li> <a href="#api">API</a>
+            <ul class="nav nav-stacked ">
+              <li><a href="#api.introduction">Introduction</a></li>
+              <li><a href="#api.authentification">Authentification</a></li>
+              <li><a href="#api.signature">Signature</a></li>
+              <li><a href="#api.reponses">Réponses</a></li>
+              <li><a href="#api.pagination">Pagination</a></li>
+              <li><a href="#api.versionning">Versionning</a></li>
+              <li><a href="#api.metadata">Metadata</a></li>
+            </ul>
+          </li>
+          <li> <a href="#methodes">METHODES</a></li>
+          <li> <a href="#methodes.vehiculier">Véhiculier</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.vehiculier.marques">Marques</a>
+                <ul class="nav">
+                  <li><a href="#methodes.vehiculier.marques.objet">L'objet marque</a></li>
+                  <li><a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                      toutes les marques</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.modeles">Modèles</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.modeles.objet">L'objet modele</a></li>
+                  <li><a href="#methodes.vehiculier.modeles.lister_modeles">Lister les
+                      modèles</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.energies">Energies</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.energies.objet">L'objet energie</a></li>
+                  <li><a href="#methodes.vehiculier.energies.lister_energies">Lister les
+                      énergies disponibles</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.puissances_fiscales">Puissances fiscales</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.puissances_fiscales.objet">L'objet
+                      puissance fiscale</a></li>
+                  <li><a href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
+                      les puissances fiscales</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.versions">Versions</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.versions.objet">L'objet version</a></li>
+                  <li><a href="#methodes.vehiculier.versions.lister_versions">Lister les
+                      versions</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.annees_mec">Années MEC</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.annees_mec.objet">L'objet annee mec</a></li>
+                  <li><a href="#methodes.vehiculier.annees_mec.lister_annees_mec">Lister les
+                      anneés mec</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.vehiculier.code_maaf">Code MAAF</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#methodes.vehiculier.code_maaf.objet">L'objet code maaf</a></li>
+                  <li><a href="#methodes.vehiculier.code_maaf.recuperer_code_maaf">Récupérer le code maaf du véhicule</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li> <a href="#methodes.referentiel">Référentiel</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.referentiel.banques_par_cp">Banque par CP</a>
+                <ul class="nav">
+                  <li><a href="#methodes.referentiel.banques_par_cp.objet">L'objet banque</a></li>
+                  <li><a href="#methodes.referentiel.banques_par_cp.recuperer_banque">Récupérer la banque par CP</a></li>
+                </ul>
+              </li>
+              <li> <a href="#methodes.referentiel.villes_par_cp">Villes par CP</a>
+                <ul class="nav">
+                  <li><a href="#methodes.referentiel.villes_par_cp.objet">L'objet ville</a></li>
+                  <li><a href="#methodes.referentiel.villes_par_cp.recuperer_villes">Récupérer les villes par CP</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li> <a href="#methodes.initialisation">Initialisation</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.initialisation.configuration">Configuration</a>
+                <ul class="nav">
+                  <li><a href="#methodes.initialisation.configuration.objet">L'objet configuration</a></li>
+                  <li><a href="#methodes.initialisation.configuration.recuperer_configuration">Récupérer la configuration</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+
+
+
+        </ul>
+      </nav>
+      <!--Main Content -->
+      <div class="col-xs-9">
+        <h1 id="api" name="API">API Rouler Serein REST</h1>
+        <!-- Introduction -->
+        <h2><a id="api.introduction" name="api.introduction"></a>Introduction</h2>
+        <div class="row">
+          <div class="col-xs-6">
+            <p>L'API est organisée autour de <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>.
+              <a href="http://www.json.org/">JSON</a> est utilisé comme format
+              de retour pour toutes les réponses, y compris les erreurs. </p>
+          </div>
+          <div class="col-xs-6"></div>
+        </div>
+        <!-- Authentification -->
+        <h2><a id="api.authentification" name="api.authentification"></a>Authentification</h2>
+        <div class="row bg-danger" >
+          <div class="col-xs-6">
+            <p>FIXME</p>
+          </div>
+          <div class="col-xs-6"></div>
+        </div>
+
+        <!-- Signature -->
+        <h2><a id="api.signature" name="api.signature"></a>Signature</h2>
+        <div class="row bg-danger" >
+          <div class="col-xs-6">
+            <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalité est en attente d'arbitrage par NXS - Surement supprimée suite à la réunion technique du 02/12/2014.</p>
+            <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
+            <p>Ce système est basé sur une clé partagée entre le client (l'application mobile) et le service REST : <ol>
+              <li>Le client construit l'URL du service REST à interroger,</li>
+              <li>Le client calcule une somme de contrôle avec la clé partagée,
+                <li>Le client ajoute la valeur de la clé en paramètre (dans notre cas paramètre GET de la requête),</li>
+              <li>Le client appelle le service REST</li>
+              <li>Le service REST reçoit la requête</li>
+              <li>Le service REST récupère la somme de contrôle des paramètres passés dans l'URL GET</li>
+              <li>Le service REST calcule la somme de contrôle de l'URL appelée avec la clé partagée</li>
+              <li>Le service REST compare les 2 sommes de contrôle. Si elles sont identiques, la requête est acceptée, sinon une erreur est levée.</li>
+            </p>
+
+<h4>Attributs</h4>
+            <dl class="dl-horizontal">
+              <dt>checksum:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Contient la somme de contrôle calculée par le client (mobile). Cet élément est optionnel si le contrôle par signature n'a pas été activé.</dd>
+            </dl>
+
+
+Voici ce que pourrait donner le calcul de notre signature en javascript avec l’utilisation de la librairie <a href="https://code.google.com/p/crypto-js/">crypto-js</a> pour réaliser les calculs de SHA1 et de HMAC-SHA1 :
+<p>
+<pre class="prettyprint language-javascript">
+&lt;script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    const sharedKey = "48@!alsd"; // Connu côté client dès le début.
+    var encryptedPassword = CryptoJS.SHA1(sharedKey);
+    var httpVerb = "GET";
+    var url = "https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques";
+    var httpUrl = httpVerb + ":" + url;
+    var checksum = CryptoJS.HmacSHA1(httpUrl,encryptedPassword).toString();
+&lt;/script&gt;
+</pre>
+</p>
+
+          </div>
+          <div class="col-xs-6">
+                      <span class="label label-info">Exemple de requête</span>
+          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3"</pre>
+  </div>
+        </div>
+
+        <!-- Réponses -->
+        <h2><a id="api.reponses" name="api.reponses"></a>Réponses</h2>
+        <div class="row">
+          <div class="col-xs-6">
+            <p>Cette API utilise les codes conventionnels de réponse HTTP afin
+              d'indiquer le succès ou l'échec d'une requête à l'API. En général,
+              les codes dans la tranche 2xx indiquent un succès ; les codes dans
+              la tranche 4xx indiquent une erreur trouvant son origine dans les
+              informations soumises (par exemple un paramètre obligatoire
+              absent) ; les codes dans la tranche 5xx indiquent une erreur côté
+              serveur. Toutes les réponses sont encodés en UTF-8.
+            </p>
+            <h4>Attributs</h4>
+            <dl class="dl-horizontal">
+              <dt>status:</dt>
+              <dd><span class="label label-danger">Obligatoire</span><br>Contient les éléments de controle de la réponse, comme le code HTTP de retour, les messages d'erreurs éventuels.</dd>
+
+              <button type="button" class="btn btn-default btn-xs btn-block " id="api.reponses.status_show">Montrer les sous-éléments</button>
+              <div class="subelements" style="display:none;">
+              <dt>code:</dt>
+              <dd><span class="label label-danger">Obligatoire</span><br>Code HTTP de retour. Ce code peut être :
+                <ul>
+                  <li><code>200</code> OK - Tout s'est déroulé comme prévu</li>
+                  <li><code>400</code> Bad Request - Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...)</li>
+                  <li><code>401</code> Unauthorized - Une erreur liée à l'authentification ou à la sécurité s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)</li>
+                  <li><code>404</code> Not Found - La version spécifiée du service n'existe pas.</li>
+                  <li><code>406</code> Not acceptable - La version n'est pas spécifiée dans le header.</li>
+                  <li><code>500</code> Server error - Une erreur s'est produite côté serveur.</li>
+                </ul>
+              </dd>
+              <dt>message:</dt>
+              <dd><span class="label label-danger">Obligatoire</span><br>Chaine de caractères représentant un message intelligible
+                donnant plus de détails sur l'erreur. Ce message peut contenir entre autre :
+                <ul>                
+                  <li>un message indiquant la source de l'erreur</li>
+              <li>la classe Java génératrice de l'erreur</li>
+              <li>l'identifiant de l'erreur, permettant de tracer l'erreur à
+                travers les couches. Cet identifiant est utilisé également côté
+                serveur. On peut donc suivre l'erreur via les logs côté serveur.</li>
+
+            </ul></dd>
+
+
+              </div>
+              <dt>data:</dt>
+              <dd><span class="label label-warning">Optionnel</span><p> 
+                Les données proprement dites, la "charge utile".</p></dd>
+            </dl>
+          </div>
+          <div class="col-xs-6"> <span class="label label-info">Résumé
+              des codes HTTP utilisés</span>
+            <pre>200 OK - Tout s'est déroulé comme prévu
+
+400 Bad Request - Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...)
+
+401 Unauthorized - Une erreur liée à l'authentification ou à la sécurité s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)
+
+404 Not Found - La version spécifiée du service n'existe pas. (ex : la version spécifiée comme paramètre dans l'URL via le paramètre "version" n'existe pas, v99 par exemple).
+
+406 Not acceptable - La version du service voulu n'est pas spécifiée dans le header HTTP.
+
+500 Server error - Une erreur s'est produite côté serveur.
+</pre> </div>
+
+<div class="col-xs-6"> <span class="label label-info">Exemple de réponse</span>
+            <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": ...
+}
+</pre> 
+
+ <span class="label label-info">Exemple de réponse</span>
+            <pre class="prettyprint language-json">
+{
+    "status":{
+      "code":400,
+      "message":"Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...) - Classe : com.natixis.etnamobile.frontend.vehicule.rest.VehiculeRestService$Proxy$_$$_WeldSubclass - Méthode : getCodeMaaf - Id erreur : DGE%1417192739598%3809a817-723c-4314-a62b-ba3ac01f2752"
+    }
+}
+</pre> 
+</div>
+        </div>
+        <!-- Pagination -->
+        <h2><a id="api.pagination" name="api.pagination"></a>Pagination</h2>
+        <div class="row bg-danger">
+          <div class="col-xs-6">
+            <p>N/A</p>
+          </div>
+          <div class="col-xs-6"></div>
+        </div>
+        <!-- Versionning -->
+        <h2><a id="api.versionning" name="api.versionning"></a>Versionning</h2>
+        <div class="row bg-danger">
+          <div class="col-xs-6">
+            <p>Le versionning des services est géré via une partie de l'URL de la requête GET. La version est obligatoire. Elle est de la forme : <code>v + numéro</code>. L'URL des requêtes doit être de la forme :
+              <pre>https://context-root/etnamobile-web/rouler_serein/{VERSION}/...</pre></p>
+            Si la version n'existe pas, une réponse avec le code de retour HTTP 404 est envoyée.
+             <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères de la forme <code>v + numéro</code> (ex : v1, v2...) permettant de spécifier la version du service à appeler. Les versions commencent à v1.</dd>
+                </dl>
+            
+          </div>
+          <div class="col-xs-6">
+            <span class="label label-info">Exemple de requête</span>
+          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
+
+            <span class="label label-info">Exemple de réponses avec version non trouvée</span>
+          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v999/vehiculier/marques</pre>
+               <pre class="prettyprint language-json">Erreur HTTP 404 - Not Found</pre>
+          </div>
+        </div>
+
+        <!-- metadata -->
+        <h2><a id="api.metadata" name="api.metadata"></a>Metadata</h2>
+        <div class="row bg-danger">
+          <div class="col-xs-6">
+            <p>N/A</p>
+          </div>
+          <div class="col-xs-6"></div>
+        </div>
+        <h1 id="methodes" name="methodes">METHODES</h1> 
+        <h1 id="methodes.vehiculier" name="methodes.vehiculier">Véhiculier</h1>
+        <!-- MARQUES-->
+        <div id="methodes.vehiculier.marques">
+          <h2>Marques</h2>
+          <p>Les marques représentent les constructeurs de véhicule qu'il est
+            possible d'assurer. Chaque marque est identifié par un libellé
+            unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3 id="methodes.vehiculier.marques.objet">L'objet marque</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé de la marque du véhicule</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.marques.lister_toutes_les_marques" name="methodes.vehiculier.marques.lister_toutes_les_marques"></a>Lister
+                toutes les marques</h3>
+              <p>Retourne une liste de toutes les marques de véhicules
+                assurables. Cette liste est triée par ordre alphabétique.&nbsp;</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les marques de véhicules assurables.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data":  [
+      {"libelle":"ALFA%20ROMEO"},
+      {"libelle":"ACL"},
+      {"libelle":"ALFA ROMEO"},
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+        <!-- MODELES -->
+        <div id="methodes.vehiculier.modeles">
+          <h2>Modèles</h2>
+          <p>Les modèles représentent les modèles de véhicule qu'il est possible
+            d'assurer, et correspondant à la marque spécifiée. Chaque modèle est
+            identifié par un libellé unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.modeles.objet" name="methodes.vehiculier.modeles.objet"></a>L'objet
+                modele</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé du modèle de véhicule </dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.modeles.lister_modeles" name="methodes.vehiculier.modeles.lister_modeles"></a>Lister
+                les modèles de véhicules</h3>
+              <p>Retourne une liste de tous les modèles de véhicules assurables
+                correspondant à la marque et à la tranche d'âge spécifiées.
+                Cette liste est triée par ordre alphabétique.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+               
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET
+                    HTTP</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les modèles de véhicules assurables,
+              correspondant à la marque et à la tranche d'âge spécifiées. <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {"libelle":"ALFA RZ"},
+      {"libelle":"ALFA SZ"},
+      {"libelle":"ALFA 145"},
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+        <!-- ENERGIES -->
+        <div id="methodes.vehiculier.energies">
+          <h2>Energies</h2>
+          <p>Les énergies représentent les énergies utilisées par les véhicules
+            qu'il est possible d'assurer, et correspondant à la marque, la
+            tranche d'âge et le modèle spécifiés. Chaque énergie est identifiée
+            par un libellé unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.energies.objet" name="methodes.vehiculier.energies.objet"></a>L'objet
+                energie</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé de l'énergie associée au véhicule</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.energies.lister_energies" name="methodes.vehiculier.energies.lister_energies"></a>Lister
+                les énergies disponibles du véhicule</h3>
+              <p>Retourne une liste de toutes les énergies disponibles pour les
+                véhicules assurables correspondant à la marque, la tranche d'âge
+                et le modèle spécifiés. Cette liste est triée par ordre
+                alphabétique.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+<dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+                <dt>modele:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le modèle du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modèles de véhicules</a>".</dd>
+                
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les énergies disponibles pour les
+              véhicules assurables correspondant à la marque, la tranche d'âge,
+              le modèle spécifiés. Cette liste est triée par ordre alphabétique.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {"libelle":"Essence"},
+      {"libelle":"Diesel"}
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+        <!-- PUISSANCE FISCALE -->
+        <div id="methodes.vehiculier.puissances_fiscales">
+          <h2>Puissances fiscales</h2>
+          <p>La puissance fiscale représentent les puissances fiscales
+            disponibles pour les véhicules qu'il est possible d'assurer, et
+            correspondant à la marque, la tranche d'âge, le modèle et l'énergie
+            spécifiés. Chaque puissance fiscale est identifiée par un libellé
+            unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.puissances_fiscales.objet" name="methodes.vehiculier.puissances_fiscales.objet"></a>L'objet
+                puissance_fiscale</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé de la puissance fiscale</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales"
+
+                  name="methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales"></a>Lister
+                les puissances fiscales disponibles du véhicule</h3>
+              <p>Retourne une liste des puissances fiscales disponibles pour les
+                véhicules assurables correspondant à la marque, la tranche
+                d'âge, le modèle et l'énergie spécifiés. Cette liste est triée
+                par ordre alphabétique.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+
+                <dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+                <dt>modele:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le modèle du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modèles de véhicules</a>".</dd>
+                <dt>energie:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant l'énergie utilisée par le
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.energies.lister_energies">Lister les
+                    énergies de véhicules</a>".</dd>
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les énergies disponibles pour les
+              véhicules assurables correspondant à la marque, la tranche d'âge,
+              le modèle et l'énergie spécifiés. Cette liste est triée par ordre alphabétique.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data":  [
+      {"libelle":"6"},
+      {"libelle":"7"},
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+        <!-- VERSION -->
+        <div id="methodes.vehiculier.versions">
+          <h2>Versions</h2>
+          <p>Les versions représentent les variantes disponibles pour les
+            véhicules qu'il est possible d'assurer, et correspondant à la
+            marque, la tranche d'âge, le modèle, l'énergie et la puissance
+            fiscale spécifiés. Chaque version est identifiée par un libellé
+            unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.versions.objet" name="methodes.vehiculier.versions.objet"></a>L'objet
+                version</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé de la variante (version)</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.versions.lister_versions" name="methodes.vehiculier.versions.lister_versions"></a>Lister
+                les versions (variantes) disponibles du véhicule</h3>
+              <p>Retourne une liste des variantes disponibles pour les
+            véhicules qu'il est possible d'assurer, et correspondant à la
+            marque, la tranche d'âge, le modèle, l'énergie et la puissance
+            fiscale spécifiés.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+
+                <dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+                <dt>modele:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le modèle du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modèles de véhicules</a>".</dd>
+                <dt>energie:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant l'énergie utilisée par le
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.energies.lister_energies">Lister les
+                    énergies de véhicules</a>".</dd>
+                <dt>puissance fiscale:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la puissance fiscale du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
+                    les puissances fiscales</a>".</dd>
+               
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les les variantes disponibles pour les
+            véhicules qu'il est possible d'assurer, et correspondant à la
+            marque, la tranche d'âge, le modèle, l'énergie et la puissance
+            fiscale spécifiés.  Cette liste est triée par ordre alphabétique.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales/17/versions</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {"libelle":"3.2 V6 24V 240 BLACK LINE - Manuelle"},
+      {"libelle":"3.2 V6 24V 240 DISTINCTIVE - Manuelle"},
+      {"libelle":"3.2 V6 24V 240 SELECTIVE - Manuelle"},
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+
+        <!-- ANNEES DE MEC -->
+        <div id="methodes.vehiculier.annees_mec">
+          <h2>Années MEC</h2>
+          <p>Les années de mise en circulation représentent les différentes années auxquelles le véhicule a été mis en circulation, et correspondant à la
+            marque, la tranche d'âge, le modèle, l'énergie, la puissance
+            fiscale et à la version spécifiés. Chaque année de mise en circulation est identifiée par un libellé unique.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.annees_mec.objet" name="methodes.vehiculier.annees_mec.objet"></a>L'objet
+                annee mec</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé de l'année de mise en circulation</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.annees_mec.lister_annees_mec" name="methodes.vehiculier.annees_mec.lister_annees_mec"></a>Lister
+                les années de mise en circulation possibles du véhicule</h3>
+              <p>Retourne une liste des années de mise en circulation possibles pour les
+                véhicules assurables correspondant à la marque, la tranche
+                d'âge, le modèle, l'énergie, la puissance fiscale et la version spécifiés. Cette liste est triée
+                par ordre alphabétique.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+
+                <dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+                <dt>modele:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le modèle du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modèles de véhicules</a>".</dd>
+                <dt>energie:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant l'énergie utilisée par le
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.energies.lister_energies">Lister les
+                    énergies de véhicules</a>".</dd>
+                <dt>puissance fiscale:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la puissance fiscale du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
+                    les puissances fiscales</a>".</dd>
+                <dt>variante:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la variante (version) du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+                    href="#methodes.vehiculier.versions.lister_versions">Lister
+                    les versions d'un véhicule</a>".</dd>
+             
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne une liste de toutes les années de mise en circulation disponibles pour les
+              véhicules assurables correspondant à la marque, la tranche d'âge,
+              le modèle, l'énergie, la puissance fiscale et la version (variante) spécifiés. Cette liste est triée par ordre alphabétique.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {"libelle":"2004"},
+      {"libelle":"2003"},
+      {...},
+      {...}
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+
+
+        <!-- CODE MAAF -->
+        <div id="methodes.vehiculier.code_maaf">
+          <h2>Code MAAF</h2>
+          <p>Le code MAAF d'un véhicule représentent l'identifiant unique pour la MAAF de ce véhicule, correspondant à la marque, la tranche d'âge, le modèle, l'énergie, la puissance
+            fiscale, à la version et à l'année de mise en circulation spécifiés. Chaque code MAAF est identifiée par un libellé unique. Ce code est unique pour un véhicule donnée.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.code_maaf.objet" name="methodes.vehiculier.code_maaf.objet"></a>L'objet
+                code maaf</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Libellé correspondant au code MAAF</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.vehiculier.code_maaf.recuperer_code_maaf" name="methodes.vehiculier.code_maaf.recuperer_code_maaf"></a>Récupérer le code MAAF du véhicule</h3>
+              <p>Retourne le code MAAF pour le
+                véhicule assurable correspondant à la marque, la tranche
+                d'âge, le modèle, l'énergie, la puissance fiscale, la version et l'année de mise en circulation spécifiés.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+               <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+
+                <dt>marque:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la marque du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                    toutes les marques</a>".</dd>
+                <dt>age:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  sont :
+                  <ul>
+                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : véhicule ayant 20 ans et plus</li>
+                  </ul>
+                </dd>
+                <dt>modele:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le modèle du véhicule. Cette
+                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modèles de véhicules</a>".</dd>
+                <dt>energie:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant l'énergie utilisée par le
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.energies.lister_energies">Lister les
+                    énergies de véhicules</a>".</dd>
+                <dt>puissance fiscale:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la puissance fiscale du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+
+                    href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
+                    les puissances fiscales</a>".</dd>
+                <dt>variante:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la variante (version) du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+                    href="#methodes.vehiculier.versions.lister_versions">Lister
+                    les versions d'un véhicule</a>".</dd>
+                <dt>annee:</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant l'année de mise en circulation du
+                  véhicule. Cette valeur est celle retournée par le service "<a
+                    href="#methodes.vehiculier.annees_mec.lister_annees_mec">Lister
+                    les années de mises en circulation</a>".</dd>
+                
+                <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne le code MAAF du véhicule, c'est-à-dire l'identifiant unique pour la MAAF de ce véhicule, correspondant à la marque, la tranche d'âge, le modèle, l'énergie, la puissance
+            fiscale, à la version (variante) et à l'année de mise en circulation spécifiés. Chaque code MAAF est identifiée par un code unique. 
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec/{CODE MAAF}/codemaaf</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/2004/codemaaf</pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": {
+        "code":"0063085"
+    }
+}
+</pre> </div>
+          </div>
+        </div>
+
+
+
+
+        <h1 id="methodes.referentiel" name="methodes.referentiel">Référentiel</h1>
+
+
+       
+        <!-- WS Référentiel Banque -->
+        <div id="methodes.referentiel.banques_par_cp">
+          <h2>Banque par code postal</h2>
+          <p>Ce service permet de récupérer les informations relatives à une banque à partir de son code postal.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.referentiel.banques_par_cp.objet" name="methodes.referentiel.banques_par_cp.objet"></a>L'objet
+                banque</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>codePostal</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Code postal correspondant aux données retournées dans la réponse. Correspond normalement au code postal passé en paramètre de la requête.</dd>
+                <dt>cib</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Code interbancaire (CIB) attribué par la Banque de France aux établissements de crédit de droit français et aux succursales d’établissements de crédit de droit étranger agréés par le CECEI pour exercer des activités bancaires en France ou à Monaco, ainsi qu’aux succursales d’établissements de crédit de l’espace économique européen exerçant leur activité en libre établissement.</dd>
+                <dt>mail</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Email du conseiller de la banque concernée.</dd>
+                <dt>libelle</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Libellé de la banque régionale correspondant au code postal spécifié.</dd>
+                <dt>url</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                URL du site institutionnel de la banque régionale correspondant au code postal spécifié. 
+                  </dd>
+                <dt>phone</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Téléphone du site institutionnel de la banque régionale correspondant au code postal spécifié. Le téléphone peut être accompagné d'un tarif (ex : <code>"0 825 07 08 09 (0,15 euros TTC/min)"</code>). Si pas de téléphone, une mention <code>"Pas de numéro d'appel"</code> peut être spécifiée.
+                  </dd>
+
+</dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+    "codePostal":"31810",
+    "cib":"17807",
+    "mail":"cyberconseiller@occitane.banquepopulaire.fr",
+    "libelle":"Banque Populaire Occitane",
+    "url":"http://www.occitane.banquepopulaire.fr",
+    "phone":"Pas de numéro d'appel"
+}
+</pre>      
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.referentiel.banques_par_cp.recuperer_banque" name="methodes.referentiel.banques_par_cp.recuperer_banque"></a>Récupérer la banque par CP</h3>
+              <p>Retourne la banque populaire régionale et ses informations, correspondant au code postal  spécifié.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>cp</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Code postal de la ville.
+                </dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne les informations relatives à la banque populaire régionale à partir de son code postal. Une seule banque au maximum peut être retournée. 
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_bp/{CP}</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_bp/31810
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+        {
+            "codePostal":"31810",
+            "cib":"17807",
+            "mail":"cyberconseiller@occitane.banquepopulaire.fr",
+            "libelle":"Banque Populaire Occitane",
+            "url":"http://www.occitane.banquepopulaire.fr",
+            "phone":"Pas de numéro d'appel"
+        }
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+
+
+
+
+
+        
+        <!-- WS Référentiel Ville -->
+        <div id="methodes.referentiel.villes_par_cp">
+          <h2>Villes par code postal</h2>
+          <p>Ce service permet de récupérer les informations relatives à une commune à partir de son pays et de son code postal. Plusieurs communes peuvent être retournées.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalité a été développée, puis arbitrée par NXS. Ce service n'est donc pas utilisé normalement.</p>
+              <h3><a id="methodes.referentiel.villes_par_cp.objet" name="methodes.referentiel.villes_par_cp.objet"></a>L'objet
+                ville</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>codeInsee</dt>
+                <dd><span style="font-style: italic;">string[]</span><br>
+                 Liste des codes INSEE correspondants au code postal et au pays passés en paramètres.</dd>
+              
+                <dt>codePostal</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Code postal correspondant aux villes retournées dans la réponse. Correspond normalement au code postal passé en paramètre de la requête.</dd>
+                <dt>nom</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Nom de la commune correspondant au code postal et au pays spécifié, en MAJUSCULE.</dd>
+                <dt>departement</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Chaine de caractère représentant le numéro du département dans laquelle se trouve la commune.</dd>
+                <dt>codePays</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                  Le code du pays dans lequel la commune est située. Ce code suit la norme <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-apha-3</a> (3 caractères, exemple "FRA" pour France)
+                  </dd>
+</dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+    "codeInsee":[
+      "148"
+    ],
+    "codePostal":"31810",
+    "nom":"CLERMONT LE FORT",
+    "departement":"31",
+    "codePays":"FRA"
+}
+</pre>      
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.referentiel.villes_par_cp.recuperer_villes" name="methodes.referentiel.villes_par_cp.recuperer_villes"></a>Récupérer les villes par CP</h3>
+              <p>Retourne les villes et leurs informations correspondant au code postal et au pays spécifiés.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version:</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>pays</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant le pays dans lequel la commune se situe, au format  <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-alpha-2</a>, par exemple FR pour la France</dd>
+                <dt>cp</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Code postal de la ville.
+                </dd>
+                <dt>checksum</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne les informations relatives à une commune à partir de son pays et de son code postal. Plusieurs communes peuvent être retournées. 
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_villes/pays/{PAYS}/cp/{CP}</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_villes/pays/FR/cp/31810
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {
+        "codeInsee":[
+          "148"
+        ],
+        "codePostal":"31810",
+        "nom":"CLERMONT LE FORT",
+        "departement":"31",
+        "codePays":"FRA"
+      },
+      {
+        "codeInsee":[
+          "572"
+        ],
+        "codePostal":"31810",
+        "nom":"VENERQUE",
+        "departement":"31",
+        "codePays":"FRA"
+      },
+      {
+        "codeInsee":[
+          "574"
+        ],
+        "codePostal":"31810",
+        "nom":"VERNET",
+        "departement":"31",
+        "codePays":"FRA"
+      }
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+
+
+       <h1 id="methodes.initialisation" name="methodes.initialisation">Initialisation</h1>
+        <!-- WS d'initialisation -->
+        <div id="methodes.initialisation.configuration">
+          <h2>Configuration</h2>
+          <p>Ce service fournit à l'application mobile les éléments nécessaires à son démarrage. Les informations contenues sont par exemple : l'état de maintenance du serveur, la liste des établissements avec leur numéro de téléphone, les numéros d'assistance...</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.initialisation.configuration.objet" name="methodes.initialisation.configuration.objet"></a>L'objet
+                configuration</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>lastVersion</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                 Numéro de la dernière version disponible de l'application dans les stores. Ce numéro a le format suivant : <code>Majeur.mineur.fix</code> où :
+                 <ul>
+                    <li>Majeur est le numéro de version majeur de l'application. La numérotation commence à 0.</li>
+                    <li>mineur est le numéro de version mineur de l'application. La numérotation commence à 0.</li>
+                    <li>fix est le numéro de version fix de l'application. La numérotation commence à 1.</li>
+                 </ul>
+                  Exemple : "0.0.1"
+
+               </dd>
+                 
+              
+                <dt>urlStore</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                URL de l'application sur le store de la plateforme.</dd>
+                <dt>serviceBaseUrl</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                URL de base des services REST. Exemple : "https://context-root/etnamobile-web/rouler_serein/"</dd>
+                <dt>maintenance</dt>
+                <dd><span style="font-style: italic;">boolean</span><br>
+                Paramètre permettant de mettre l'application en maintenance. Les valeurs autorisées sont :
+                <ul><li><code>true</code> : la partie serveur de l'application est déclarée être en maintenance.</li>
+                <li><code>false</code> : la partie serveur de l'application est fonctionnelle (pas en maintenance).</li></ul></dd>
+                <dt>messageMaintenance</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réessayer plus tard."</dd>
+                <dt>antennesRegionales</dt>
+                <dd><span style="font-style: italic;">etablissement[]</span><br>
+                Tableau contenant la liste des établissements avec les informations attenantes.</dd>
+                
+
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.etablissements_show">Montrer l'objet établissement</button>
+
+              <div class="subelements2" style="display:none;">
+              <dt>id</dt>
+              <dd><span style="font-style: italic;">string</span><br>Identifiant issu de la base de données.
+              </dd>
+              <dt>label</dt>
+              <dd><span style="font-style: italic;">string</span><br>libellé de la banque.
+              </dd>
+              <dt>phone</dt>
+              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de la banque.
+              </dd>
+              <dt>mail</dt>
+              <dd><span style="font-style: italic;">string</span><br>Adresse mail de contact de la banque.
+              </dd>
+    </div>
+
+                <dt>numerosAssistanceSinistre</dt>
+                <dd><span style="font-style: italic;">numeroAssistanceSinistre[]</span><br>
+                Tableau de 2 objets contenant les 2 numéros d'assistance sinistre ainsi que le libellé correspondant à afficher.
+                </dd>
+
+                <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.numerosAssistanceSinistre_show">Montrer l'objet numeroAssistanceSinistre</button>
+
+              <div class="subelements3" style="display:none;">
+              <dt>region</dt>
+              <dd><span style="font-style: italic;">string</span><br>La région concernée. Les choix valides sont : <ul><li>"france" : pour la France</li><li>"international" : pour l'International</li></ul>
+              </dd>
+              <dt>label</dt>
+              <dd><span style="font-style: italic;">string</span><br>Libellé à afficher dans l'application mobile sur le bouton associé à l'appel pour sinistre de la région concernée.
+              </dd>
+              <dt>phone</dt>
+              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de l'assistance de la région concernée.
+              </dd>
+    </div>
+
+
+</dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+  "lastVersion": "0.0.1",
+  "urlStore": "balbla",
+  "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
+  "maintenance": false,
+  "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
+  "antennesRegionales": [
+    {
+       "id": "001",
+       "label": "Antenne 001",
+       "phone": "01 23 45 67 89",
+       "mail": "antenne001@bp.fr"
+    },
+    {
+       "id": "002",
+       "label": "Antenne 002",
+       "phone": "01 23 45 67 89",
+       "mail": "antenne002@bp.fr"
+    },
+    { 
+       ...
+    }
+  ],
+  "numerosAssistanceSinistre": [
+    {
+       "region": "france",
+       "label": "France Sinistre",
+       "phone": "01 23 45 67 89"
+    }, 
+    {
+       "region": "international",
+       "label": "WorldWide Assistance",
+       "phone": "+33 123456789"
+    }
+  ],
+}
+</pre>      
+            </div>
+          </div>
+         
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.initialisation.configuration.recuperer_configuration"></a>Récupérer la configuration</h3>
+              <p>Retourne la configuration nécessaire à l'application mobile correspondant à la plateforme et à l'enseigne.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>enseigne</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractère désignant l'enseigne. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>bp</code> pour l'enseigne Banque Populaire </li><li><code>cm</code> pour l'enseigne Crédit Maritime</li>
+                </dd>
+                <dt>plateforme</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Chaine de caractères désignant la plateforme dont on désire la configuration. Cela correspond à la plateforme d'exécution du téléphone. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>ios</code> pour iOS (plateforme Apple)</li><li><code>android</code> pour Android (plateforme Google)</li>
+                </li></ul></dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne les informations nécessaires à l'application mobile pour son démarrage, correspondant à la plateforme et à l'enseigne spécifiées. Les <code>data</code> retournées contiennent un <a href="#methodes.initialisation.configuration.objet">objet configuration.</a>
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/configuration/{ENSEIGNE}/{PLATEFORME}</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/configuration/bp/android
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+      {
+        "lastVersion": "0.0.1",
+        "urlStore": "balbla",
+        "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
+        "maintenance": false,
+        "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
+        "antennesRegionales": [
+          {
+             "id": "001",
+             "label": "Antenne 001",
+             "phone": "01 23 45 67 89",
+             "mail": "antenne001@bp.fr"
+          },
+          {
+             "id": "002",
+             "label": "Antenne 002",
+             "phone": "01 23 45 67 89",
+             "mail": "antenne002@bp.fr"
+          },
+          { 
+             ...
+          }
+        ],
+        "numerosAssistanceSinistre": [
+          {
+             "region": "france",
+             "label": "France Sinistre",
+             "phone": "01 23 45 67 89"
+          }, 
+          {
+             "region": "international",
+             "label": "WorldWide Assistance",
+             "phone": "+33 123456789"
+          }
+        ],
+      }
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <script>
+
+    function onLoad() {
+        prettyPrint();
+
+        $("[id='api.reponses.status_show']").click(function() {
+                $('.subelements').slideToggle("fast");
+        });
+
+        $("[id='methodes.initialisation.configuration.objet.etablissements_show']").click(function() {
+                $('.subelements2').slideToggle("fast");
+        });
+
+        $("[id='methodes.initialisation.configuration.objet.numerosAssistanceSinistre_show']").click(function() {
+                $('.subelements3').slideToggle("fast");
+        });
+
+
+    }
+
+    $(onLoad());
+
+
+    </script>
+  </body>
+</html>
