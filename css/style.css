@@ -81,14 +81,18 @@ h2 {
 
 .subelements,
 .subelements2,
-.subelements3 {
+.subelements3,
+.subelements6,
+.subelements7 {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }
 
 .subsubelements,
 .subsubelements2,
-.subsubelements3 {
+.subsubelements3,
+.subsubelements6,
+.subsubelements7 {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }

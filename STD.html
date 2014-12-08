@@ -3,7 +3,7 @@
   <head>
     <meta content="text/html; charset=windows-1252" http-equiv="content-type">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="css/prettify.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -104,7 +104,16 @@
               </li>
             </ul>
           </li>
-
+          <li> <a href="#methodes.sinistre">Sinistre</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.sinistre.predeclaration">Prédéclaration</a>
+                <ul class="nav">
+                  <li><a href="#methodes.sinistre.predeclaration.objet">L'objet prédéclaration</a></li>
+                  <li><a href="#methodes.sinistre.predeclaration.envoyer_predeclaration">Envoyer sa prédéclaration</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 
 
 
@@ -1249,9 +1258,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                 <li><code>false</code> : la partie serveur de l'application est fonctionnelle (pas en maintenance).</li></ul></dd>
                 <dt>messageMaintenance</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réessayer plus tard."</dd>
+                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réess_yer plus tard."</dd>
                 <dt>antennesRegionales</dt>
-                <dd><span style="font-style: italic;">etablissement[]</span><br>
+                <dd><span stylinsnt-style: italic;">etablissement[]</span><br>
                 Tableau contenant la liste des établissements avec les informations attenantes.</dd>
                 
 
@@ -1416,6 +1425,134 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         </div>
 
 
+
+
+       <h1 id="methodes.sinistre" name="methodes.sinitre">Sinistre</h1>
+        <!-- WS de déclaration d'un sinistre -->
+        <div id="methodes.sinistre.predeclaration">
+          <h2>Prédéclaration de sinistre</h2>
+          <p>Ce service permet à l'application mobile d'enregistrer les élémnents les éléments nécessaires à la pré-déclaration d'un sinistre</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.sinistre.predeclaration.objet" name="methodes.sinistre.predeclaration.objet"></a>L'objet
+                pré-déclaration</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>nature</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+                Nature du sinistre. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>accident</code></li>
+                    <li><code>vol</code></li>
+                    <li><code>incendie</code></li>
+                 </ul>
+               </dd>
+                 
+             
+                <dt>date</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+                La date à laquelle a eu lieu le sinistre, au format JJ/MM/SSAA. Exemple : <code>15/12/2014</code></dd>
+                <dt>immatriculation</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+                L'immatriculation du véhicule qui fait l'objet de la déclaration de sinistre.</dd>
+                <dt>email</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
+                L'email du conducteur du véhicule.
+                </dd>
+                <dt>phone</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+                Le téléphone du conducteur du véhicule</dd>
+                <dt>no_societaire</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+                Correspond au n° de sociétaire (=n° assuré côté MAAF) du conducteur du véhicule.</dd>
+                <dt>commentaires</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
+                Zone de texte permettant d'ajouter un commentaire global au sinistre déclaré.</dd>
+                <dt>temoins</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">temoin[]</span><br>
+                Tableau contenant la liste des témoins (3 max) avec les informations attenantes.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.sinistre.predeclaration.objet.temoins_show">Montrer l'objet temoin</button>
+
+              <div class="subelements6" style="display:none;">
+              <dt>nom</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Nom du témoin
+              </dd>
+              <dt>prenom</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Prénom du témoin
+              </dd>
+              <dt>email</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Email du témoin.
+              <dt>phone</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Numéro de téléphone du témoin.
+              </dd>
+              <dt>adresse</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Adresse du témoin.
+              </dd>
+              <dt>commentaires</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Commentaires associées au témoin.
+              </dd>
+    </div>
+
+                <dt>photos</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">photo[]</span><br>
+                Tableau contenant la liste des photos (4 max) associées à la déclaration de sinistre.
+                </dd>
+
+                <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.sinistre.predeclaration.objet.photos_show">Montrer l'objet photo</button>
+
+              <div class="subelements7" style="display:none;">
+              <dt>base64</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>La chaîne de caractères représentant la photo encodée au format base64.
+              </dd>
+    </div>
+
+
+</dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+  "nature": "accident",
+  "date" : "15/12/2014",
+  "immatriculation": "AZ0-AZ9",
+  "email": "conducteur@voiture.net",
+  "phone": "0561452515",
+  "no_societaire": "012345678"
+  "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
+  "temoins": [
+    {
+      "nom": "PROT",
+      "prenom": "GEORGES",
+      "email": "georges.prot@yahoo.com",
+      "phone": "0152126579",
+      "adresse": "2 rue Alexandre Dumas, 75020 Paris",
+      "commentaires": "Témoin très sympathique"
+    },
+    {
+      "nom": "DURAND",
+      "prenom": "John",
+      "phone": "0152892654",
+      "commentaires": "Un passant"
+    }
+  ],
+
+  "photos":[
+    { 
+      "base64": "R0lGODlheAAqAPekAA4MERAPExMRFhYUGRgWGxsZHh4cISAeIyMhJiYkKCknKyspLS4tMTAuMjMyNTc1OTk3Ozs6PT08QEEjR0QlSkE/QkwuVU4yVVMyW1U4XVc2YVk3Yls7ZV48aUNCRUdFSUhHSkxKTk9NUVFPU1JRVFdWWVxaXl9eYWRDbmVJbWdCcmpFdWtKdG1HeW5JenFLfHNVfHVbfGVjZ2dmaWhmaWtqbG9vcXBucXpkf3JxdHZ1eH18fnZOgXZRgnlShX5ViXxlgn9+gYBXjIJZjYZdkYlflYFohoNljIF/godyi4dikYphlotrlI1kmY5pmZBnnJFsnI12k5B+lJN1m5Z7nZZtoZVwoJx6paJ8rYOChIeGiIiHiYuKjJGPkpaBm5OSlJeWmJiXmZmYmp2FpJuIoaSEraSMrKiPr6CfoaaXqqaCsKqMs6+NuaySs6ydsLKUuraevqSjpKemqKinqa2sra+hs7GhtrCvsbWmuraoubSztbe2uLi3ubu6vLmfwbukwbypw7+/wMCsx8K8w8W1ysa9yMy80cTDxMfGyMnEysvKy87D0c/P0NHF1NPJ1dTH2dbN2dnN3NTT1NzU3tra293O4d7V4d7Y4ODX4+Pa5ube6eTk5Ofn6Onj6+zs7e/v8PHt8/Py8/f2+fj3+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAAIf5KRmlsZSBzb3VyY2U6IGh0dHA6Ly9mci53aWtpcGVkaWEub3JnL3dpa2kvRmljaGllcjpOYXRpeGlzX25vdXZlYXVfbG9nby5naWYALAAAAAB4ACoAAAj+AEkJHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnLlxlCZQNHMq7NToD6BMoEbpHEpqlCU8VJRAuXLlD06iM0U1GsMChQ8nUJo4ESQUakhQi9xI8RKp68FLUTJg6HBkzRsnVyZ5/ToIBwoVGCxYIWR2ICg7KS5oeAFFkJ8reDoN3MRnD6K+pDjxUQSZlKI9gUIN/NSHj+fPn/ccCjVKER9PpD41pmRQVCA9kgRy2qOIoKdDYbIE2RJH0aeEoi4lsYCBBw8NFpyoMSSKIKYxKDCg4OEEzpk3lgrGKUAAAZ2CfAz+kPhNkJGD7nIGMlIwoD2BAgXaDxAAYVMoEgf4kAqVpYAHRAR9soN/tZGyBwEmdDWICAUI4GAAAiAgghyVjZJIDBNg0IIPL2AwgRJqvKGJQKNAQhUHLvgwBBx/tDGidgIoUIADAA7ExwAhkEfiDgI8UMAHmwi0yQ45FHlCAQnUUGQOWngSSggF6JcajxHUKKAAVQ60hwAJkkKJBAScIMYcc8ShhQgGBKEZQaPkwQIHHHSwQgsqEPcEFmxUQgooeTCBAgo9/DBEGYYY8hSMMvAIAmsC8UHACDqScogCC/BBggBfDDTKppYhEMEmQnX1CZRSppbFAFWKwqMHBQqkxwD+XdKBJaMD3YYam3a40MIKHGDAQQxpFHIGFmqUAcclZqSwQQs/ECHEGo9kUplAcQhAAycnWHvrjSLoKEoNAeQwCh0FREDrQIogUF9BoxbQR4BICOBBDQSwWtCrXfZhQAEmdBGHaIqAapAiLPDwQgccJDGIYp2sgcUTP/QAQ5wrDEHEoJ0celC1Mnj5gQBZCOVotzYawEBsn5gggBaQpftpQU9GWZCq80XQ6kD4CsXfAvMJ8B4CDshwSF+TGPECDFEU0pxAgBCxhBA//KCCCi8MsQQRTGTCEMdCBbLAAXGQMjJ5KQeggyeffEIH0LER5HKQtjH4rm02OOjAIQblTKL+JHFwscMNMoiwgAALzO0XJJMsLRAoU/BgcRNE8CBoE0IwsUhD1c7Q1XYLHDK2QHQcQAAEIIDwwQcN5qB4p+sSFAqDpZLiSQ0CiIDEjLGTordBm3qiyAcAINGQIT+o2EQVTyzRRBNLKJGIQ3EEIENXo2whAAhgFECyJyHEuIAC4FNagAI3p9v6QK+7WysNAYRAyShfEOBA7Pg2R4kWfawuOwkAZMHQKG3ggQ9+sIQqII95ULgc9KRnGxkI4Dwki0O9EEEJSVDigpLIgbXWxDq41Qp2AvEE+9xHoi8UoAF70BKXmgOGCJngC3GgAx3CUIIBJMBwCQFFFDbUrCc0oQjUQoACJCAShwFMjyCbCMF8xrMJDxAgbAaRhAMQYDhFJOBlrgMhJ2owgBGcC34GQKFQDmQCzWyCC6hzkBr9M4dpFcQRVVFBCyTngx5AIRIRycQdbiYQStzhDkPjhB72cCuDIOIObZPdHvoAmVEcQg+cIMUm/uhBTR2CDkOTpB5qFEJEoEELO8gCGPoQyYYQgle+6gDCpvCiucSEEBywgGA0wAEqKMaVMukEEChAHCAQgoO4hEmJ6pCGxATzmMhMpjKXycxmOvOZ0IymNKdJzWpa85ojCQgAOw=="
+    },
+    { 
+      "base64":"iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtJJREFUeNrMV09r1EAUf/nnYduypWARaUEQ2+LJPehR1w8gevWi+wFavBTBm55EQVQUr3a/QUXwJu0qXuph48ltPdhqq6IVtrpsW5PMOJOdZGeymZ1JWqUPHpkMk/d+8/4HQE5lwpg9b7J19Ix4gVtfIvwxca4MCjJBTfcJX2XrRcJz3LrKnXtK+BhkJB0ApzjBvNIaB6ZJeFjybbkfMB0A5wnfUpxxGZgHKdajbqrIPrQUgrfYrekN19ia318lbDBrUJC73Lk1tl/jzh48MpIb6xcmKlzQ7TdVx56vzPEbdsqhpk765KSHyQ0ZAG0aOmIpz+xsIfC2caps83/4GQXZ6oD7D7G4yiBkgYhjhFMlcK4/TpXmOA4Ui0Wptva9CvjLS9D6HgBGACQAjcwuwJvfcl83+Py+IwNlL8WLXQBfcwPA7d+pMlVZ0Je8u9OAGvVwTcueociC4A/O1YyEdMGfPuxHADazWOAd6+8dANutOFqN8RMxasMwwR49JDH/LxIDjaTMvbvAvnxNyIKCJAt89yW0n8wQF+SbB4TOhZnPs2VAo69MlQVEACQT0HIviMCyIRgZ7N5mbAqMwpDoCoxzARAVvXkRck9GUAFcFgzMVsGaOC2kYOApXKpjAb4aUkt4d6bV9X+9oVXiU2OAlEzp9GKSLJCOV+z2ggsCHMls5nYBbre6L4VBcGZuh8UI1V+DNT5CFJ8Be1JUjjY3lJ1QBcBlU21PITJLZ0N2rszCgCQN0c8NrQ5r6lYuVH+lnYK0BoTf+Fg55GgXIu/Rje7tSVCakyWA4yfjnA9WlkjrfRsrV3VBHQC1tNmQWiKyhn/4KFijdtLcMll7s0Cqn398AWRZicLT6YD+DlZ2Qp0gjAOxLxCfKiRu2sWAPCyTo/dfkDKeDbPOeI49hX9A0hCTvl5lwwc1+7ws/7UBpACKfjgvcjFCFT6jT6Iw01D7V4ABALvsF7lgQK5jAAAAAElFTkSuQmCC"
+    }
+  ]
+}
+
+</pre>      
+            </div>
+          </div>
+         
+
       </div>
     </div>
     <script>
@@ -1434,8 +1571,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         $("[id='methodes.initialisation.configuration.objet.numerosAssistanceSinistre_show']").click(function() {
                 $('.subelements3').slideToggle("fast");
         });
-
-
+        $("[id='methodes.sinistre.predeclaration.objet.temoins_show']").click(function() {
+                $('.subelements6').slideToggle("fast");
+        });
+        $("[id='methodes.sinistre.predeclaration.objet.photos_show']").click(function() {
+                $('.subelements7').slideToggle("fast");
+        });
     }
 
     $(onLoad());
