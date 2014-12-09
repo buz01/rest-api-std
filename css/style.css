@@ -6,6 +6,8 @@ h2 {
 
 .fixed {
     position: fixed;
+    overflow: auto;
+    height: 100%;
 }
 
 /* sidebar */
