@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/prettify.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,14 +18,14 @@
               <li><a href="#api.introduction">Introduction</a></li>
               <li><a href="#api.authentification">Authentification</a></li>
               <li><a href="#api.signature">Signature</a></li>
-              <li><a href="#api.reponses">Réponses</a></li>
+              <li><a href="#api.reponses">RÃ©ponses</a></li>
               <li><a href="#api.pagination">Pagination</a></li>
               <li><a href="#api.versionning">Versionning</a></li>
               <li><a href="#api.metadata">Metadata</a></li>
             </ul>
           </li>
           <li> <a href="#methodes">METHODES</a></li>
-          <li> <a href="#methodes.vehiculier">Véhiculier</a>
+          <li> <a href="#methodes.vehiculier">VÃ©hiculier</a>
             <ul class="nav nav-stacked ">
               <li> <a href="#methodes.vehiculier.marques">Marques</a>
                 <ul class="nav">
@@ -34,18 +34,18 @@
                       toutes les marques</a></li>
                 </ul>
               </li>
-              <li> <a href="#methodes.vehiculier.modeles">Modèles</a>
+              <li> <a href="#methodes.vehiculier.modeles">ModÃ¨les</a>
                 <ul class="nav nav-stacked">
                   <li><a href="#methodes.vehiculier.modeles.objet">L'objet modele</a></li>
                   <li><a href="#methodes.vehiculier.modeles.lister_modeles">Lister les
-                      modèles</a></li>
+                      modÃ¨les</a></li>
                 </ul>
               </li>
               <li> <a href="#methodes.vehiculier.energies">Energies</a>
                 <ul class="nav nav-stacked">
                   <li><a href="#methodes.vehiculier.energies.objet">L'objet energie</a></li>
                   <li><a href="#methodes.vehiculier.energies.lister_energies">Lister les
-                      énergies disponibles</a></li>
+                      Ã©nergies disponibles</a></li>
                 </ul>
               </li>
               <li> <a href="#methodes.vehiculier.puissances_fiscales">Puissances fiscales</a>
@@ -63,33 +63,33 @@
                       versions</a></li>
                 </ul>
               </li>
-              <li> <a href="#methodes.vehiculier.annees_mec">Années MEC</a>
+              <li> <a href="#methodes.vehiculier.annees_mec">AnnÃ©es MEC</a>
                 <ul class="nav nav-stacked">
                   <li><a href="#methodes.vehiculier.annees_mec.objet">L'objet annee mec</a></li>
                   <li><a href="#methodes.vehiculier.annees_mec.lister_annees_mec">Lister les
-                      anneés mec</a></li>
+                      anneÃ©s mec</a></li>
                 </ul>
               </li>
               <li> <a href="#methodes.vehiculier.code_maaf">Code MAAF</a>
                 <ul class="nav nav-stacked">
                   <li><a href="#methodes.vehiculier.code_maaf.objet">L'objet code maaf</a></li>
-                  <li><a href="#methodes.vehiculier.code_maaf.recuperer_code_maaf">Récupérer le code maaf du véhicule</a></li>
+                  <li><a href="#methodes.vehiculier.code_maaf.recuperer_code_maaf">RÃ©cupÃ©rer le code maaf du vÃ©hicule</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li> <a href="#methodes.referentiel">Référentiel</a>
+          <li> <a href="#methodes.referentiel">RÃ©fÃ©rentiel</a>
             <ul class="nav nav-stacked ">
               <li> <a href="#methodes.referentiel.banques_par_cp">Banque par CP</a>
                 <ul class="nav">
                   <li><a href="#methodes.referentiel.banques_par_cp.objet">L'objet banque</a></li>
-                  <li><a href="#methodes.referentiel.banques_par_cp.recuperer_banque">Récupérer la banque par CP</a></li>
+                  <li><a href="#methodes.referentiel.banques_par_cp.recuperer_banque">RÃ©cupÃ©rer la banque par CP</a></li>
                 </ul>
               </li>
               <li> <a href="#methodes.referentiel.villes_par_cp">Villes par CP</a>
                 <ul class="nav">
                   <li><a href="#methodes.referentiel.villes_par_cp.objet">L'objet ville</a></li>
-                  <li><a href="#methodes.referentiel.villes_par_cp.recuperer_villes">Récupérer les villes par CP</a></li>
+                  <li><a href="#methodes.referentiel.villes_par_cp.recuperer_villes">RÃ©cupÃ©rer les villes par CP</a></li>
                 </ul>
               </li>
             </ul>
@@ -99,17 +99,27 @@
               <li> <a href="#methodes.initialisation.configuration">Configuration</a>
                 <ul class="nav">
                   <li><a href="#methodes.initialisation.configuration.objet">L'objet configuration</a></li>
-                  <li><a href="#methodes.initialisation.configuration.recuperer_configuration">Récupérer la configuration</a></li>
+                  <li><a href="#methodes.initialisation.configuration.recuperer_configuration">RÃ©cupÃ©rer la configuration</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li> <a href="#methodes.sinistre">Sinistre</a>
             <ul class="nav nav-stacked ">
-              <li> <a href="#methodes.sinistre.predeclaration">Prédéclaration</a>
+              <li> <a href="#methodes.sinistre.predeclaration">PrÃ©dÃ©claration</a>
                 <ul class="nav">
-                  <li><a href="#methodes.sinistre.predeclaration.objet">L'objet prédéclaration</a></li>
-                  <li><a href="#methodes.sinistre.predeclaration.envoyer_predeclaration">Envoyer sa prédéclaration</a></li>
+                  <li><a href="#methodes.sinistre.predeclaration.objet">L'objet prÃ©dÃ©claration</a></li>
+                  <li><a href="#methodes.sinistre.predeclaration.envoyer_predeclaration">Envoyer sa prÃ©dÃ©claration</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li> <a href="#methodes.petit_rouleur">Petit Rouleur</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.petit_rouleur.contrat_eligible">EligibilitÃ©</a>
+                <ul class="nav">
+                  <li><a href="#methodes.petit_rouleur.contrat_eligible.objet">L'objet contrat eligible</a></li>
+                  <li><a href="#methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles">Lister les contrats Ã©ligibles</a></li>
                 </ul>
               </li>
             </ul>
@@ -117,15 +127,16 @@
         </ul>
       </nav>
       <!--Main Content -->
+
       <div class="col-xs-9">
         <h1 id="api" name="API">API Rouler Serein REST</h1>
         <!-- Introduction -->
         <h2><a id="api.introduction" name="api.introduction"></a>Introduction</h2>
         <div class="row">
           <div class="col-xs-6">
-            <p>L'API est organisée autour de <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>.
-              <a href="http://www.json.org/">JSON</a> est utilisé comme format
-              de retour pour toutes les réponses, y compris les erreurs. </p>
+            <p>L'API est organisÃ©e autour de <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>.
+              <a href="http://www.json.org/">JSON</a> est utilisÃ© comme format
+              de retour pour toutes les rÃ©ponses, y compris les erreurs. </p>
           </div>
           <div class="col-xs-6"></div>
         </div>
@@ -142,33 +153,33 @@
         <h2><a id="api.signature" name="api.signature"></a>Signature</h2>
         <div class="row bg-danger" >
           <div class="col-xs-6">
-            <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalité est en attente d'arbitrage par NXS - Surement supprimée suite à la réunion technique du 02/12/2014.</p>
-            <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
-            <p>Ce système est basé sur une clé partagée entre le client (l'application mobile) et le service REST : <ol>
-              <li>Le client construit l'URL du service REST à interroger,</li>
-              <li>Le client calcule une somme de contrôle avec la clé partagée,
-                <li>Le client ajoute la valeur de la clé en paramètre (dans notre cas paramètre GET de la requête),</li>
+            <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalitÃ© est en attente d'arbitrage par NXS - Surement supprimÃ©e suite Ã  la rÃ©union technique du 02/12/2014.</p>
+            <p>Un systÃ¨me de signature peut Ãªtre mis en place afin de prÃ©venir la modification de requÃªtes et de limiter les Ã©ventuelles attaques DoS. Ce systÃ¨me permet Ã  un utilisateur de rejouer la mÃªme requÃªte, mais pas de modifier la requÃªte. Ce systÃ¨me peut se montrer particuliÃ¨rement intÃ©ressant dans le cas de services d'accÃ¨s Ã  un catalogue, comme les service du vÃ©hiculier par exemple, pouvant Ãªtre utilisÃ©s par d'autres applications par exemple. </p>
+            <p>Ce systÃ¨me est basÃ© sur une clÃ© partagÃ©e entre le client (l'application mobile) et le service REST : <ol>
+              <li>Le client construit l'URL du service REST Ã  interroger,</li>
+              <li>Le client calcule une somme de contrÃ´le avec la clÃ© partagÃ©e,
+                <li>Le client ajoute la valeur de la clÃ© en paramÃ¨tre (dans notre cas paramÃ¨tre GET de la requÃªte),</li>
               <li>Le client appelle le service REST</li>
-              <li>Le service REST reçoit la requête</li>
-              <li>Le service REST récupère la somme de contrôle des paramètres passés dans l'URL GET</li>
-              <li>Le service REST calcule la somme de contrôle de l'URL appelée avec la clé partagée</li>
-              <li>Le service REST compare les 2 sommes de contrôle. Si elles sont identiques, la requête est acceptée, sinon une erreur est levée.</li>
+              <li>Le service REST reÃ§oit la requÃªte</li>
+              <li>Le service REST rÃ©cupÃ¨re la somme de contrÃ´le des paramÃ¨tres passÃ©s dans l'URL GET</li>
+              <li>Le service REST calcule la somme de contrÃ´le de l'URL appelÃ©e avec la clÃ© partagÃ©e</li>
+              <li>Le service REST compare les 2 sommes de contrÃ´le. Si elles sont identiques, la requÃªte est acceptÃ©e, sinon une erreur est levÃ©e.</li>
             </p>
 
 <h4>Attributs</h4>
             <dl class="dl-horizontal">
               <dt>checksum:</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Contient la somme de contrôle calculée par le client (mobile). Cet élément est optionnel si le contrôle par signature n'a pas été activé.</dd>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Contient la somme de contrÃ´le calculÃ©e par le client (mobile). Cet Ã©lÃ©ment est optionnel si le contrÃ´le par signature n'a pas Ã©tÃ© activÃ©.</dd>
             </dl>
 
 
-Voici ce que pourrait donner le calcul de notre signature en javascript avec l’utilisation de la librairie <a href="https://code.google.com/p/crypto-js/">crypto-js</a> pour réaliser les calculs de SHA1 et de HMAC-SHA1 :
+Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€™utilisation de la librairie <a href="https://code.google.com/p/crypto-js/">crypto-js</a> pour rÃ©aliser les calculs de SHA1 et de HMAC-SHA1 :
 <p>
 <pre class="prettyprint language-javascript">
 &lt;script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
-    const sharedKey = "48@!alsd"; // Connu côté client dès le début.
+    const sharedKey = "48@!alsd"; // Connu cÃ´tÃ© client dÃ¨s le dÃ©but.
     var encryptedPassword = CryptoJS.SHA1(sharedKey);
     var httpVerb = "GET";
     var url = "https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques";
@@ -180,50 +191,50 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
           </div>
           <div class="col-xs-6">
-                      <span class="label label-info">Exemple de requête</span>
+                      <span class="label label-info">Exemple de requÃªte</span>
           <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3"</pre>
   </div>
         </div>
 
-        <!-- Réponses -->
-        <h2><a id="api.reponses" name="api.reponses"></a>Réponses</h2>
+        <!-- RÃ©ponses -->
+        <h2><a id="api.reponses" name="api.reponses"></a>RÃ©ponses</h2>
         <div class="row">
           <div class="col-xs-6">
-            <p>Cette API utilise les codes conventionnels de réponse HTTP afin
-              d'indiquer le succès ou l'échec d'une requête à l'API. En général,
-              les codes dans la tranche 2xx indiquent un succès ; les codes dans
+            <p>Cette API utilise les codes conventionnels de rÃ©ponse HTTP afin
+              d'indiquer le succÃ¨s ou l'Ã©chec d'une requÃªte Ã  l'API. En gÃ©nÃ©ral,
+              les codes dans la tranche 2xx indiquent un succÃ¨s ; les codes dans
               la tranche 4xx indiquent une erreur trouvant son origine dans les
-              informations soumises (par exemple un paramètre obligatoire
-              absent) ; les codes dans la tranche 5xx indiquent une erreur côté
-              serveur. Toutes les réponses sont encodés en UTF-8.
+              informations soumises (par exemple un paramÃ¨tre obligatoire
+              absent) ; les codes dans la tranche 5xx indiquent une erreur cÃ´tÃ©
+              serveur. Toutes les rÃ©ponses sont encodÃ©s en UTF-8.
             </p>
             <h4>Attributs</h4>
             <dl class="dl-horizontal">
               <dt>status:</dt>
-              <dd><span class="label label-danger">Obligatoire</span><br>Contient les éléments de controle de la réponse, comme le code HTTP de retour, les messages d'erreurs éventuels.</dd>
+              <dd><span class="label label-danger">Obligatoire</span><br>Contient les Ã©lÃ©ments de controle de la rÃ©ponse, comme le code HTTP de retour, les messages d'erreurs Ã©ventuels.</dd>
 
-              <button type="button" class="btn btn-default btn-xs btn-block " id="api.reponses.status_show">Montrer les sous-éléments</button>
+              <button type="button" class="btn btn-default btn-xs btn-block " id="api.reponses.status_show">Montrer les sous-Ã©lÃ©ments</button>
               <div class="subelements" style="display:none;">
               <dt>code:</dt>
-              <dd><span class="label label-danger">Obligatoire</span><br>Code HTTP de retour. Ce code peut être :
+              <dd><span class="label label-danger">Obligatoire</span><br>Code HTTP de retour. Ce code peut Ãªtre :
                 <ul>
-                  <li><code>200</code> OK - Tout s'est déroulé comme prévu</li>
-                  <li><code>400</code> Bad Request - Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...)</li>
-                  <li><code>401</code> Unauthorized - Une erreur liée à l'authentification ou à la sécurité s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)</li>
-                  <li><code>404</code> Not Found - La version spécifiée du service n'existe pas.</li>
-                  <li><code>406</code> Not acceptable - La version n'est pas spécifiée dans le header.</li>
-                  <li><code>500</code> Server error - Une erreur s'est produite côté serveur.</li>
+                  <li><code>200</code> OK - Tout s'est dÃ©roulÃ© comme prÃ©vu</li>
+                  <li><code>400</code> Bad Request - Une erreur fonctionnelle s'est produite (ex : paramÃ¨tre obligatoire manquant, format incorrect...)</li>
+                  <li><code>401</code> Unauthorized - Une erreur liÃ©e Ã  l'authentification ou Ã  la sÃ©curitÃ© s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)</li>
+                  <li><code>404</code> Not Found - La version spÃ©cifiÃ©e du service n'existe pas.</li>
+                  <li><code>406</code> Not acceptable - La version n'est pas spÃ©cifiÃ©e dans le header.</li>
+                  <li><code>500</code> Server error - Une erreur s'est produite cÃ´tÃ© serveur.</li>
                 </ul>
               </dd>
               <dt>message:</dt>
-              <dd><span class="label label-danger">Obligatoire</span><br>Chaine de caractères représentant un message intelligible
-                donnant plus de détails sur l'erreur. Ce message peut contenir entre autre :
+              <dd><span class="label label-danger">Obligatoire</span><br>Chaine de caractÃ¨res reprÃ©sentant un message intelligible
+                donnant plus de dÃ©tails sur l'erreur. Ce message peut contenir entre autre :
                 <ul>                
                   <li>un message indiquant la source de l'erreur</li>
-              <li>la classe Java génératrice de l'erreur</li>
-              <li>l'identifiant de l'erreur, permettant de tracer l'erreur à
-                travers les couches. Cet identifiant est utilisé également côté
-                serveur. On peut donc suivre l'erreur via les logs côté serveur.</li>
+              <li>la classe Java gÃ©nÃ©ratrice de l'erreur</li>
+              <li>l'identifiant de l'erreur, permettant de tracer l'erreur Ã 
+                travers les couches. Cet identifiant est utilisÃ© Ã©galement cÃ´tÃ©
+                serveur. On peut donc suivre l'erreur via les logs cÃ´tÃ© serveur.</li>
 
             </ul></dd>
 
@@ -231,41 +242,41 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               </div>
               <dt>data:</dt>
               <dd><span class="label label-warning">Optionnel</span><p> 
-                Les données proprement dites, la "charge utile".</p></dd>
+                Les donnÃ©es proprement dites, la "charge utile".</p></dd>
             </dl>
           </div>
-          <div class="col-xs-6"> <span class="label label-info">Résumé
-              des codes HTTP utilisés</span>
-            <pre>200 OK - Tout s'est déroulé comme prévu
+          <div class="col-xs-6"> <span class="label label-info">RÃ©sumÃ©
+              des codes HTTP utilisÃ©s</span>
+            <pre>200 OK - Tout s'est dÃ©roulÃ© comme prÃ©vu
 
-400 Bad Request - Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...)
+400 Bad Request - Une erreur fonctionnelle s'est produite (ex : paramÃ¨tre obligatoire manquant, format incorrect...)
 
-401 Unauthorized - Une erreur liée à l'authentification ou à la sécurité s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)
+401 Unauthorized - Une erreur liÃ©e Ã  l'authentification ou Ã  la sÃ©curitÃ© s'est produite (ex : checksum invalide, authentification HTTP basique incorrecte)
 
-404 Not Found - La version spécifiée du service n'existe pas. (ex : la version spécifiée comme paramètre dans l'URL via le paramètre "version" n'existe pas, v99 par exemple).
+404 Not Found - La version spÃ©cifiÃ©e du service n'existe pas. (ex : la version spÃ©cifiÃ©e comme paramÃ¨tre dans l'URL via le paramÃ¨tre "version" n'existe pas, v99 par exemple).
 
-406 Not acceptable - La version du service voulu n'est pas spécifiée dans le header HTTP.
+406 Not acceptable - La version du service voulu n'est pas spÃ©cifiÃ©e dans le header HTTP.
 
-500 Server error - Une erreur s'est produite côté serveur.
+500 Server error - Une erreur s'est produite cÃ´tÃ© serveur.
 </pre> </div>
 
-<div class="col-xs-6"> <span class="label label-info">Exemple de réponse</span>
+<div class="col-xs-6"> <span class="label label-info">Exemple de rÃ©ponse</span>
             <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": ...
 }
 </pre> 
 
- <span class="label label-info">Exemple de réponse</span>
+ <span class="label label-info">Exemple de rÃ©ponse</span>
             <pre class="prettyprint language-json">
 {
     "status":{
       "code":400,
-      "message":"Une erreur fonctionnelle s'est produite (ex : paramètre obligatoire manquant, format incorrect...) - Classe : com.natixis.etnamobile.frontend.vehicule.rest.VehiculeRestService$Proxy$_$$_WeldSubclass - Méthode : getCodeMaaf - Id erreur : DGE%1417192739598%3809a817-723c-4314-a62b-ba3ac01f2752"
+      "message":"Une erreur fonctionnelle s'est produite (ex : paramÃ¨tre obligatoire manquant, format incorrect...) - Classe : com.natixis.etnamobile.frontend.vehicule.rest.VehiculeRestService$Proxy$_$$_WeldSubclass - MÃ©thode : getCodeMaaf - Id erreur : DGE%1417192739598%3809a817-723c-4314-a62b-ba3ac01f2752"
     }
 }
 </pre> 
@@ -283,22 +294,22 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <h2><a id="api.versionning" name="api.versionning"></a>Versionning</h2>
         <div class="row bg-danger">
           <div class="col-xs-6">
-            <p>Le versionning des services est géré via une partie de l'URL de la requête GET. La version est obligatoire. Elle est de la forme : <code>v + numéro</code>. L'URL des requêtes doit être de la forme :
+            <p>Le versionning des services est gÃ©rÃ© via une partie de l'URL de la requÃªte GET. La version est obligatoire. Elle est de la forme : <code>v + numÃ©ro</code>. L'URL des requÃªtes doit Ãªtre de la forme :
               <pre>https://context-root/etnamobile-web/rouler_serein/{VERSION}/...</pre></p>
-            Si la version n'existe pas, une réponse avec le code de retour HTTP 404 est envoyée.
+            Si la version n'existe pas, une rÃ©ponse avec le code de retour HTTP 404 est envoyÃ©e.
              <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères de la forme <code>v + numéro</code> (ex : v1, v2...) permettant de spécifier la version du service à appeler. Les versions commencent à v1.</dd>
+                  Chaine de caractÃ¨res de la forme <code>v + numÃ©ro</code> (ex : v1, v2...) permettant de spÃ©cifier la version du service Ã  appeler. Les versions commencent Ã  v1.</dd>
                 </dl>
             
           </div>
           <div class="col-xs-6">
-            <span class="label label-info">Exemple de requête</span>
+            <span class="label label-info">Exemple de requÃªte</span>
           <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
 
-            <span class="label label-info">Exemple de réponses avec version non trouvée</span>
+            <span class="label label-info">Exemple de rÃ©ponses avec version non trouvÃ©e</span>
           <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v999/vehiculier/marques</pre>
                <pre class="prettyprint language-json">Erreur HTTP 404 - Not Found</pre>
           </div>
@@ -313,12 +324,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           <div class="col-xs-6"></div>
         </div>
         <h1 id="methodes" name="methodes">METHODES</h1> 
-        <h1 id="methodes.vehiculier" name="methodes.vehiculier">Véhiculier</h1>
+        <h1 id="methodes.vehiculier" name="methodes.vehiculier">VÃ©hiculier</h1>
         <!-- MARQUES-->
         <div id="methodes.vehiculier.marques">
           <h2>Marques</h2>
-          <p>Les marques représentent les constructeurs de véhicule qu'il est
-            possible d'assurer. Chaque marque est identifié par un libellé
+          <p>Les marques reprÃ©sentent les constructeurs de vÃ©hicule qu'il est
+            possible d'assurer. Chaque marque est identifiÃ© par un libellÃ©
             unique.</p>
           <div class="row">
             <div class="col-xs-6">
@@ -327,7 +338,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé de la marque du véhicule</dd>
+                  LibellÃ© de la marque du vÃ©hicule</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -336,8 +347,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.marques.lister_toutes_les_marques" name="methodes.vehiculier.marques.lister_toutes_les_marques"></a>Lister
                 toutes les marques</h3>
-              <p>Retourne une liste de toutes les marques de véhicules
-                assurables. Cette liste est triée par ordre alphabétique.&nbsp;</p>
+              <p>Retourne une liste de toutes les marques de vÃ©hicules
+                assurables. Cette liste est triÃ©e par ordre alphabÃ©tique.&nbsp;</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version:</dt>
@@ -345,26 +356,26 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les marques de véhicules assurables.
+              Retourne une liste de toutes les marques de vÃ©hicules assurables.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data":  [
       {"libelle":"ALFA%20ROMEO"},
@@ -379,10 +390,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         </div>
         <!-- MODELES -->
         <div id="methodes.vehiculier.modeles">
-          <h2>Modèles</h2>
-          <p>Les modèles représentent les modèles de véhicule qu'il est possible
-            d'assurer, et correspondant à la marque spécifiée. Chaque modèle est
-            identifié par un libellé unique.</p>
+          <h2>ModÃ¨les</h2>
+          <p>Les modÃ¨les reprÃ©sentent les modÃ¨les de vÃ©hicule qu'il est possible
+            d'assurer, et correspondant Ã  la marque spÃ©cifiÃ©e. Chaque modÃ¨le est
+            identifiÃ© par un libellÃ© unique.</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.modeles.objet" name="methodes.vehiculier.modeles.objet"></a>L'objet
@@ -391,7 +402,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé du modèle de véhicule </dd>
+                  LibellÃ© du modÃ¨le de vÃ©hicule </dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -399,10 +410,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.modeles.lister_modeles" name="methodes.vehiculier.modeles.lister_modeles"></a>Lister
-                les modèles de véhicules</h3>
-              <p>Retourne une liste de tous les modèles de véhicules assurables
-                correspondant à la marque et à la tranche d'âge spécifiées.
-                Cette liste est triée par ordre alphabétique.</p>
+                les modÃ¨les de vÃ©hicules</h3>
+              <p>Retourne une liste de tous les modÃ¨les de vÃ©hicules assurables
+                correspondant Ã  la marque et Ã  la tranche d'Ã¢ge spÃ©cifiÃ©es.
+                Cette liste est triÃ©e par ordre alphabÃ©tique.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                <dt>version:</dt>
@@ -410,46 +421,46 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET
                     HTTP</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les modèles de véhicules assurables,
-              correspondant à la marque et à la tranche d'âge spécifiées. <br>
+              Retourne une liste de toutes les modÃ¨les de vÃ©hicules assurables,
+              correspondant Ã  la marque et Ã  la tranche d'Ã¢ge spÃ©cifiÃ©es. <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {"libelle":"ALFA RZ"},
@@ -465,10 +476,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <!-- ENERGIES -->
         <div id="methodes.vehiculier.energies">
           <h2>Energies</h2>
-          <p>Les énergies représentent les énergies utilisées par les véhicules
-            qu'il est possible d'assurer, et correspondant à la marque, la
-            tranche d'âge et le modèle spécifiés. Chaque énergie est identifiée
-            par un libellé unique.</p>
+          <p>Les Ã©nergies reprÃ©sentent les Ã©nergies utilisÃ©es par les vÃ©hicules
+            qu'il est possible d'assurer, et correspondant Ã  la marque, la
+            tranche d'Ã¢ge et le modÃ¨le spÃ©cifiÃ©s. Chaque Ã©nergie est identifiÃ©e
+            par un libellÃ© unique.</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.energies.objet" name="methodes.vehiculier.energies.objet"></a>L'objet
@@ -477,7 +488,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé de l'énergie associée au véhicule</dd>
+                  LibellÃ© de l'Ã©nergie associÃ©e au vÃ©hicule</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -485,11 +496,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.energies.lister_energies" name="methodes.vehiculier.energies.lister_energies"></a>Lister
-                les énergies disponibles du véhicule</h3>
-              <p>Retourne une liste de toutes les énergies disponibles pour les
-                véhicules assurables correspondant à la marque, la tranche d'âge
-                et le modèle spécifiés. Cette liste est triée par ordre
-                alphabétique.</p>
+                les Ã©nergies disponibles du vÃ©hicule</h3>
+              <p>Retourne une liste de toutes les Ã©nergies disponibles pour les
+                vÃ©hicules assurables correspondant Ã  la marque, la tranche d'Ã¢ge
+                et le modÃ¨le spÃ©cifiÃ©s. Cette liste est triÃ©e par ordre
+                alphabÃ©tique.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                                <dt>version:</dt>
@@ -497,52 +508,52 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                 <dt>modele:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le modèle du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
-                    les modèles de véhicules</a>".</dd>
+                  Chaine de caractÃ¨res dÃ©signant le modÃ¨le du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modÃ¨les de vÃ©hicules</a>".</dd>
                 
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les énergies disponibles pour les
-              véhicules assurables correspondant à la marque, la tranche d'âge,
-              le modèle spécifiés. Cette liste est triée par ordre alphabétique.
+              Retourne une liste de toutes les Ã©nergies disponibles pour les
+              vÃ©hicules assurables correspondant Ã  la marque, la tranche d'Ã¢ge,
+              le modÃ¨le spÃ©cifiÃ©s. Cette liste est triÃ©e par ordre alphabÃ©tique.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {"libelle":"Essence"},
@@ -557,10 +568,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <!-- PUISSANCE FISCALE -->
         <div id="methodes.vehiculier.puissances_fiscales">
           <h2>Puissances fiscales</h2>
-          <p>La puissance fiscale représentent les puissances fiscales
-            disponibles pour les véhicules qu'il est possible d'assurer, et
-            correspondant à la marque, la tranche d'âge, le modèle et l'énergie
-            spécifiés. Chaque puissance fiscale est identifiée par un libellé
+          <p>La puissance fiscale reprÃ©sentent les puissances fiscales
+            disponibles pour les vÃ©hicules qu'il est possible d'assurer, et
+            correspondant Ã  la marque, la tranche d'Ã¢ge, le modÃ¨le et l'Ã©nergie
+            spÃ©cifiÃ©s. Chaque puissance fiscale est identifiÃ©e par un libellÃ©
             unique.</p>
           <div class="row">
             <div class="col-xs-6">
@@ -570,7 +581,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé de la puissance fiscale</dd>
+                  LibellÃ© de la puissance fiscale</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -580,11 +591,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <h3><a id="methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales"
 
                   name="methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales"></a>Lister
-                les puissances fiscales disponibles du véhicule</h3>
+                les puissances fiscales disponibles du vÃ©hicule</h3>
               <p>Retourne une liste des puissances fiscales disponibles pour les
-                véhicules assurables correspondant à la marque, la tranche
-                d'âge, le modèle et l'énergie spécifiés. Cette liste est triée
-                par ordre alphabétique.</p>
+                vÃ©hicules assurables correspondant Ã  la marque, la tranche
+                d'Ã¢ge, le modÃ¨le et l'Ã©nergie spÃ©cifiÃ©s. Cette liste est triÃ©e
+                par ordre alphabÃ©tique.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                <dt>version:</dt>
@@ -593,58 +604,58 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
                 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marques.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                 <dt>modele:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le modèle du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
-                    les modèles de véhicules</a>".</dd>
+                  Chaine de caractÃ¨res dÃ©signant le modÃ¨le du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modÃ¨les de vÃ©hicules</a>".</dd>
                 <dt>energie:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant l'énergie utilisée par le
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant l'Ã©nergie utilisÃ©e par le
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.energies.lister_energies">Lister les
-                    énergies de véhicules</a>".</dd>
+                    Ã©nergies de vÃ©hicules</a>".</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les énergies disponibles pour les
-              véhicules assurables correspondant à la marque, la tranche d'âge,
-              le modèle et l'énergie spécifiés. Cette liste est triée par ordre alphabétique.
+              Retourne une liste de toutes les Ã©nergies disponibles pour les
+              vÃ©hicules assurables correspondant Ã  la marque, la tranche d'Ã¢ge,
+              le modÃ¨le et l'Ã©nergie spÃ©cifiÃ©s. Cette liste est triÃ©e par ordre alphabÃ©tique.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data":  [
       {"libelle":"6"},
@@ -659,10 +670,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <!-- VERSION -->
         <div id="methodes.vehiculier.versions">
           <h2>Versions</h2>
-          <p>Les versions représentent les variantes disponibles pour les
-            véhicules qu'il est possible d'assurer, et correspondant à la
-            marque, la tranche d'âge, le modèle, l'énergie et la puissance
-            fiscale spécifiés. Chaque version est identifiée par un libellé
+          <p>Les versions reprÃ©sentent les variantes disponibles pour les
+            vÃ©hicules qu'il est possible d'assurer, et correspondant Ã  la
+            marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie et la puissance
+            fiscale spÃ©cifiÃ©s. Chaque version est identifiÃ©e par un libellÃ©
             unique.</p>
           <div class="row">
             <div class="col-xs-6">
@@ -672,7 +683,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé de la variante (version)</dd>
+                  LibellÃ© de la variante (version)</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -680,11 +691,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.versions.lister_versions" name="methodes.vehiculier.versions.lister_versions"></a>Lister
-                les versions (variantes) disponibles du véhicule</h3>
+                les versions (variantes) disponibles du vÃ©hicule</h3>
               <p>Retourne une liste des variantes disponibles pour les
-            véhicules qu'il est possible d'assurer, et correspondant à la
-            marque, la tranche d'âge, le modèle, l'énergie et la puissance
-            fiscale spécifiés.</p>
+            vÃ©hicules qu'il est possible d'assurer, et correspondant Ã  la
+            marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie et la puissance
+            fiscale spÃ©cifiÃ©s.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                <dt>version:</dt>
@@ -693,67 +704,67 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
                 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                 <dt>modele:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le modèle du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
-                    les modèles de véhicules</a>".</dd>
+                  Chaine de caractÃ¨res dÃ©signant le modÃ¨le du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modÃ¨les de vÃ©hicules</a>".</dd>
                 <dt>energie:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant l'énergie utilisée par le
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant l'Ã©nergie utilisÃ©e par le
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.energies.lister_energies">Lister les
-                    énergies de véhicules</a>".</dd>
+                    Ã©nergies de vÃ©hicules</a>".</dd>
                 <dt>puissance fiscale:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la puissance fiscale du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant la puissance fiscale du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
                     les puissances fiscales</a>".</dd>
                
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les les variantes disponibles pour les
-            véhicules qu'il est possible d'assurer, et correspondant à la
-            marque, la tranche d'âge, le modèle, l'énergie et la puissance
-            fiscale spécifiés.  Cette liste est triée par ordre alphabétique.
+            vÃ©hicules qu'il est possible d'assurer, et correspondant Ã  la
+            marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie et la puissance
+            fiscale spÃ©cifiÃ©s.  Cette liste est triÃ©e par ordre alphabÃ©tique.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales/17/versions</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {"libelle":"3.2 V6 24V 240 BLACK LINE - Manuelle"},
@@ -769,10 +780,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
         <!-- ANNEES DE MEC -->
         <div id="methodes.vehiculier.annees_mec">
-          <h2>Années MEC</h2>
-          <p>Les années de mise en circulation représentent les différentes années auxquelles le véhicule a été mis en circulation, et correspondant à la
-            marque, la tranche d'âge, le modèle, l'énergie, la puissance
-            fiscale et à la version spécifiés. Chaque année de mise en circulation est identifiée par un libellé unique.</p>
+          <h2>AnnÃ©es MEC</h2>
+          <p>Les annÃ©es de mise en circulation reprÃ©sentent les diffÃ©rentes annÃ©es auxquelles le vÃ©hicule a Ã©tÃ© mis en circulation, et correspondant Ã  la
+            marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie, la puissance
+            fiscale et Ã  la version spÃ©cifiÃ©s. Chaque annÃ©e de mise en circulation est identifiÃ©e par un libellÃ© unique.</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.annees_mec.objet" name="methodes.vehiculier.annees_mec.objet"></a>L'objet
@@ -781,7 +792,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé de l'année de mise en circulation</dd>
+                  LibellÃ© de l'annÃ©e de mise en circulation</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
@@ -789,11 +800,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.annees_mec.lister_annees_mec" name="methodes.vehiculier.annees_mec.lister_annees_mec"></a>Lister
-                les années de mise en circulation possibles du véhicule</h3>
-              <p>Retourne une liste des années de mise en circulation possibles pour les
-                véhicules assurables correspondant à la marque, la tranche
-                d'âge, le modèle, l'énergie, la puissance fiscale et la version spécifiés. Cette liste est triée
-                par ordre alphabétique.</p>
+                les annÃ©es de mise en circulation possibles du vÃ©hicule</h3>
+              <p>Retourne une liste des annÃ©es de mise en circulation possibles pour les
+                vÃ©hicules assurables correspondant Ã  la marque, la tranche
+                d'Ã¢ge, le modÃ¨le, l'Ã©nergie, la puissance fiscale et la version spÃ©cifiÃ©s. Cette liste est triÃ©e
+                par ordre alphabÃ©tique.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                <dt>version:</dt>
@@ -802,72 +813,72 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
                 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                 <dt>modele:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le modèle du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
-                    les modèles de véhicules</a>".</dd>
+                  Chaine de caractÃ¨res dÃ©signant le modÃ¨le du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modÃ¨les de vÃ©hicules</a>".</dd>
                 <dt>energie:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant l'énergie utilisée par le
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant l'Ã©nergie utilisÃ©e par le
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.energies.lister_energies">Lister les
-                    énergies de véhicules</a>".</dd>
+                    Ã©nergies de vÃ©hicules</a>".</dd>
                 <dt>puissance fiscale:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la puissance fiscale du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant la puissance fiscale du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
                     les puissances fiscales</a>".</dd>
                 <dt>variante:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la variante (version) du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant la variante (version) du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
                     href="#methodes.vehiculier.versions.lister_versions">Lister
-                    les versions d'un véhicule</a>".</dd>
+                    les versions d'un vÃ©hicule</a>".</dd>
              
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les années de mise en circulation disponibles pour les
-              véhicules assurables correspondant à la marque, la tranche d'âge,
-              le modèle, l'énergie, la puissance fiscale et la version (variante) spécifiés. Cette liste est triée par ordre alphabétique.
+              Retourne une liste de toutes les annÃ©es de mise en circulation disponibles pour les
+              vÃ©hicules assurables correspondant Ã  la marque, la tranche d'Ã¢ge,
+              le modÃ¨le, l'Ã©nergie, la puissance fiscale et la version (variante) spÃ©cifiÃ©s. Cette liste est triÃ©e par ordre alphabÃ©tique.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {"libelle":"2004"},
@@ -884,8 +895,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <!-- CODE MAAF -->
         <div id="methodes.vehiculier.code_maaf">
           <h2>Code MAAF</h2>
-          <p>Le code MAAF d'un véhicule représentent l'identifiant unique pour la MAAF de ce véhicule, correspondant à la marque, la tranche d'âge, le modèle, l'énergie, la puissance
-            fiscale, à la version et à l'année de mise en circulation spécifiés. Chaque code MAAF est identifiée par un libellé unique. Ce code est unique pour un véhicule donnée.</p>
+          <p>Le code MAAF d'un vÃ©hicule reprÃ©sentent l'identifiant unique pour la MAAF de ce vÃ©hicule, correspondant Ã  la marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie, la puissance
+            fiscale, Ã  la version et Ã  l'annÃ©e de mise en circulation spÃ©cifiÃ©s. Chaque code MAAF est identifiÃ©e par un libellÃ© unique. Ce code est unique pour un vÃ©hicule donnÃ©e.</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.vehiculier.code_maaf.objet" name="methodes.vehiculier.code_maaf.objet"></a>L'objet
@@ -894,17 +905,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Libellé correspondant au code MAAF</dd>
+                  LibellÃ© correspondant au code MAAF</dd>
               </dl>
             </div>
             <div class="col-xs-6"> </div>
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <h3><a id="methodes.vehiculier.code_maaf.recuperer_code_maaf" name="methodes.vehiculier.code_maaf.recuperer_code_maaf"></a>Récupérer le code MAAF du véhicule</h3>
+              <h3><a id="methodes.vehiculier.code_maaf.recuperer_code_maaf" name="methodes.vehiculier.code_maaf.recuperer_code_maaf"></a>RÃ©cupÃ©rer le code MAAF du vÃ©hicule</h3>
               <p>Retourne le code MAAF pour le
-                véhicule assurable correspondant à la marque, la tranche
-                d'âge, le modèle, l'énergie, la puissance fiscale, la version et l'année de mise en circulation spécifiés.</p>
+                vÃ©hicule assurable correspondant Ã  la marque, la tranche
+                d'Ã¢ge, le modÃ¨le, l'Ã©nergie, la puissance fiscale, la version et l'annÃ©e de mise en circulation spÃ©cifiÃ©s.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                <dt>version:</dt>
@@ -913,77 +924,77 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
                 <dt>marque:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la marque du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
+                  Chaine de caractÃ¨res dÃ©signant la marque du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.marque.lister_toutes_les_marques">Lister
                     toutes les marques</a>".</dd>
                 <dt>age:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Tranche d'âge du véhicule à assurer. Les valeurs autorisées
+                  Tranche d'Ã¢ge du vÃ©hicule Ã  assurer. Les valeurs autorisÃ©es
                   sont :
                   <ul>
-                    <li>0 : véhicule ayant moins de 5 ans (exclu)</li>
-                    <li>5 : véhicule ayant entre 5 et 10 ans (exclu)</li>
-                    <li>10 : véhicule ayant entre 10 et 15 ans (exclu)</li>
-                    <li>15 : véhicule ayant entre 15 et 20 ans (exclu)</li>
-                    <li>20 : véhicule ayant 20 ans et plus</li>
+                    <li>0 : vÃ©hicule ayant moins de 5 ans (exclu)</li>
+                    <li>5 : vÃ©hicule ayant entre 5 et 10 ans (exclu)</li>
+                    <li>10 : vÃ©hicule ayant entre 10 et 15 ans (exclu)</li>
+                    <li>15 : vÃ©hicule ayant entre 15 et 20 ans (exclu)</li>
+                    <li>20 : vÃ©hicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
                 <dt>modele:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le modèle du véhicule. Cette
-                  valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
-                    les modèles de véhicules</a>".</dd>
+                  Chaine de caractÃ¨res dÃ©signant le modÃ¨le du vÃ©hicule. Cette
+                  valeur est celle retournÃ©e par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
+                    les modÃ¨les de vÃ©hicules</a>".</dd>
                 <dt>energie:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant l'énergie utilisée par le
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant l'Ã©nergie utilisÃ©e par le
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.energies.lister_energies">Lister les
-                    énergies de véhicules</a>".</dd>
+                    Ã©nergies de vÃ©hicules</a>".</dd>
                 <dt>puissance fiscale:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la puissance fiscale du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant la puissance fiscale du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
 
                     href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
                     les puissances fiscales</a>".</dd>
                 <dt>variante:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la variante (version) du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant la variante (version) du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
                     href="#methodes.vehiculier.versions.lister_versions">Lister
-                    les versions d'un véhicule</a>".</dd>
+                    les versions d'un vÃ©hicule</a>".</dd>
                 <dt>annee:</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant l'année de mise en circulation du
-                  véhicule. Cette valeur est celle retournée par le service "<a
+                  Chaine de caractÃ¨res dÃ©signant l'annÃ©e de mise en circulation du
+                  vÃ©hicule. Cette valeur est celle retournÃ©e par le service "<a
                     href="#methodes.vehiculier.annees_mec.lister_annees_mec">Lister
-                    les années de mises en circulation</a>".</dd>
+                    les annÃ©es de mises en circulation</a>".</dd>
                 
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne le code MAAF du véhicule, c'est-à-dire l'identifiant unique pour la MAAF de ce véhicule, correspondant à la marque, la tranche d'âge, le modèle, l'énergie, la puissance
-            fiscale, à la version (variante) et à l'année de mise en circulation spécifiés. Chaque code MAAF est identifiée par un code unique. 
+              Retourne le code MAAF du vÃ©hicule, c'est-Ã -dire l'identifiant unique pour la MAAF de ce vÃ©hicule, correspondant Ã  la marque, la tranche d'Ã¢ge, le modÃ¨le, l'Ã©nergie, la puissance
+            fiscale, Ã  la version (variante) et Ã  l'annÃ©e de mise en circulation spÃ©cifiÃ©s. Chaque code MAAF est identifiÃ©e par un code unique. 
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec/{CODE MAAF}/codemaaf</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/2004/codemaaf</pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": {
         "code":"0063085"
@@ -996,14 +1007,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
 
 
-        <h1 id="methodes.referentiel" name="methodes.referentiel">Référentiel</h1>
+        <h1 id="methodes.referentiel" name="methodes.referentiel">RÃ©fÃ©rentiel</h1>
 
 
        
-        <!-- WS Référentiel Banque -->
+        <!-- WS RÃ©fÃ©rentiel Banque -->
         <div id="methodes.referentiel.banques_par_cp">
           <h2>Banque par code postal</h2>
-          <p>Ce service permet de récupérer les informations relatives à une banque à partir de son code postal.</p>
+          <p>Ce service permet de rÃ©cupÃ©rer les informations relatives Ã  une banque Ã  partir de son code postal.</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.referentiel.banques_par_cp.objet" name="methodes.referentiel.banques_par_cp.objet"></a>L'objet
@@ -1012,23 +1023,23 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>codePostal</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Code postal correspondant aux données retournées dans la réponse. Correspond normalement au code postal passé en paramètre de la requête.</dd>
+                Code postal correspondant aux donnÃ©es retournÃ©es dans la rÃ©ponse. Correspond normalement au code postal passÃ© en paramÃ¨tre de la requÃªte.</dd>
                 <dt>cib</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Code interbancaire (CIB) attribué par la Banque de France aux établissements de crédit de droit français et aux succursales d’établissements de crédit de droit étranger agréés par le CECEI pour exercer des activités bancaires en France ou à Monaco, ainsi qu’aux succursales d’établissements de crédit de l’espace économique européen exerçant leur activité en libre établissement.</dd>
+                Code interbancaire (CIB) attribuÃ© par la Banque de France aux Ã©tablissements de crÃ©dit de droit franÃ§ais et aux succursales dâ€™Ã©tablissements de crÃ©dit de droit Ã©tranger agrÃ©Ã©s par le CECEI pour exercer des activitÃ©s bancaires en France ou Ã  Monaco, ainsi quâ€™aux succursales dâ€™Ã©tablissements de crÃ©dit de lâ€™espace Ã©conomique europÃ©en exerÃ§ant leur activitÃ© en libre Ã©tablissement.</dd>
                 <dt>mail</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Email du conseiller de la banque concernée.</dd>
+                Email du conseiller de la banque concernÃ©e.</dd>
                 <dt>libelle</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Libellé de la banque régionale correspondant au code postal spécifié.</dd>
+                LibellÃ© de la banque rÃ©gionale correspondant au code postal spÃ©cifiÃ©.</dd>
                 <dt>url</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                URL du site institutionnel de la banque régionale correspondant au code postal spécifié. 
+                URL du site institutionnel de la banque rÃ©gionale correspondant au code postal spÃ©cifiÃ©. 
                   </dd>
                 <dt>phone</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Téléphone du site institutionnel de la banque régionale correspondant au code postal spécifié. Le téléphone peut être accompagné d'un tarif (ex : <code>"0 825 07 08 09 (0,15 euros TTC/min)"</code>). Si pas de téléphone, une mention <code>"Pas de numéro d'appel"</code> peut être spécifiée.
+                TÃ©lÃ©phone du site institutionnel de la banque rÃ©gionale correspondant au code postal spÃ©cifiÃ©. Le tÃ©lÃ©phone peut Ãªtre accompagnÃ© d'un tarif (ex : <code>"0 825 07 08 09 (0,15 euros TTC/min)"</code>). Si pas de tÃ©lÃ©phone, une mention <code>"Pas de numÃ©ro d'appel"</code> peut Ãªtre spÃ©cifiÃ©e.
                   </dd>
 
 </dl>
@@ -1042,15 +1053,15 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
     "mail":"cyberconseiller@occitane.banquepopulaire.fr",
     "libelle":"Banque Populaire Occitane",
     "url":"http://www.occitane.banquepopulaire.fr",
-    "phone":"Pas de numéro d'appel"
+    "phone":"Pas de numÃ©ro d'appel"
 }
 </pre>      
             </div>
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <h3><a id="methodes.referentiel.banques_par_cp.recuperer_banque" name="methodes.referentiel.banques_par_cp.recuperer_banque"></a>Récupérer la banque par CP</h3>
-              <p>Retourne la banque populaire régionale et ses informations, correspondant au code postal  spécifié.</p>
+              <h3><a id="methodes.referentiel.banques_par_cp.recuperer_banque" name="methodes.referentiel.banques_par_cp.recuperer_banque"></a>RÃ©cupÃ©rer la banque par CP</h3>
+              <p>Retourne la banque populaire rÃ©gionale et ses informations, correspondant au code postal  spÃ©cifiÃ©.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version:</dt>
@@ -1062,20 +1073,20 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                 </dd>
               </dl>
               <h4>Retour</h4>
-              Retourne les informations relatives à la banque populaire régionale à partir de son code postal. Une seule banque au maximum peut être retournée. 
+              Retourne les informations relatives Ã  la banque populaire rÃ©gionale Ã  partir de son code postal. Une seule banque au maximum peut Ãªtre retournÃ©e. 
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_bp/{CP}</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_bp/31810
               </pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
         {
@@ -1084,7 +1095,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
             "mail":"cyberconseiller@occitane.banquepopulaire.fr",
             "libelle":"Banque Populaire Occitane",
             "url":"http://www.occitane.banquepopulaire.fr",
-            "phone":"Pas de numéro d'appel"
+            "phone":"Pas de numÃ©ro d'appel"
         }
     ]
 }
@@ -1097,33 +1108,33 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
 
         
-        <!-- WS Référentiel Ville -->
+        <!-- WS RÃ©fÃ©rentiel Ville -->
         <div id="methodes.referentiel.villes_par_cp">
           <h2>Villes par code postal</h2>
-          <p>Ce service permet de récupérer les informations relatives à une commune à partir de son pays et de son code postal. Plusieurs communes peuvent être retournées.</p>
+          <p>Ce service permet de rÃ©cupÃ©rer les informations relatives Ã  une commune Ã  partir de son pays et de son code postal. Plusieurs communes peuvent Ãªtre retournÃ©es.</p>
           <div class="row">
             <div class="col-xs-6">
-              <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalité a été développée, puis arbitrée par NXS. Ce service n'est donc pas utilisé normalement.</p>
+              <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalitÃ© a Ã©tÃ© dÃ©veloppÃ©e, puis arbitrÃ©e par NXS. Ce service n'est donc pas utilisÃ© normalement.</p>
               <h3><a id="methodes.referentiel.villes_par_cp.objet" name="methodes.referentiel.villes_par_cp.objet"></a>L'objet
                 ville</h3>
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
                 <dt>codeInsee</dt>
                 <dd><span style="font-style: italic;">string[]</span><br>
-                 Liste des codes INSEE correspondants au code postal et au pays passés en paramètres.</dd>
+                 Liste des codes INSEE correspondants au code postal et au pays passÃ©s en paramÃ¨tres.</dd>
               
                 <dt>codePostal</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Code postal correspondant aux villes retournées dans la réponse. Correspond normalement au code postal passé en paramètre de la requête.</dd>
+                Code postal correspondant aux villes retournÃ©es dans la rÃ©ponse. Correspond normalement au code postal passÃ© en paramÃ¨tre de la requÃªte.</dd>
                 <dt>nom</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Nom de la commune correspondant au code postal et au pays spécifié, en MAJUSCULE.</dd>
+                Nom de la commune correspondant au code postal et au pays spÃ©cifiÃ©, en MAJUSCULE.</dd>
                 <dt>departement</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Chaine de caractère représentant le numéro du département dans laquelle se trouve la commune.</dd>
+                Chaine de caractÃ¨re reprÃ©sentant le numÃ©ro du dÃ©partement dans laquelle se trouve la commune.</dd>
                 <dt>codePays</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                  Le code du pays dans lequel la commune est située. Ce code suit la norme <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-apha-3</a> (3 caractères, exemple "FRA" pour France)
+                  Le code du pays dans lequel la commune est situÃ©e. Ce code suit la norme <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-apha-3</a> (3 caractÃ¨res, exemple "FRA" pour France)
                   </dd>
 </dl>
             </div>
@@ -1144,8 +1155,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <h3><a id="methodes.referentiel.villes_par_cp.recuperer_villes" name="methodes.referentiel.villes_par_cp.recuperer_villes"></a>Récupérer les villes par CP</h3>
-              <p>Retourne les villes et leurs informations correspondant au code postal et au pays spécifiés.</p>
+              <h3><a id="methodes.referentiel.villes_par_cp.recuperer_villes" name="methodes.referentiel.villes_par_cp.recuperer_villes"></a>RÃ©cupÃ©rer les villes par CP</h3>
+              <p>Retourne les villes et leurs informations correspondant au code postal et au pays spÃ©cifiÃ©s.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version:</dt>
@@ -1153,35 +1164,35 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>pays</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant le pays dans lequel la commune se situe, au format  <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-alpha-2</a>, par exemple FR pour la France</dd>
+                  Chaine de caractÃ¨res dÃ©signant le pays dans lequel la commune se situe, au format  <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-alpha-2</a>, par exemple FR pour la France</dd>
                 <dt>cp</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Code postal de la ville.
                 </dd>
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Retourne les informations relatives à une commune à partir de son pays et de son code postal. Plusieurs communes peuvent être retournées. 
+              Retourne les informations relatives Ã  une commune Ã  partir de son pays et de son code postal. Plusieurs communes peuvent Ãªtre retournÃ©es. 
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_villes/pays/{PAYS}/cp/{CP}</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_villes/pays/FR/cp/31810
               </pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {
@@ -1222,7 +1233,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         <!-- WS d'initialisation -->
         <div id="methodes.initialisation.configuration">
           <h2>Configuration</h2>
-          <p>Ce service fournit à l'application mobile les éléments nécessaires à son démarrage. Les informations contenues sont par exemple : l'état de maintenance du serveur, la liste des établissements avec leur numéro de téléphone, les numéros d'assistance...</p>
+          <p>Ce service fournit Ã  l'application mobile les Ã©lÃ©ments nÃ©cessaires Ã  son dÃ©marrage. Les informations contenues sont par exemple : l'Ã©tat de maintenance du serveur, la liste des Ã©tablissements avec leur numÃ©ro de tÃ©lÃ©phone, les numÃ©ros d'assistance...</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.initialisation.configuration.objet" name="methodes.initialisation.configuration.objet"></a>L'objet
@@ -1231,11 +1242,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <dl class="dl-horizontal">
                 <dt>lastVersion</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                 Numéro de la dernière version disponible de l'application dans les stores. Ce numéro a le format suivant : <code>Majeur.mineur.fix</code> où :
+                 NumÃ©ro de la derniÃ¨re version disponible de l'application dans les stores. Ce numÃ©ro a le format suivant : <code>Majeur.mineur.fix</code> oÃ¹ :
                  <ul>
-                    <li>Majeur est le numéro de version majeur de l'application. La numérotation commence à 0.</li>
-                    <li>mineur est le numéro de version mineur de l'application. La numérotation commence à 0.</li>
-                    <li>fix est le numéro de version fix de l'application. La numérotation commence à 1.</li>
+                    <li>Majeur est le numÃ©ro de version majeur de l'application. La numÃ©rotation commence Ã  0.</li>
+                    <li>mineur est le numÃ©ro de version mineur de l'application. La numÃ©rotation commence Ã  0.</li>
+                    <li>fix est le numÃ©ro de version fix de l'application. La numÃ©rotation commence Ã  1.</li>
                  </ul>
                   Exemple : "0.0.1"
 
@@ -1250,29 +1261,29 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                 URL de base des services REST. Exemple : "https://context-root/etnamobile-web/rouler_serein/"</dd>
                 <dt>maintenance</dt>
                 <dd><span style="font-style: italic;">boolean</span><br>
-                Paramètre permettant de mettre l'application en maintenance. Les valeurs autorisées sont :
-                <ul><li><code>true</code> : la partie serveur de l'application est déclarée être en maintenance.</li>
+                ParamÃ¨tre permettant de mettre l'application en maintenance. Les valeurs autorisÃ©es sont :
+                <ul><li><code>true</code> : la partie serveur de l'application est dÃ©clarÃ©e Ãªtre en maintenance.</li>
                 <li><code>false</code> : la partie serveur de l'application est fonctionnelle (pas en maintenance).</li></ul></dd>
                 <dt>messageMaintenance</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réess_yer plus tard."</dd>
+                Message Ã  afficher si l'application est en maintenance (si le paramÃ¨tre <code>maintenance</code> est Ã  <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de rÃ©ess_yer plus tard."</dd>
                 <dt>antennesRegionales</dt>
                 <dd><span stylinsnt-style: italic;">etablissement[]</span><br>
-                Tableau contenant la liste des établissements avec les informations attenantes.</dd>
+                Tableau contenant la liste des Ã©tablissements avec les informations attenantes.</dd>
                 
 
 
-<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.etablissements_show">Montrer l'objet établissement</button>
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.etablissements_show">Montrer l'objet Ã©tablissement</button>
 
               <div class="subelements2" style="display:none;">
               <dt>id</dt>
-              <dd><span style="font-style: italic;">string</span><br>Identifiant issu de la base de données.
+              <dd><span style="font-style: italic;">string</span><br>Identifiant issu de la base de donnÃ©es.
               </dd>
               <dt>label</dt>
-              <dd><span style="font-style: italic;">string</span><br>libellé de la banque.
+              <dd><span style="font-style: italic;">string</span><br>libellÃ© de la banque.
               </dd>
               <dt>phone</dt>
-              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de la banque.
+              <dd><span style="font-style: italic;">string</span><br>NumÃ©ro de tÃ©lÃ©phone de la banque.
               </dd>
               <dt>mail</dt>
               <dd><span style="font-style: italic;">string</span><br>Adresse mail de contact de la banque.
@@ -1281,20 +1292,20 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
                 <dt>numerosAssistanceSinistre</dt>
                 <dd><span style="font-style: italic;">numeroAssistanceSinistre[]</span><br>
-                Tableau de 2 objets contenant les 2 numéros d'assistance sinistre ainsi que le libellé correspondant à afficher.
+                Tableau de 2 objets contenant les 2 numÃ©ros d'assistance sinistre ainsi que le libellÃ© correspondant Ã  afficher.
                 </dd>
 
                 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.numerosAssistanceSinistre_show">Montrer l'objet numeroAssistanceSinistre</button>
 
               <div class="subelements3" style="display:none;">
               <dt>region</dt>
-              <dd><span style="font-style: italic;">string</span><br>La région concernée. Les choix valides sont : <ul><li>"france" : pour la France</li><li>"international" : pour l'International</li></ul>
+              <dd><span style="font-style: italic;">string</span><br>La rÃ©gion concernÃ©e. Les choix valides sont : <ul><li>"france" : pour la France</li><li>"international" : pour l'International</li></ul>
               </dd>
               <dt>label</dt>
-              <dd><span style="font-style: italic;">string</span><br>Libellé à afficher dans l'application mobile sur le bouton associé à l'appel pour sinistre de la région concernée.
+              <dd><span style="font-style: italic;">string</span><br>LibellÃ© Ã  afficher dans l'application mobile sur le bouton associÃ© Ã  l'appel pour sinistre de la rÃ©gion concernÃ©e.
               </dd>
               <dt>phone</dt>
-              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de l'assistance de la région concernée.
+              <dd><span style="font-style: italic;">string</span><br>NumÃ©ro de tÃ©lÃ©phone de l'assistance de la rÃ©gion concernÃ©e.
               </dd>
     </div>
 
@@ -1309,7 +1320,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
   "urlStore": "balbla",
   "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
   "maintenance": false,
-  "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
+  "messageMaintenance": "L'application est actuellement en maintenance. Merci de rÃ©essayer plus tard.",
   "antennesRegionales": [
     {
        "id": "001",
@@ -1346,8 +1357,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
          
           <div class="row">
             <div class="col-xs-6">
-              <h3><a id="methodes.initialisation.configuration.recuperer_configuration"></a>Récupérer la configuration</h3>
-              <p>Retourne la configuration nécessaire à l'application mobile correspondant à la plateforme et à l'enseigne.</p>
+              <h3><a id="methodes.initialisation.configuration.recuperer_configuration"></a>RÃ©cupÃ©rer la configuration</h3>
+              <p>Retourne la configuration nÃ©cessaire Ã  l'application mobile correspondant Ã  la plateforme et Ã  l'enseigne.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version</dt>
@@ -1355,28 +1366,28 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>enseigne</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractère désignant l'enseigne. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>bp</code> pour l'enseigne Banque Populaire </li><li><code>cm</code> pour l'enseigne Crédit Maritime</li>
+                  Chaine de caractÃ¨re dÃ©signant l'enseigne. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>bp</code> pour l'enseigne Banque Populaire </li><li><code>cm</code> pour l'enseigne CrÃ©dit Maritime</li>
                 </dd>
                 <dt>plateforme</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractères désignant la plateforme dont on désire la configuration. Cela correspond à la plateforme d'exécution du téléphone. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>ios</code> pour iOS (plateforme Apple)</li><li><code>android</code> pour Android (plateforme Google)</li>
+                  Chaine de caractÃ¨res dÃ©signant la plateforme dont on dÃ©sire la configuration. Cela correspond Ã  la plateforme d'exÃ©cution du tÃ©lÃ©phone. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>ios</code> pour iOS (plateforme Apple)</li><li><code>android</code> pour Android (plateforme Google)</li>
                 </li></ul></dd>
               </dl>
               <h4>Retour</h4>
-              Retourne les informations nécessaires à l'application mobile pour son démarrage, correspondant à la plateforme et à l'enseigne spécifiées. Les <code>data</code> retournées contiennent un <a href="#methodes.initialisation.configuration.objet">objet configuration.</a>
+              Retourne les informations nÃ©cessaires Ã  l'application mobile pour son dÃ©marrage, correspondant Ã  la plateforme et Ã  l'enseigne spÃ©cifiÃ©es. Les <code>data</code> retournÃ©es contiennent un <a href="#methodes.initialisation.configuration.objet">objet configuration.</a>
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/configuration/{ENSEIGNE}/{PLATEFORME}</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/configuration/bp/android
               </pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
       {
@@ -1384,7 +1395,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
         "urlStore": "balbla",
         "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
         "maintenance": false,
-        "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
+        "messageMaintenance": "L'application est actuellement en maintenance. Merci de rÃ©essayer plus tard.",
         "antennesRegionales": [
           {
              "id": "001",
@@ -1425,18 +1436,18 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
 
 
        <h1 id="methodes.sinistre" name="methodes.sinitre">Sinistre</h1>
-        <!-- WS de déclaration d'un sinistre -->
-          <h2><a id="methodes.sinistre.predeclaration" name="methodes.sinistre.predeclaration"></a>Prédéclaration de sinistre</h2>
-          <p>Ce service permet à l'application mobile d'enregistrer les élémnents les éléments nécessaires à la pré-déclaration d'un sinistre</p>
+        <!-- WS de dÃ©claration d'un sinistre -->
+          <h2><a id="methodes.sinistre.predeclaration" name="methodes.sinistre.predeclaration"></a>PrÃ©dÃ©claration de sinistre</h2>
+          <p>Ce service permet Ã  l'application mobile d'enregistrer les Ã©lÃ©mnents les Ã©lÃ©ments nÃ©cessaires Ã  la prÃ©-dÃ©claration d'un sinistre</p>
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.sinistre.predeclaration.objet" name="methodes.sinistre.predeclaration.objet"></a>L'objet
-                pré-déclaration</h3>
+                prÃ©-dÃ©claration</h3>
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
                 <dt>nature</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-                Nature du sinistre. La valeur peut être choisie parmi les valeurs suivantes :
+                Nature du sinistre. La valeur peut Ãªtre choisie parmi les valeurs suivantes :
                  <ul>
                     <li><code>accident</code></li>
                     <li><code>vol</code></li>
@@ -1447,59 +1458,59 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
              
                 <dt>date</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
-                La date à laquelle a eu lieu le sinistre, au format JJ/MM/SSAA. Exemple : <code>15/12/2014</code></dd>
+                La date Ã  laquelle a eu lieu le sinistre, au format SSAAMMJJ. Exemple : <code>20141215</code></dd>
                 <dt>immatriculation</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-                L'immatriculation du véhicule qui fait l'objet de la déclaration de sinistre.</dd>
+                L'immatriculation du vÃ©hicule qui fait l'objet de la dÃ©claration de sinistre.</dd>
                 <dt>email</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
-                L'email du conducteur du véhicule.
+                L'email du conducteur du vÃ©hicule.
                 </dd>
                 <dt>phone</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-                Le téléphone du conducteur du véhicule</dd>
+                Le tÃ©lÃ©phone du conducteur du vÃ©hicule</dd>
                 <dt>no_societaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-                Correspond au n° de sociétaire (=n° assuré côté MAAF) du conducteur du véhicule.</dd>
+                Correspond au nÂ° de sociÃ©taire (=nÂ° assurÃ© cÃ´tÃ© MAAF) du conducteur du vÃ©hicule.</dd>
                 <dt>commentaires</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
-                Zone de texte permettant d'ajouter un commentaire global au sinistre déclaré.</dd>
+                Zone de texte permettant d'ajouter un commentaire global au sinistre dÃ©clarÃ©.</dd>
                 <dt>temoins</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">temoin[]</span><br>
-                Tableau contenant la liste des témoins (3 max) avec les informations attenantes. Au moins un attribut du témoin doit être renseigné pour pouvoir considérer le témoin comme non vide.</dd>
+                Tableau contenant la liste des tÃ©moins (3 max) avec les informations attenantes. Au moins un attribut du tÃ©moin doit Ãªtre renseignÃ© pour pouvoir considÃ©rer le tÃ©moin comme non vide.</dd>
                 
 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.sinistre.predeclaration.objet.temoins_show">Montrer l'objet temoin</button>
 
               <div class="subelements6" style="display:none;">
               <dt>nom</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Nom du témoin
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Nom du tÃ©moin
               </dd>
               <dt>prenom</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Prénom du témoin
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>PrÃ©nom du tÃ©moin
               </dd>
               <dt>email</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Email du témoin.
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Email du tÃ©moin.
               <dt>phone</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Numéro de téléphone du témoin.
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>NumÃ©ro de tÃ©lÃ©phone du tÃ©moin.
               </dd>
               <dt>adresse</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Adresse du témoin.
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Adresse du tÃ©moin.
               </dd>
               <dt>commentaires</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Commentaires associées au témoin.
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>Commentaires associÃ©es au tÃ©moin.
               </dd>
-    </div>
+              </div>
 
                 <dt>photos</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">photo[]</span><br>
-                Tableau contenant la liste des photos (4 max) associées à la déclaration de sinistre.
+                Tableau contenant la liste des photos (4 max) associÃ©es Ã  la dÃ©claration de sinistre.
                 </dd>
 
                 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.sinistre.predeclaration.objet.photos_show">Montrer l'objet photo</button>
 
               <div class="subelements7" style="display:none;">
               <dt>base64</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>La chaîne de caractères représentant la photo encodée au format base64.
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>La chaÃ®ne de caractÃ¨res reprÃ©sentant la photo encodÃ©e au format base64.
               </dd>
     </div>
 
@@ -1511,12 +1522,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
               <pre class="prettyprint language-json">
 {
   "nature": "accident",
-  "date" : "15/12/2014",
+  "date" : "20141215",
   "immatriculation": "AZ0-AZ9",
   "email": "conducteur@voiture.net",
   "phone": "0561452515",
   "no_societaire": "012345678"
-  "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
+  "commentaires":"Ceci est un commentaire global Ã  la dÃ©claration du sinistre",
   "temoins": [
     {
       "nom": "PROT",
@@ -1524,7 +1535,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
       "email": "georges.prot@yahoo.com",
       "phone": "0152126579",
       "adresse": "2 rue Alexandre Dumas, 75020 Paris",
-      "commentaires": "Témoin très sympathique"
+      "commentaires": "TÃ©moin trÃ¨s sympathique"
     },
     {
       "nom": "DURAND",
@@ -1550,8 +1561,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
          
           <div class="row">
             <div class="col-xs-6">
-              <h3><a id="methodes.sinistre.predeclaration.predeclarer_sinistre" name="methodes.sinistre.predeclaration.predeclarer_sinistre"></a>Prédéclarer un sinistre</h3>
-              <p>Permet d'envoyer les informations nécessaires pour la pré-décalration d'un sinistre.</p>
+              <h3><a id="methodes.sinistre.predeclaration.predeclarer_sinistre" name="methodes.sinistre.predeclaration.predeclarer_sinistre"></a>PrÃ©dÃ©clarer un sinistre</h3>
+              <p>Permet d'envoyer les informations nÃ©cessaires pour la prÃ©-dÃ©calration d'un sinistre.</p>
               <h4>Attributs</h4>
  <dl class="dl-horizontal">
                 <dt>version</dt>
@@ -1559,33 +1570,33 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>predeclaration</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Informations de la prédéclaration. <a href="#methodes.sinistre.predeclaration.objet">cf l'objet pré-déclaration.</a>
+                  Informations de la prÃ©dÃ©claration. <a href="#methodes.sinistre.predeclaration.objet">cf l'objet prÃ©-dÃ©claration.</a>
                 </dd>
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
-                    défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
-                  signature de la requête. Cette signature est calculée pour une
-                  URL donnée avec ses arguments avec un algorithme de cryptage,
-                  Par défaut, si l'argument est omis, la chaine est considérée
+                    dÃ©faut = null</span><br>
+                  Chaine de caractÃ¨re optionnelle permettant de spÃ©cifier la
+                  signature de la requÃªte. Cette signature est calculÃ©e pour une
+                  URL donnÃ©e avec ses arguments avec un algorithme de cryptage,
+                  Par dÃ©faut, si l'argument est omis, la chaine est considÃ©rÃ©e
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Pas de retour spécifique. Retourne uniquement les valeurs de status de réponse.
+              Pas de retour spÃ©cifique. Retourne uniquement les valeurs de status de rÃ©ponse.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/predeclarer_sinistre</pre>
-              <span class="label label-info">Exemple de requête (CURL)</span>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
               <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/predeclarer_sinistre POST
     -d '{
       "nature": "accident",
-      "date" : "15/12/2014",
+      "date" : "20141215",
       "immatriculation": "AZ0-AZ9",
       "email": "conducteur@voiture.net",
       "phone": "0561452515",
       "no_societaire": "012345678"
-      "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
+      "commentaires":"Ceci est un commentaire global Ã  la dÃ©claration du sinistre",
       "temoins": [
         {
           "nom": "PROT",
@@ -1593,7 +1604,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
           "email": "georges.prot@yahoo.com",
           "phone": "0152126579",
           "adresse": "2 rue Alexandre Dumas, 75020 Paris",
-          "commentaires": "Témoin très sympathique"
+          "commentaires": "TÃ©moin trÃ¨s sympathique"
         },
         {
           "nom": "DURAND",
@@ -1612,21 +1623,222 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l’u
       ]
     }'
               </pre>
-              <span class="label label-info">Exemple de réponse</span>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
     "status":{
         "code":200,
-        "message":"La demande a été traitée"
+        "message":"La demande a Ã©tÃ© traitÃ©e"
     },
     "data": [
     ]
 }
 </pre> </div>
           </div>
-        </div>             
+            
 
+        <h1 id="methodes.petit_rouleur" name="methodes.petit_rouleur">Petit Rouleur</h1>
+        <!-- WS Petit Rouleur-->
+        <div id="methodes.petit_rouleur.contrat_eligible">
+          <h2>EligibilitÃ©</h2>
+          <p>Ce service permet de rÃ©cupÃ©rer les informations relatives aux contrats Ã©ligibles Ã  l'offre "Petit Rouleur".</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.petit_rouleur.contrat_eligible.objet" name="methodes.petit_rouleur.contrat_eligible.objet"></a>L'objet
+                contrat eligible</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>no_societaire</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                NumÃ©ro sociÃ©taire MAAF.</dd>
+                <dt>no_contrat</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Numero de contrat.</dd>
+                <dt>code_integrite</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Code intÃ©gritÃ©</dd>
+                <dt>no_vehicule</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                NumÃ©ro vehicule contrat Auto</dd>
+                <dt>no_sequence</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                NumÃ©ro sÃ©quence dispositif</dd>
+                <dt>date_precedent_releve</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Date du prÃ©cÃ©dent relevÃ© kilomÃ©trique au format SSAAMMDD</dd>
+                <dt>km_precedent_releve</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                KilomÃ©trage compteur du prÃ©cedent relevÃ©</dd>
+                <dt>marque</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                LibellÃ© de la marque du vehicule</dd>
+                <dt>modele</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Libelle du modÃ¨le de vÃ©hicule</dd>
+                <dt>immatriculation</dt>
+                <dd><span style="font-style: italic;">string</span><br>
+                Immatriculation du vÃ©hicule</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+    "no_societaire":"",
+    "no_contrat":"",
+    "code_integrite":"",
+    "no_vehicule":"",
+    "no_sequence":"",
+    "date_precedent_releve":"20141215",
+    "km_precedent_releve":"",
+    "marque":"",
+    "modele":"",
+    "immatriculation":""
+}
+</pre>      
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles" name="methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles"></a>Lister les contrats Ã©ligibles</h3>
+              <p>Retourne les contrats auto Ã©ligibles du client correspondant aux informations fournies en entrÃ©e.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>no_societaire</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Numero societaire MAAF.
+                </dd>
+                <dt>no_client_partenaire</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                NumÃ©ro client partenaire.
+                </dd>
+                <dt>code_enseigne</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Code enseigne.
+                </dd>
+              </dl>
+              <h4>Retour</h4>
+              Retourne les contrats auto Ã©ligibles du client sous forme de tableau, correspondant aux informations fournies en entrÃ©e. Cf <a href="#methodes.petit_rouleur.contrat_eligible.objet">l'objet contrat eligible</a>.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/eligibilite/{NO_SOCIETAIRE}/{CODE_ENSEIGNE}/{NO_CLIENT_PARTENAIRE}</pre>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
+              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/0001457/cm/9486532
+              </pre>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a Ã©tÃ© traitÃ©e"
+    },
+    "data": [
+        {
+          "no_societaire":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20141215",
+          "km_precedent_releve":"",
+          "marque":"",
+          "modele":"",
+          "immatriculation":""
+        },
+        {
+          "no_societaire":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20140301",
+          "km_precedent_releve":"",
+          "marque":"",
+          "modele":"",
+          "immatriculation":""
+        },
+    ]
+}
+</pre> </div>
+          </div>
+        </div>
 
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.petit_rouleur.contrat_eligible.declarer_km" name="methodes.petit_rouleur.contrat_eligible.declarer_km"></a>DÃ©clarer km</h3>
+              <p>Permet d'effectuer la dÃ©claration du kilomÃ©trage pour le contrat spÃ©cifiÃ©.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>contrat</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Les informations concernant le <a href="#methodes.petit_rouleur.contrat_eligible.objet">contrat</a> sur lequel la dÃ©claration de km doit Ãªtre rÃ©alisÃ©e. Ces informations proviennent du service <a href="#methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles">lister les contrats Ã©ligibles</a>. 
+                </dd>
+                <dt>date</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Date du relevÃ© au format SSAAMMDD.
+                </dd>
+                <dt>solde_kilometrique</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Solde kilomÃ©trique
+                </dd>
+              </dl>
+              <h4>Retour</h4>
+              Permet d'effectuer la dÃ©claration du kilomÃ©trage pour le contrat spÃ©cifiÃ©.
+              Retourne les Ã©lÃ©ments suivants :
+               <dl class="dl-horizontal">
+               <dt>indicateur</dt>
+               <dd><span style="font-style: italic;">string</span><br>
+                  L'indicateur</dd>
+               <dt>solde_kilometrique</dt>
+               <dd><span style="font-style: italic;">string</span><br>
+                  Le solde kilomÃ©trique</dd>                  
+                </dl>
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/declarer_km</pre>
+              <span class="label label-info">Exemple de requÃªte (CURL)</span>
+              <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/declarer_km POST
+    -d '{
+      "contrat" : {
+          "no_societaire":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20141215",
+          "km_precedent_releve":"",
+          "marque":"",
+          "modele":"",
+          "immatriculation":""
+        },
+        "date":"20141216",
+        "solde_kilometrique":"256125"
+        }
+     }'
+
+              </pre>
+              <span class="label label-info">Exemple de rÃ©ponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a Ã©tÃ© traitÃ©e"
+    },
+    "data": [
+        "indicateur":"",
+        "solde_kilometrique":""
+    ]
+}
+</pre> </div>
+          </div>
 
 
       </div>
