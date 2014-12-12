@@ -1088,16 +1088,15 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "code":200,
         "message":"La demande a été traitée"
     },
-    "data": [
-        {
-            "codePostal":"31810",
-            "cib":"17807",
-            "mail":"cyberconseiller@occitane.banquepopulaire.fr",
-            "libelle":"Banque Populaire Occitane",
-            "url":"http://www.occitane.banquepopulaire.fr",
-            "phone":"Pas de numéro d'appel"
-        }
-    ]
+    "data":  {
+        "codePostal":"31810",
+        "cib":"17807",
+        "mail":"cyberconseiller@occitane.banquepopulaire.fr",
+        "libelle":"Banque Populaire Occitane",
+        "url":"http://www.occitane.banquepopulaire.fr",
+        "phone":"Pas de numéro d'appel"
+    }
+    
 }
 </pre> </div>
           </div>
@@ -1656,13 +1655,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 Numero de contrat.</dd>
                 <dt>code_integrite</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Code intégrité</dd>
+                Code intégrité. Clé technique sur le contrat, qui permet de vérifier qu'il n'y a pas eu de modification entre l'appel du WS d'éligibilité et celui de saisie du km. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.
+              </dd>
                 <dt>no_vehicule</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Numéro vehicule contrat Auto</dd>
+                Numéro de véhicule. Clé technique pour identifier le véhicule. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
                 <dt>no_sequence</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Numéro séquence dispositif</dd>
+                Numéro séquence dispositif. Clé technique pour le kilométrage. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
                 <dt>date_precedent_releve</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Date du précédent relevé kilométrique au format SSAAMMDD</dd>
@@ -1717,7 +1717,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 </dd>
                 <dt>code_enseigne</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                Code enseigne.
+                Code enseigne. Le code enseigne est le code établissement.  Il ne sera plus demandé en entrée des WebServices d'éligibilité et de saisie.
+                Cela ne pose pas de problème si le numéro de sociétaire est indiqué en entrée des WS (car il est unique et indépendant des BP).
+                Cela pose un problème si le numéro de client partenaire est mis en entrée du WS : il n'y aura pas d'unicité. L'unicité se fait sur le couple numéro de client partenaire (matricule) et code établissement.
+                NA mettra en entrée des WS, le numéro client présent sur le courrier, c'est à dire le numéro de sociétaire.
+                Cette problématique est en cours d'instruction par la MAAF.
+
                 </dd>
               </dl>
               <h4>Retour</h4>
@@ -1795,10 +1800,19 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                <dl class="dl-horizontal">
                <dt>indicateur</dt>
                <dd><span style="font-style: italic;">string</span><br>
-                  L'indicateur</dd>
+                  L'indicateur. L'indicateur de réduction permettra de savoir si l'offre petit rouleur a été renouvelée suite à la saisie du kilométrage. Il pourra prendre deux valeurs : 
+                  <ul>
+                    <li><code>O</code> : L'offre petit rouleur a été renouvelée.</li>
+                    <li><code>N</code> : L'offre petit rouleur n'a pas été renouvelée.</li>
+                  </ul>
+                  </dd>
                <dt>solde_kilometrique</dt>
                <dd><span style="font-style: italic;">string</span><br>
-                  Le solde kilométrique</dd>                  
+                  Le solde kilométrique. Le solde kilométrique est généralement la différence entre le nouveau relevé de compteur et l'ancien relevé de compteur. Dans quelques cas particuliers (exemple : remplacement de véhicule), le calcul est plus complexe (cumul).
+
+
+
+                </dd>                  
                 </dl>
               <br>
             </div>
@@ -1820,7 +1834,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
           "immatriculation":""
         },
         "date":"20141216",
-        "solde_kilometrique":"256125"
+        "solde_kilometrique":"6280"
         }
      }'
 
@@ -1833,8 +1847,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "message":"La demande a été traitée"
     },
     "data": [
-        "indicateur":"",
-        "solde_kilometrique":""
+        "indicateur":"O",
+        "solde_kilometrique":"6280"
     ]
 }
 </pre> </div>
