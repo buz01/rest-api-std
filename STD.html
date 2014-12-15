@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -110,6 +110,16 @@
                 <ul class="nav">
                   <li><a href="#methodes.sinistre.predeclaration.objet">L'objet prédéclaration</a></li>
                   <li><a href="#methodes.sinistre.predeclaration.envoyer_predeclaration">Envoyer sa prédéclaration</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li> <a href="#methodes.simulation_devis">Simulation Devis</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.simulation_devis.tarification">Tarification</a>
+                <ul class="nav">
+                  <li><a href="#methodes.simulation_devis.devis.objet">L'objet devis</a></li>
+                  <li><a href="#methodes.simulation_devis.tarification.demander_tarification">Demander une tarificatuin</a></li>
                 </ul>
               </li>
             </ul>
@@ -1634,6 +1644,676 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 }
 </pre> </div>
           </div>
+
+       <h1 id="methodes.simulation_devis" name="methodes.simulation_devis">Simulation Devis</h1>
+        <!-- WS de simulation d'un devis -->
+          <h2><a id="methodes.simulation_devis.tarification" name="methodes.simulation_devis.tarification"></a>Tarification d'un devis</h2>
+          <p>Ce service permet à l'application mobile de déterminer une tarification pour une simulation de devis.</p>
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.simulation_devis.devis.objet" name="methodes.simulation_devis.devis.objet"></a>L'objet
+                devis</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+                <dt>dateEffet</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+                Date d'effet du devis</dd>
+                <dt>origineVehicule</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+                Origine du véhicule. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 pour "REPRISE"</code></li>
+                    <li><code>1 pour "VEHICULE_SUPP"</code></li>
+                    <li><code>2 pour "PREMIERE_ASS"</code></li>
+                    <li><code>3 pour "AUTRE (Exclusion)"</code></li>
+                    <li><code>4 pour "TRANSFERE (Exclusion)"</code></li>
+                    <li><code>5 pour "REMPLACEMENT (Exclusion)"</code></li>
+                 </ul>
+		</dd>
+                <dt>antecedentsAuto</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">antecedentsAuto</span><br>
+                Bloc détaillant les antécédents.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.antecedentsAuto_show">Montrer l'objet antecedentsAuto</button>
+
+              <div class="subelements8" style="display:none;">
+              <dt>bonusMalus</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">bonusMalus</span><br>
+                Bloc détaillant les bonus malus.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.bonusMalus_show">Montrer l'objet bonusMalus</button>
+
+              <div class="subelements9" style="display:none;">
+                <dt>coeffBm</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+                Coefficient bonus - malus</dd>
+                <dt>dateDerniereEcheance</dt>
+                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">date</span><br>
+                Date du dernier calcul du coefficient BM. Donnée obligatoire si antécédent = REPRISE. Sinon on met vide.</dd>
+                <dt>nbAnneesBmDemi</dt>
+                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">entier</span><br>
+                Nombre d’année avec un coefficient BM à 0,5. Obligatoire si CfBonusMals = 0,5. Facultatif sinon. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>1</code></li>
+                    <li><code>2</code></li>
+                    <li><code>3</code></li>
+                    <li><code>4</code></li>
+                    <li><code>5</code></li>
+                 </ul></dd>
+              </div>
+
+		<dt>sinistre</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">sinistre</span><br>
+                Bloc Sinistralité.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.sinistre_show">Montrer l'objet sinistre</button>
+
+              <div class="subelements10" style="display:none;">
+                <dt>sinistreResp</dt>
+                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">sinistreResp</span><br>
+                Bloc Sinistre responsable. Seulement si le souscripteur a eu des sinistres responsables.</dd>
+                                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.sinistreResp_show">Montrer l'objet sinistreResp</button>
+
+	    <div class="subelements11" style="display:none;">
+              <dt>dateSinistreResponsable</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+		Date du sinistre responsable.</dd>
+              <dt>tauxResponsabiliteSinistre</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+		Taux de responsabilité du sinistre. Décimal [0 ; 1].</dd>
+   	    </div>
+                <dt>syntheseDeuxAns</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">syntheseDeuxAns</span><br>
+                Synthèse des sinistres sur les 2 dernières années.</dd>
+                                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.syntheseDeuxAns_show">Montrer l'objet syntheseDeuxAns</button>
+
+	    <div class="subelements12" style="display:none;">
+              <dt>nbSinistreBrisGlace</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+		Nombre de sinistres bris de glace.</dd>
+              <dt>nbSinistreResponsable</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+		Nombre de sinistres responsables.</dd>
+              <dt>nbSinistreTiersNonIdentifie</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+		Nombre de sinistres avec tiers non identifié.</dd>
+    	    </div>
+        </div>
+   </div>
+
+                <dt>proposition</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">proposition</span><br>
+                Bloc détaillant la proposition.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.proposition_show">Montrer l'objet proposition</button>
+
+	    <div class="subelements13" style="display:none;">
+              <dt>usageVehicule</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Usage du véhicule.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0: Privé</code></li>
+                    <li><code>1: Privé + Retraité</code></li>
+                    <li><code>2: Privé et trajet travail</code></li>
+                    <li><code>3: Privé et Professionnel</code></li>
+                    <li><code>4: Tournée régulère</code></li>
+                 </ul></dd>
+              <dt>NiveauProtectionAssuranceSouhaite</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Niveau de protection assurance souhaité. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : OR</code></li>
+                    <li><code>1 : ARGENT</code></li>
+                    <li><code>2 : BRONZE</code></li>
+                 </ul></dd>
+              <dt>indOffrePetitRouleur</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">String</span><br>
+		Indicateur de l'offre petit Rouleur.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>"O" : le conducteur souhaite adhérer à l'offre petit Rouleur</code></li>
+                    <li><code>"N" sinon</code></li>
+                 </ul></dd>
+              <dt>indTarifFonctionnaire</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">String</span><br>
+		Indicateur du tarif fonctionnaire.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>"O" : le conducteur souhaite adhérer à l'offre fonctionnaire</code></li>
+                    <li><code>"N" sinon</code></li>
+                 </ul></dd>
+                <dt>tarification</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">tarification</span><br>
+                Tarification.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.tarification_show">Montrer l'objet tarification</button>
+
+	    <div class="subelements14" style="display:none;">
+	      <dt>garantiesDisponibles</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">garantiesDisponibles[]</span><br>
+                Pack correspondant aux garanties disponibles.
+                </dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.garantiesDisponibles_show">Montrer l'objet garantiesDisponibles</button>
+
+              <div class="subelements15" style="display:none;">
+              <dt>idPackGaranties</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Id du pack garanties.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "ZEN"</code></li>
+                    <li><code>1 : "SECURITE_FINANCIERE"</code></li>
+                    <li><code>2 : "SERENITE_PRO"</code></li>
+                 </ul>
+              </dd>
+	      <dt>garantiesOptSous</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">garantie[]</span><br>
+                Liste des garanties optionnelles souscriptibles et souscrites.</dd>
+    	    </div>
+	    <dt>garantiesOptSansNotionPack</dt>
+            <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">garantie[]</span><br>
+             Garanties Optionnels sans notions de packs.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.garantie_show">Montrer l'objet garantie</button>
+
+	    <div class="subelements16" style="display:none;">
+              <dt>codeGarantie</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Code de la garantie.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "AMENAGEMENT_PRO_ACCESSOIRE"</code></li>
+                    <li><code>1 : "ASSISTANCE_BASE"</code></li>
+                    <li><code>2 : "CATASTROPHE_NATURELLE"</code></li>
+                    <li><code>3 : "CONTENU_PRI_EQUIPEMENT_VEH"</code></li>
+                    <li><code>4 : "CONTENU_PRO"</code></li>
+                    <li><code>5 : "DOMMAGE_CORPOREL"</code></li>
+                    <li><code>6 : "DOMMAGE_TOUS_ACCIDENTS"</code></li>
+                    <li><code>7 : "DEFENSE"</code></li>
+                    <li><code>8 : "INCENDIE_EXPLOSION_ATTENTAT"</code></li>
+                    <li><code>9 : "RECOURS"</code></li>
+                    <li><code>10 : "RESPONSABILITE_CIVILE"</code></li>
+                    <li><code>11 : "SERVICE_CONSEIL_REPARATION"</code></li>
+                    <li><code>12 : "VOL"</code></li>
+                    <li><code>13 : "EVENEMENT_CLIMATIQUE"</code></li>
+                    <li><code>14 : "ASSISTANCE_PANNE_0KM"</code></li>
+                    <li><code>15 : "BRIS_GLACE_INTEG"</code></li>
+                    <li><code>16 : "CAPITAL_COUP_DUR"</code></li>
+                    <li><code>17 : "VEHICULE_REMPLACEMENT_PLUS"</code></li>
+                    <li><code>18 : "DEFENSE_JURIDIQUE_AUTOMOBILISTE"</code></li>
+                    <li><code>19 : "PERMIS_ZEN"</code></li>
+                    <li><code>20 : "INDEMNISATION_2PLUS"</code></li>
+                    <li><code>21 : "BRIS_INTERNE_AMENAG_PRO"</code></li>
+                    <li><code>22 : "PERTE_EXPLOITATION"</code></li>
+                 </ul>
+              </dd>
+              <dt>indChoixGarantieClient</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Indicateur de choix de la garantie par le client.  La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>"O" : le client a choisi cette garantie</code></li>
+                    <li><code>"N" sinon</code></li>
+                 </ul>
+              </dd>
+              <dt>montantCapitalAssure</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+		Montant du capital assuré pour cette garantie.</dd>
+	    </div>
+	    <dt>garantiesCouvertesFormuleSouscrite</dt>
+            <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">garantiesCouvertesFormuleSouscrite[]</span><br>
+             Liste des garanties couvertes par la formule Souscrite.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.garantiesCouvertesFormuleSouscrite_show">Montrer l'objet garantiesCouvertesFormuleSouscrite</button>
+
+	    <div class="subelements17" style="display:none;">
+              <dt>codeGarantie</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Code de la garantie. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "AMENAGEMENT_PRO_ACCESSOIRE"</code></li>
+                    <li><code>1 : "ASSISTANCE_BASE"</code></li>
+                    <li><code>2 : "CATASTROPHE_NATURELLE"</code></li>
+                    <li><code>3 : "CONTENU_PRI_EQUIPEMENT_VEH"</code></li>
+                    <li><code>4 : "CONTENU_PRO"</code></li>
+                    <li><code>5 : "DOMMAGE_CORPOREL"</code></li>
+                    <li><code>6 : "DOMMAGE_TOUS_ACCIDENTS"</code></li>
+                    <li><code>7 : "DEFENSE"</code></li>
+                    <li><code>8 : "INCENDIE_EXPLOSION_ATTENTAT"</code></li>
+                    <li><code>9 : "RECOURS"</code></li>
+                    <li><code>10 : "RESPONSABILITE_CIVILE"</code></li>
+                    <li><code>11 : "SERVICE_CONSEIL_REPARATION"</code></li>
+                    <li><code>12 : "VOL"</code></li>
+                    <li><code>13 : "EVENEMENT_CLIMATIQUE"</code></li>
+                    <li><code>14 : "ASSISTANCE_PANNE_0KM"</code></li>
+                    <li><code>15 : "BRIS_GLACE_INTEG"</code></li>
+                    <li><code>16 : "CAPITAL_COUP_DUR"</code></li>
+                    <li><code>17 : "VEHICULE_REMPLACEMENT_PLUS"</code></li>
+                    <li><code>18 : "DEFENSE_JURIDIQUE_AUTOMOBILISTE"</code></li>
+                    <li><code>19 : "PERMIS_ZEN"</code></li>
+                    <li><code>20 : "INDEMNISATION_2PLUS"</code></li>
+                    <li><code>21 : "BRIS_INTERNE_AMENAG_PRO"</code></li>
+                    <li><code>22 : "PERTE_EXPLOITATION"</code></li>
+                 </ul>
+              </dd>
+              <dt>montantCapitalAssure</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+		Montant du capital assuré pour cette garantie.</dd>
+	    </div>
+	</div>
+     </div>
+     <dt>conducteurPrincipal</dt>
+     <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">conducteur</span><br>
+     Bloc détaillant les informations du conducteur principal.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.conducteur_show">Montrer l'objet conducteurPrincipal</button>
+
+	    <div class="subelements18" style="display:none;">
+              <dt>dateNaissance</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+		Date de naissance du conducteur.</dd>
+              <dt>DatePermis</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+		Date de permis de conduire du conducteur permettant l’usage du véhicule à assurer.</dd>
+              <dt>lienParente</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Lien de parenté entre le conducteur et le souscripteur. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "SOUSCRIPTEUR"</code></li>
+                    <li><code>1 : "CONJOINT"</code></li>
+                    <li><code>2 : "ENFANT"</code></li>
+                    <li><code>3 : "AUTRE (Exclusion)"</code></li>
+                 </ul></dd>
+              <dt>experience</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Expérience de conduite du conducteur. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : moins de 2 ans</code></li>
+                    <li><code>1 : 2 ans ou plus</code></li>
+                 </ul></dd>
+              <dt>sexe</dt>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+		Sexe du conducteur. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "MASCULIN"</code></li>
+                    <li><code>1 : "FEMININ"</code></li>
+                 </ul></dd>
+	    </div>
+     <dt>conducteurSecondaire</dt>
+     <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">conducteur</span><br>
+     Bloc détaillant les informations du conducteur secondaire.</dd>
+     <dt>vehicule</dt>
+     <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">vehicule</span><br>
+     Bloc détaillant les caractéristique du véhicule.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.vehicule_show">Montrer l'objet vehicule</button>
+
+	<div class="subelements19" style="display:none;">
+     		<dt>anneeCirculation</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+     		Année de mise en circulation du véhicule.</dd>
+     		<dt>nbKmCompteur</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		Nombre de Kilomètres au compteur du véhicule.</dd>
+     		<dt>serie</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">serie</span><br>
+     		Véhicule série.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.serie_show">Montrer l'objet serie</button>
+
+		<div class="subelements20" style="display:none;">
+     			<dt>numSerieMaaf</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			Numéro de série issue du catalogue de véhicule MAAF.</dd>
+		</div>
+     		<dt>commune</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">commune</span><br>
+     		Zone de circulation.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.commune_show">Montrer l'objet commune</button>
+
+		<div class="subelements21" style="display:none;">
+     			<dt>codeInsee</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			Code INSEE de la commune.</dd>
+		</div>
+	</div>
+     <dt>souscripteur</dt>
+     <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">souscripteur</span><br>
+     Bloc détaillant les caractéristique du véhicule.</dd>
+                
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.souscripteur_show">Montrer l'objet souscripteur</button>
+
+	<div class="subelements22" style="display:none;">
+     		<dt>commune</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">commune</span><br>
+     		Adresse du souscripteur.</dd>
+     		<dt>infoComplementaires</dt>
+     		<dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">infoComplementaires</span><br>
+     		Informations complémentaires du souscripteur s'il souhaite être recontacté. Uniquement utilisé par TDI si l'utilisateur a fourni ses infos.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.infoComplementaires_show">Montrer l'objet infoComplementaires</button>
+
+	<div class="subelements23" style="display:none;">
+     		<dt>nom</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Nom du souscripteur.</dd>
+     		<dt>prenom</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Prénom du souscripteur.</dd>
+     		<dt>civilite</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Prénom du souscripteur. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "Monsieur"</code></li>
+                    <li><code>1 : "Madame"</code></li>
+                 </ul></dd>
+     		<dt>email</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Email du souscripteur.</dd>
+     		<dt>telephone</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Téléphone du souscripteur.</dd>
+     		<dt>adresse1</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		adresse1 du souscripteur.</dd>
+     		<dt>adresse2</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		adresse2 du souscripteur.</dd>
+     		<dt>adresse3</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		adresse3 du souscripteur.</dd>
+     		<dt>codePostal</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Code postal du souscripteur.</dd>
+     		<dt>ville</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Ville du souscripteur.</dd>
+     		<dt>matriculeBp</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
+     		Matricule BP du souscripteur s'il est déjà client BP.</dd>
+	</div>
+     </div>
+
+</dl>
+            </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet</span>
+              <pre class="prettyprint language-json">
+{
+      "dateEffet": "20140107",
+      "origineVehicule" : "2",
+      "antecedentsAuto":
+        {
+      	 "bonusMalus":
+          { 
+		"coeffBm": "0.52",
+		"dateDerniereEcheance": "20130107",
+		"nbAnneesBmDemi": "3"
+	  }, 
+      	 "sinistre":
+          {  
+      	 	"sinistreResp":
+          	{ 
+			"dateSinistreResponsable": "20130407",
+			"tauxResponsabiliteSinistre": "0"
+	  	},
+      	 	"syntheseDeuxAns":
+          	{ 
+			"nbSinistreBrisGlace": "3",
+			"nbSinistreResponsable": "4",
+			"nbSinistreTiersNonIdentifie": "1"
+	  	}
+	  }
+        },
+      "proposition":
+        { 
+		"usageVehicule": "4",
+		"NiveauProtectionAssuranceSouhaite": "1",
+		"indOffrePetitRouleur": "N",
+		"indTarifFonctionnaire": "N",
+      		"tarification":
+        	{
+			"garantiesDisponibles":[
+        		  {
+				"idPackGaranties": "0",
+				"garantiesOptSous":[
+        		  	  {
+					"codeGarantie": "11",
+					"indChoixGarantieClient": "N",
+					"montantCapitalAssure": "100.22"
+        		  	  }
+				]
+        		  }
+      			],
+			"garantiesOptSansNotionPack":[
+        		  {
+				"codeGarantie": "18",
+				"indChoixGarantieClient": "O",
+				"montantCapitalAssure": "990.23"
+        		  }
+      			],
+			"garantiesCouvertesFormuleSouscrite":[
+        		  {
+				"codeGarantie": "3",
+				"montantCapitalAssure": "555.55"
+        		  }
+      			]
+		}
+	},
+      "conducteurPrincipal":
+        { 
+		"dateNaissance": "19850407",
+		"DatePermis": "20050407",
+		"lienParente": "2",
+		"experience": "0",
+		"sexe": "0"
+	},
+      "conducteurSecondaire":
+        { 
+		"dateNaissance": "19890107",
+		"DatePermis": "20060407",
+		"lienParente": "3",
+		"experience": "1",
+		"sexe": "1"
+	},
+      "vehicule":
+        { 
+		"anneeCirculation": "2000",
+		"nbKmCompteur": "100000.45",
+      	 	"serie":
+          	{ 
+			"numSerieMaaf": "0016045"
+	  	},
+      	 	"zoneCirculation":
+          	{ 
+			"codeInsee": "31245"
+	  	}
+	},
+      "souscripteur":
+        { 
+      	 	"commune":
+          	{ 
+			"codeInsee": "31245"
+	  	}
+      	 	"infoComplementaires":
+          	{ 
+			"nom": "Martin",
+			"prenom": "Nicolas",
+			"civilite": "2",
+			"email": "nicolas_martin@gmail.com",
+			"telephone": "0564841532",
+			"adresse1": "74 Rue de Loan",
+			"adresse2": "Batiment C",
+			"adresse3": "Appartement 782",
+			"codePostal": "31245",
+			"ville": "L'Union",
+			"matriculeBp": "003"
+	  	}
+	}
+    }
+
+</pre>      
+            </div>
+          </div>
+         
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.simulation_devis.tarification.demander_tarification" name="methodes.simulation_devis.tarification.demander_tarification"></a>Demander une tarification</h3>
+              <p>Permet d'envoyer les informations nécessaires pour recevoir une tarification de devis.</p>
+              <h4>Attributs</h4>
+ <dl class="dl-horizontal">
+                <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>devis</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Informations du devis pour la tarification. <a href="#methodes.simulation_devis.devis.objet">cf l'objet devis.</a>
+                </dd>
+                <dt>checksum</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractère optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              Pas de retour spécifique. Retourne uniquement les valeurs de status de réponse.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_obtenir_tarification</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_obtenir_tarification POST
+    -d '{
+      "dateEffet": "20140107",
+      "origineVehicule" : "2",
+      "antecedentsAuto":
+        {
+      	 "bonusMalus":
+          { 
+		"coeffBm": "0.52",
+		"dateDerniereEcheance": "20130107",
+		"nbAnneesBmDemi": "3"
+	  }, 
+      	 "sinistre":
+          {  
+      	 	"sinistreResp":
+          	{ 
+			"dateSinistreResponsable": "20130407",
+			"tauxResponsabiliteSinistre": "0"
+	  	},
+      	 	"syntheseDeuxAns":
+          	{ 
+			"nbSinistreBrisGlace": "3",
+			"nbSinistreResponsable": "4",
+			"nbSinistreTiersNonIdentifie": "1"
+	  	}
+	  }
+        },
+      "proposition":
+        { 
+		"usageVehicule": "4",
+		"NiveauProtectionAssuranceSouhaite": "1",
+		"indOffrePetitRouleur": "N",
+		"indTarifFonctionnaire": "N",
+      		"tarification":
+        	{
+			"garantiesDisponibles":[
+        		  {
+				"idPackGaranties": "0",
+				"garantiesOptSous":[
+        		  	  {
+					"codeGarantie": "11",
+					"indChoixGarantieClient": "N",
+					"montantCapitalAssure": "100.22"
+        		  	  }
+				]
+        		  }
+      			],
+			"garantiesOptSansNotionPack":[
+        		  {
+				"codeGarantie": "18",
+				"indChoixGarantieClient": "O",
+				"montantCapitalAssure": "990.23"
+        		  }
+      			],
+			"garantiesCouvertesFormuleSouscrite":[
+        		  {
+				"codeGarantie": "3",
+				"montantCapitalAssure": "555.55"
+        		  }
+      			]
+		}
+	},
+      "conducteurPrincipal":
+        { 
+		"dateNaissance": "19850407",
+		"DatePermis": "20050407",
+		"lienParente": "2",
+		"experience": "0",
+		"sexe": "0"
+	},
+      "conducteurSecondaire":
+        { 
+		"dateNaissance": "19890107",
+		"DatePermis": "20060407",
+		"lienParente": "3",
+		"experience": "1",
+		"sexe": "1"
+	},
+      "vehicule":
+        { 
+		"anneeCirculation": "2000",
+		"nbKmCompteur": "100000.45",
+      	 	"serie":
+          	{ 
+			"numSerieMaaf": "0016045"
+	  	},
+      	 	"zoneCirculation":
+          	{ 
+			"codeInsee": "31245"
+	  	}
+	},
+      "souscripteur":
+        { 
+      	 	"commune":
+          	{ 
+			"codeInsee": "31245"
+	  	}
+      	 	"infoComplementaires":
+          	{ 
+			"nom": "Martin",
+			"prenom": "Nicolas",
+			"civilite": "2",
+			"email": "nicolas_martin@gmail.com",
+			"telephone": "0564841532",
+			"adresse1": "74 Rue de Loan",
+			"adresse2": "Batiment C",
+			"adresse3": "Appartement 782",
+			"codePostal": "31245",
+			"ville": "L'Union",
+			"matriculeBp": "003"
+	  	}
+	}
+    }'
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+    ]
+}
+</pre> </div>
+          </div>
+
+*******************************************************************************************
+
+
             
 
         <h1 id="methodes.petit_rouleur" name="methodes.petit_rouleur">Petit Rouleur</h1>
@@ -1878,6 +2558,54 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         });
         $("[id='methodes.sinistre.predeclaration.objet.photos_show']").click(function() {
                 $('.subelements7').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.antecedentsAuto_show']").click(function() {
+                $('.subelements8').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.bonusMalus_show']").click(function() {
+                $('.subelements9').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.sinistre_show']").click(function() {
+                $('.subelements10').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.sinistreResp_show']").click(function() {
+                $('.subelements11').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.syntheseDeuxAns_show']").click(function() {
+                $('.subelements12').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.proposition_show']").click(function() {
+                $('.subelements13').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.tarification_show']").click(function() {
+                $('.subelements14').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.garantiesDisponibles_show']").click(function() {
+                $('.subelements15').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.garantie_show']").click(function() {
+                $('.subelements16').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.garantiesCouvertesFormuleSouscrite_show']").click(function() {
+                $('.subelements17').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.conducteur_show']").click(function() {
+                $('.subelements18').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.vehicule_show']").click(function() {
+                $('.subelements19').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.serie_show']").click(function() {
+                $('.subelements20').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.commune_show']").click(function() {
+                $('.subelements21').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.souscripteur_show']").click(function() {
+                $('.subelements22').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.infoComplementaires_show']").click(function() {
+                $('.subelements23').slideToggle("fast");
         });
     }
 
