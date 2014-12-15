@@ -1265,7 +1265,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <li><code>false</code> : la partie serveur de l'application est fonctionnelle (pas en maintenance).</li></ul></dd>
                 <dt>messageMaintenance</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réess_yer plus tard."</dd>
+                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réessayer plus tard."</dd>
                 <dt>antennesRegionales</dt>
                 <dd><span stylinsnt-style: italic;">etablissement[]</span><br>
                 Tableau contenant la liste des établissements avec les informations attenantes.</dd>
@@ -1468,7 +1468,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>phone</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
                 Le téléphone du conducteur du véhicule</dd>
-                <dt>no_societaire</dt>
+                <dt>noSocietaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
                 Correspond au n° de sociétaire (=n° assuré côté MAAF) du conducteur du véhicule.</dd>
                 <dt>commentaires</dt>
@@ -1525,7 +1525,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   "immatriculation": "AZ0-AZ9",
   "email": "conducteur@voiture.net",
   "phone": "0561452515",
-  "no_societaire": "012345678"
+  "noSocietaire": "012345678"
   "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
   "temoins": [
     {
@@ -1594,7 +1594,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "immatriculation": "AZ0-AZ9",
       "email": "conducteur@voiture.net",
       "phone": "0561452515",
-      "no_societaire": "012345678"
+      "noSocietaire": "012345678"
       "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
       "temoins": [
         {
@@ -1647,26 +1647,26 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 contrat eligible</h3>
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
-                <dt>no_societaire</dt>
+                <dt>noSocietaire</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro sociétaire MAAF.</dd>
-                <dt>no_contrat</dt>
+                <dt>noContrat</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numero de contrat.</dd>
-                <dt>code_integrite</dt>
+                <dt>codeIntegrite</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Code intégrité. Clé technique sur le contrat, qui permet de vérifier qu'il n'y a pas eu de modification entre l'appel du WS d'éligibilité et celui de saisie du km. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.
               </dd>
-                <dt>no_vehicule</dt>
+                <dt>noVehicule</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro de véhicule. Clé technique pour identifier le véhicule. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
-                <dt>no_sequence</dt>
+                <dt>noSequence</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro séquence dispositif. Clé technique pour le kilométrage. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
-                <dt>date_precedent_releve</dt>
+                <dt>datePrecedentReleve</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Date du précédent relevé kilométrique au format SSAAMMDD</dd>
-                <dt>km_precedent_releve</dt>
+                <dt>kmPrecedentReleve</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Kilométrage compteur du précedent relevé</dd>
                 <dt>marque</dt>
@@ -1684,13 +1684,13 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 <span class="label label-info">Exemple d'objet</span>
               <pre class="prettyprint language-json">
 {
-    "no_societaire":"",
-    "no_contrat":"",
-    "code_integrite":"",
-    "no_vehicule":"",
-    "no_sequence":"",
-    "date_precedent_releve":"20141215",
-    "km_precedent_releve":"",
+    "noSocietaire":"",
+    "noContrat":"",
+    "codeIntegrite":"",
+    "noVehicule":"",
+    "noSequence":"",
+    "datePrecedentReleve":"20141215",
+    "kmPrecedentReleve":"",
     "marque":"",
     "modele":"",
     "immatriculation":""
@@ -1707,15 +1707,15 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>version</dt>
                <dd><span class="label label-danger">Obligatoire</span><br>
                   <a href="#api.versionning">Cf Versionning</a></dd>
-                <dt>no_societaire</dt>
+                <dt>noSocietaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Numero societaire MAAF.
                 </dd>
-                <dt>no_client_partenaire</dt>
+                <dt>noClientPartenaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Numéro client partenaire.
                 </dd>
-                <dt>code_enseigne</dt>
+                <dt>codeEnseigne</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Code enseigne. Le code enseigne est le code établissement.  Il ne sera plus demandé en entrée des WebServices d'éligibilité et de saisie.
                 Cela ne pose pas de problème si le numéro de sociétaire est indiqué en entrée des WS (car il est unique et indépendant des BP).
@@ -1743,25 +1743,25 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
     },
     "data": [
         {
-          "no_societaire":"",
-          "no_contrat":"",
-          "code_integrite":"",
-          "no_vehicule":"",
-          "no_sequence":"",
-          "date_precedent_releve":"20141215",
-          "km_precedent_releve":"",
+          "noSocietaire":"",
+          "noContrat":"",
+          "codeIntegrite":"",
+          "noVehicule":"",
+          "noSequence":"",
+          "datePrecedentReleve":"20141215",
+          "kmPrecedentReleve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
         },
         {
           "no_societaire":"",
-          "no_contrat":"",
-          "code_integrite":"",
-          "no_vehicule":"",
-          "no_sequence":"",
-          "date_precedent_releve":"20140301",
-          "km_precedent_releve":"",
+          "noContrat":"",
+          "codeIntegrite":"",
+          "noVehicule":"",
+          "noSequence":"",
+          "datePrecedentReleve":"20140301",
+          "kmPrecedentReleve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
@@ -1789,7 +1789,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Date du relevé au format SSAAMMDD.
                 </dd>
-                <dt>solde_kilometrique</dt>
+                <dt>soldeKilometrique</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Solde kilométrique
                 </dd>
@@ -1806,7 +1806,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                     <li><code>N</code> : L'offre petit rouleur n'a pas été renouvelée.</li>
                   </ul>
                   </dd>
-               <dt>solde_kilometrique</dt>
+               <dt>soldeKilometrique</dt>
                <dd><span style="font-style: italic;">string</span><br>
                   Le solde kilométrique. Le solde kilométrique est généralement la différence entre le nouveau relevé de compteur et l'ancien relevé de compteur. Dans quelques cas particuliers (exemple : remplacement de véhicule), le calcul est plus complexe (cumul).
 
@@ -1822,19 +1822,19 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/declarer_km POST
     -d '{
       "contrat" : {
-          "no_societaire":"",
-          "no_contrat":"",
-          "code_integrite":"",
-          "no_vehicule":"",
-          "no_sequence":"",
-          "date_precedent_releve":"20141215",
-          "km_precedent_releve":"",
+          "noSocietaire":"",
+          "noContrat":"",
+          "codeIntegrite":"",
+          "noVehicule":"",
+          "noSequence":"",
+          "datePrecedentReleve":"20141215",
+          "kmPrecedentReleve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
         },
         "date":"20141216",
-        "solde_kilometrique":"6280"
+        "soldeKilometrique":"6280"
         }
      }'
 
@@ -1848,7 +1848,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
     },
     "data": [
         "indicateur":"O",
-        "solde_kilometrique":"6280"
+        "soldeKilometrique":"6280"
     ]
 }
 </pre> </div>
