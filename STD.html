@@ -1711,19 +1711,6 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Numero societaire MAAF.
                 </dd>
-                <dt>noClientPartenaire</dt>
-                <dd><span class="label label-danger">Obligatoire</span><br>
-                Numéro client partenaire.
-                </dd>
-                <dt>codeEnseigne</dt>
-                <dd><span class="label label-danger">Obligatoire</span><br>
-                Code enseigne. Le code enseigne est le code établissement.  Il ne sera plus demandé en entrée des WebServices d'éligibilité et de saisie.
-                Cela ne pose pas de problème si le numéro de sociétaire est indiqué en entrée des WS (car il est unique et indépendant des BP).
-                Cela pose un problème si le numéro de client partenaire est mis en entrée du WS : il n'y aura pas d'unicité. L'unicité se fait sur le couple numéro de client partenaire (matricule) et code établissement.
-                NA mettra en entrée des WS, le numéro client présent sur le courrier, c'est à dire le numéro de sociétaire.
-                Cette problématique est en cours d'instruction par la MAAF.
-
-                </dd>
               </dl>
               <h4>Retour</h4>
               Retourne les contrats auto éligibles du client sous forme de tableau, correspondant aux informations fournies en entrée. Cf <a href="#methodes.petit_rouleur.contrat_eligible.objet">l'objet contrat eligible</a>.
