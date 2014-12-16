@@ -203,7 +203,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
           </div>
           <div class="col-xs-6">
                       <span class="label label-info">Exemple de requÃªte</span>
-          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3"</pre>
+          <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3"</pre>
   </div>
         </div>
 
@@ -318,10 +318,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
           </div>
           <div class="col-xs-6">
             <span class="label label-info">Exemple de requÃªte</span>
-          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
+          <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
 
             <span class="label label-info">Exemple de rÃ©ponses avec version non trouvÃ©e</span>
-          <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v999/vehiculier/marques</pre>
+          <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v999/vehiculier/marques</pre>
                <pre class="prettyprint language-json">Erreur HTTP 404 - Not Found</pre>
           </div>
         </div>
@@ -380,7 +380,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl  https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -465,7 +465,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -558,7 +558,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -660,7 +660,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -769,7 +769,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales/17/versions</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20145/energies/Essence/puissancesfiscales/17/versions</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -883,7 +883,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -999,7 +999,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/vehiculier/marques/{MARQUE}/ages/{AGE}/modeles/{MODELE}/energies/{ENERGIE}/puissancesfiscales/{PUISSANCE FISCALE}/versions/{VARIANTE}/anneesmec/{CODE MAAF}/codemaaf</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/2004/codemaaf</pre>
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques/ALFA%20ROMEO/ages/5/modeles/ALFA%20147/energies/Essence/puissancesfiscales/18/versions/3.2%20V6%20250%20GTA%203%20PTES%20-%20Manuelle/anneesmec/2004/codemaaf</pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
 {
@@ -1090,7 +1090,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_bp/{CP}</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_bp/31810
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_bp/31810
               </pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
@@ -1195,7 +1195,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/referentiel_villes/pays/{PAYS}/cp/{CP}</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_villes/pays/FR/cp/31810
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/referentiel_villes/pays/FR/cp/31810
               </pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
@@ -1390,7 +1390,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/configuration/{ENSEIGNE}/{PLATEFORME}</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/configuration/bp/android
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/configuration/bp/android
               </pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
@@ -1598,7 +1598,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/predeclarer_sinistre</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/predeclarer_sinistre POST
+              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/predeclarer_sinistre
     -d '{
       "nature": "accident",
       "date" : "20141215",
@@ -2463,7 +2463,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_obtenir_tarification</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_obtenir_tarification POST
+              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_obtenir_tarification
     -d '{
       "dateEffet": "20140107",
       "origineVehicule" : "2",
@@ -2741,7 +2741,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/eligibilite/{NO_SOCIETAIRE}/{CODE_ENSEIGNE}/{NO_CLIENT_PARTENAIRE}</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/0001457/cm/9486532
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/0001457/cm/9486532
               </pre>
               <span class="label label-info">Exemple de rÃ©ponse</span>
               <pre class="prettyprint language-json">
@@ -2828,7 +2828,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec lâ€
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/declarer_km</pre>
               <span class="label label-info">Exemple de requÃªte (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/declarer_km POST
+              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/declarer_km
     -d '{
       "contrat" : {
           "no_societaire":"",
