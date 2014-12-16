@@ -1276,8 +1276,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>messageMaintenance</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réessayer plus tard."</dd>
-                <dt>antennesRegionales</dt>
-                <dd><span stylinsnt-style: italic;">etablissement[]</span><br>
+                <dt>etablissements</dt>
+                <dd><span style="font-style: italic;">etablissement[]</span><br>
                 Tableau contenant la liste des établissements avec les informations attenantes.</dd>
                 
 
@@ -1285,17 +1285,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.initialisation.configuration.objet.etablissements_show">Montrer l'objet établissement</button>
 
               <div class="subelements2" style="display:none;">
-              <dt>id</dt>
-              <dd><span style="font-style: italic;">string</span><br>Identifiant issu de la base de données.
+              <dt>code</dt>
+              <dd><span style="font-style: italic;">string</span><br>Code de l'établissement.
               </dd>
               <dt>label</dt>
-              <dd><span style="font-style: italic;">string</span><br>libellé de la banque.
+              <dd><span style="font-style: italic;">string</span><br>libellé de l'établissement.
               </dd>
               <dt>phone</dt>
-              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de la banque.
+              <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de l'établissement.
               </dd>
               <dt>mail</dt>
-              <dd><span style="font-style: italic;">string</span><br>Adresse mail de contact de la banque.
+              <dd><span style="font-style: italic;">string</span><br>Adresse mail de contact de l'établissement.
               </dd>
     </div>
 
@@ -1330,7 +1330,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
   "maintenance": false,
   "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
-  "antennesRegionales": [
+  "etablissements": [
     {
        "id": "001",
        "label": "Antenne 001",
@@ -1405,7 +1405,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "serviceBaseUrl": "https://natixis.fr/roulerserein/api/",
         "maintenance": false,
         "messageMaintenance": "L'application est actuellement en maintenance. Merci de réessayer plus tard.",
-        "antennesRegionales": [
+        "etablissements": [
           {
              "id": "001",
              "label": "Antenne 001",
