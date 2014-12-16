@@ -119,6 +119,7 @@
               <li> <a href="#methodes.simulation_devis.tarification">Tarification</a>
                 <ul class="nav">
                   <li><a href="#methodes.simulation_devis.devis.objet">L'objet devis</a></li>
+                  <li><a href="#methodes.simulation_devis.tarificationResultat.objet">L'objet tarification</a></li>
                   <li><a href="#methodes.simulation_devis.tarification.demander_tarification">Demander une tarificatuin</a></li>
                 </ul>
               </li>
@@ -1275,7 +1276,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <li><code>false</code> : la partie serveur de l'application est fonctionnelle (pas en maintenance).</li></ul></dd>
                 <dt>messageMaintenance</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réessayer plus tard."</dd>
+                Message à afficher si l'application est en maintenance (si le paramètre <code>maintenance</code> est à <code>true</code>). Par exemple "L'application est actuellement en maintenance. Merci de réess_yer plus tard."</dd>
                 <dt>antennesRegionales</dt>
                 <dd><span stylinsnt-style: italic;">etablissement[]</span><br>
                 Tableau contenant la liste des établissements avec les informations attenantes.</dd>
@@ -1478,7 +1479,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>phone</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
                 Le téléphone du conducteur du véhicule</dd>
-                <dt>noSocietaire</dt>
+                <dt>no_societaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
                 Correspond au n° de sociétaire (=n° assuré côté MAAF) du conducteur du véhicule.</dd>
                 <dt>commentaires</dt>
@@ -1535,7 +1536,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   "immatriculation": "AZ0-AZ9",
   "email": "conducteur@voiture.net",
   "phone": "0561452515",
-  "noSocietaire": "012345678"
+  "no_societaire": "012345678"
   "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
   "temoins": [
     {
@@ -1604,7 +1605,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "immatriculation": "AZ0-AZ9",
       "email": "conducteur@voiture.net",
       "phone": "0561452515",
-      "noSocietaire": "012345678"
+      "no_societaire": "012345678"
       "commentaires":"Ceci est un commentaire global à la déclaration du sinistre",
       "temoins": [
         {
@@ -1688,10 +1689,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
                 Coefficient bonus - malus</dd>
                 <dt>dateDerniereEcheance</dt>
-                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">date</span><br>
+                <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">date</span><br>
                 Date du dernier calcul du coefficient BM. Donnée obligatoire si antécédent = REPRISE. Sinon on met vide.</dd>
                 <dt>nbAnneesBmDemi</dt>
-                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">entier</span><br>
+                <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">entier</span><br>
                 Nombre d’année avec un coefficient BM à 0,5. Obligatoire si CfBonusMals = 0,5. Facultatif sinon. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
                     <li><code>1</code></li>
@@ -1710,7 +1711,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 
               <div class="subelements10" style="display:none;">
                 <dt>sinistreResp</dt>
-                <dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">sinistreResp</span><br>
+                <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">sinistreResp</span><br>
                 Bloc Sinistre responsable. Seulement si le souscripteur a eu des sinistres responsables.</dd>
                                 
 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.sinistreResp_show">Montrer l'objet sinistreResp</button>
@@ -1987,7 +1988,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">commune</span><br>
      		Adresse du souscripteur.</dd>
      		<dt>infoComplementaires</dt>
-     		<dd><span class="label label-normal">Conditionnel</span> <span style="font-style: italic;">infoComplementaires</span><br>
+     		<dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">infoComplementaires</span><br>
      		Informations complémentaires du souscripteur s'il souhaite être recontacté. Uniquement utilisé par TDI si l'utilisateur a fourni ses infos.</dd>
 
 <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.infoComplementaires_show">Montrer l'objet infoComplementaires</button>
@@ -2036,7 +2037,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 </dl>
             </div>
             <div class="col-xs-6"> 
-<span class="label label-info">Exemple d'objet</span>
+<span class="label label-info">Exemple d'objet Devis</span>
               <pre class="prettyprint language-json">
 {
       "dateEffet": "20140107",
@@ -2154,7 +2155,285 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 </pre>      
             </div>
           </div>
-         
+
+<div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.simulation_devis.tarificationResultat.objet" name="methodes.simulation_devis.tarificationResultat.objet"></a>L'objet
+                tarificationResultat</h3>
+              <h4>Attributs</h4>
+              <dl class="dl-horizontal">
+     		<dt>bonusMalusActualise</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		Bonus malus actualisé. Le Bonus doit se trouver dans l’intervalle [0.5 ; 3,5].</dd>
+     		<dt>formuleExacteProduit</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Formule exacte du produit. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : OR</code></li>
+                    <li><code>1 : ARGENT</code></li>
+                    <li><code>2 : BRONZE</code></li>
+                 </ul></dd>
+     		<dt>fracPaiementCotisation</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Fractionnement du paiement de la cotisation. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "UNE_FOIS"</code></li>
+                    <li><code>1 : "DEUX_FOIS"</code></li>
+                    <li><code>2 : "QUATRE_FOIS"</code></li>
+                    <li><code>3 : "DOUZE_FOIS"</code></li>
+                 </ul></dd>
+     		<dt>zoneRisqueRetenu</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Zone de risque retenu.</dd>
+     		<dt>montantAnnuelAvecPacks</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant annuel TTC en considérant les packs choisis.</dd>
+     		<dt>montantAnnuelSansPacks</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant annuel TTC sans considérer les packs choisis.</dd>
+     		<dt>niveauTarification</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Niveau de Tarification. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "NORMAL"</code></li>
+                    <li><code>1 : "SELECTION"</code></li>
+                    <li><code>2 : "EXCELLENCE"</code></li>
+                 </ul></dd>
+     		<dt>niveauReduc</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Niveau de réduction en regard des bons antécédents des conducteurs. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "MAUVAIS"</code></li>
+                    <li><code>1 : "BON"</code></li>
+                    <li><code>2 : "TRES_BON"</code></li>
+                 </ul></dd>
+     		<dt>modePaiementCotisation</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Mode de paiement de la cotisation. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "PRELEVEMENT_AUTOMATIQUE"</code></li>
+                    <li><code>1 : "CHEQUE"</code></li>
+                 </ul></dd>
+		<dt>garantiesCouvertes</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">garantiesCouvertes[]</span><br>
+     		Liste des garanties couvertes par la formule Souscrite.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.garantiesCouvertes_show">Montrer l'objet garantiesCouvertes</button>
+
+	<div class="subelements24" style="display:none;">
+     		<dt>typeGarantie</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Type de la garantie. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "AMENAGEMENT_PRO_ACCESSOIRE"</code></li>
+                    <li><code>1 : "ASSISTANCE_BASE"</code></li>
+                    <li><code>2 : "CATASTROPHE_NATURELLE"</code></li>
+                    <li><code>3 : "CONTENU_PRI_EQUIPEMENT_VEH"</code></li>
+                    <li><code>4 : "CONTENU_PRO"</code></li>
+                    <li><code>5 : "DOMMAGE_CORPOREL"</code></li>
+                    <li><code>6 : "DOMMAGE_TOUS_ACCIDENTS"</code></li>
+                    <li><code>7 : "DEFENSE"</code></li>
+                    <li><code>8 : "INCENDIE_EXPLOSION_ATTENTAT"</code></li>
+                    <li><code>9 : "RECOURS"</code></li>
+                    <li><code>10 : "RESPONSABILITE_CIVILE"</code></li>
+                    <li><code>11 : "SERVICE_CONSEIL_REPARATION"</code></li>
+                    <li><code>12 : "VOL"</code></li>
+                    <li><code>13 : "EVENEMENT_CLIMATIQUE"</code></li>
+                    <li><code>14 : "ASSISTANCE_PANNE_0KM"</code></li>
+                    <li><code>15 : "BRIS_GLACE_INTEG"</code></li>
+                    <li><code>16 : "CAPITAL_COUP_DUR"</code></li>
+                    <li><code>17 : "VEHICULE_REMPLACEMENT_PLUS"</code></li>
+                    <li><code>18 : "DEFENSE_JURIDIQUE_AUTOMOBILISTE"</code></li>
+                    <li><code>19 : "PERMIS_ZEN"</code></li>
+                    <li><code>20 : "INDEMNISATION_2PLUS"</code></li>
+                    <li><code>21 : "BRIS_INTERNE_AMENAG_PRO"</code></li>
+                    <li><code>22 : "PERTE_EXPLOITATION"</code></li>
+                 </ul></dd>
+     		<dt>libelleCommercial</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Libellé commercial de la garantie.</dd>
+     		<dt>montantCapitalAssure</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant du capital assuré pour cette garantie.</dd>
+     		<dt>indBesoinChoixCapitalInternaute</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Indicateur besoin choix capital Internaute.</dd>
+     		<dt>montantFranchise</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant de la Franchise pour cette garantie.</dd>
+		<dt>capitauxSelectionnable</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">capitauxSelectionnable[]</span><br>
+     		Liste des capitaux selectionnable pour cette garantie.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.capitauxSelectionnable_show">Montrer l'objet capitauxSelectionnable</button>
+
+		<div class="subelements25" style="display:none;">
+     			<dt>montantCapital</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     			Montant du capital.</dd>
+     			<dt>libelleInternaute</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			Libellé à afficher à l'internaute.</dd>
+		</div>
+	</div>
+	<dt>garantiesSouscriptibles</dt>
+     	<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">garantiesSouscriptibles[]</span><br>
+     	Liste des garanties souscriptibles hors Packs.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.garantiesSouscriptibles_show">Montrer l'objet garantiesSouscriptibles</button>
+
+	<div class="subelements26" style="display:none;">
+     		<dt>typeGarantie</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Type de la garantie. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "AMENAGEMENT_PRO_ACCESSOIRE"</code></li>
+                    <li><code>1 : "ASSISTANCE_BASE"</code></li>
+                    <li><code>2 : "CATASTROPHE_NATURELLE"</code></li>
+                    <li><code>3 : "CONTENU_PRI_EQUIPEMENT_VEH"</code></li>
+                    <li><code>4 : "CONTENU_PRO"</code></li>
+                    <li><code>5 : "DOMMAGE_CORPOREL"</code></li>
+                    <li><code>6 : "DOMMAGE_TOUS_ACCIDENTS"</code></li>
+                    <li><code>7 : "DEFENSE"</code></li>
+                    <li><code>8 : "INCENDIE_EXPLOSION_ATTENTAT"</code></li>
+                    <li><code>9 : "RECOURS"</code></li>
+                    <li><code>10 : "RESPONSABILITE_CIVILE"</code></li>
+                    <li><code>11 : "SERVICE_CONSEIL_REPARATION"</code></li>
+                    <li><code>12 : "VOL"</code></li>
+                    <li><code>13 : "EVENEMENT_CLIMATIQUE"</code></li>
+                    <li><code>14 : "ASSISTANCE_PANNE_0KM"</code></li>
+                    <li><code>15 : "BRIS_GLACE_INTEG"</code></li>
+                    <li><code>16 : "CAPITAL_COUP_DUR"</code></li>
+                    <li><code>17 : "VEHICULE_REMPLACEMENT_PLUS"</code></li>
+                    <li><code>18 : "DEFENSE_JURIDIQUE_AUTOMOBILISTE"</code></li>
+                    <li><code>19 : "PERMIS_ZEN"</code></li>
+                    <li><code>20 : "INDEMNISATION_2PLUS"</code></li>
+                    <li><code>21 : "BRIS_INTERNE_AMENAG_PRO"</code></li>
+                    <li><code>22 : "PERTE_EXPLOITATION"</code></li>
+                 </ul></dd>
+     		<dt>libelleCommercial</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Libellé commercial de la garantie.</dd>
+     		<dt>garantieChoisie</dt>
+     		<dd><span class="label labeldanger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Garantie choisie ou non. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>O</code></li>
+                    <li><code>N</code></li>
+                 </ul></dd>
+     		<dt>montantCapitalAssure</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant du capital assuré pour cette garantie.</dd>
+     		<dt>indBesoinChoixCapitalInternaute</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Indicateur besoin choix capital Internaute.</dd>
+     		<dt>montantFranchise</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant de la Franchise pour cette garantie.</dd>
+		<dt>capitauxSelectionnable</dt>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">capitauxSelectionnable[]</span><br>
+     		Liste des capitaux selectionnable pour cette garantie.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.capitauxSelectionnable_show">Montrer l'objet capitauxSelectionnable</button>
+
+		<div class="subelements27" style="display:none;">
+     			<dt>montantCapital</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     			Montant du capital.</dd>
+     			<dt>libelleInternaute</dt>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			Libellé à afficher à l'internaute.</dd>
+		</div>
+	</div>
+	<dt>packs</dt>
+     	<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">packs[]</span><br>
+     	Packs.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.packs_show">Montrer l'objet packs</button>
+
+	<div class="subelements28" style="display:none;">
+     		<dt>typePack</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		Type de Pack. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "ZEN"</code></li>
+                    <li><code>1 : "SECURITE_FINANCIERE"</code></li>
+                    <li><code>2 : "SERENITE_PRO"</code></li>
+                 </ul></dd>
+     		<dt>montantSouscriptionGarantiesChoisies</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		Montant pour la souscription aux garanties choisies dans le pack.</dd>
+     		<dt>garantiesSouscriptibles</dt>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">garantiesSouscriptibles[]</span><br>
+     		Liste des garanties souscriptibles dans ce pack.</dd>
+	</div>
+	
+     </dl>
+   </div>
+            <div class="col-xs-6"> 
+<span class="label label-info">Exemple d'objet tarificationResultat</span>
+              <pre class="prettyprint language-json">
+{
+      "bonusMalusActualise": "0.5",
+      "formuleExacteProduit" : "2",
+      "fracPaiementCotisation" : "3",
+      "zoneRisqueRetenu" : "31245",
+      "montantAnnuelAvecPacks" : "512.25",
+      "montantAnnuelSansPacks" : "512.25",
+      "niveauTarification" : "1",
+      "niveauReduc" : "0",
+      "modePaiementCotisation" : "0",
+      "garantiesCouvertes":[
+        { 
+      	 	"typeGarantie": "21",
+      	 	"libelleCommercial": "",
+      	 	"montantCapitalAssure": "1000.02",
+      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"montantFranchise": "654.12",
+      	 	"capitauxSelectionnable":[
+          	{ 
+      	 		"montantCapital": "541.56",
+      	 		"libelleInternaute": ""
+	  	}]
+	}],
+      "garantiesSouscriptibles":[
+        { 
+      	 	"typeGarantie": "7",
+      	 	"libelleCommercial": "",
+		"garantieChoisie": "O",
+      	 	"montantCapitalAssure": "1000.02",
+      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"montantFranchise": "654.12",
+      	 	"capitauxSelectionnable":[
+          	{ 
+      	 		"montantCapital": "541.56",
+      	 		"libelleInternaute": ""
+	  	}]
+	}],
+      "packs":[
+        { 
+      	 	"typePack": "1",
+      	 	"montantSouscriptionGarantiesChoisies": "4587.78",
+      		"garantiesSouscriptibles":[
+        		{ 
+      	 			"typeGarantie": "7",
+      	 			"libelleCommercial": "",
+				"garantieChoisie": "O",
+      	 			"montantCapitalAssure": "1000.02",
+      	 			"indBesoinChoixCapitalInternaute": "N",
+      	 			"montantFranchise": "654.12",
+      	 			"capitauxSelectionnable":[
+          			{ 
+      	 				"montantCapital": "541.56",
+      	 				"libelleInternaute": ""
+	  			}]
+			}]
+	}]
+}
+</pre>      
+</div>
+</div>
+
           <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.simulation_devis.tarification.demander_tarification" name="methodes.simulation_devis.tarification.demander_tarification"></a>Demander une tarification</h3>
@@ -2178,7 +2457,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   comme null</dd>
               </dl>
               <h4>Retour</h4>
-              Pas de retour spécifique. Retourne uniquement les valeurs de status de réponse.
+              Retourne la tarification correspondant aux informations fournies en entrée. Cf <a href="#methodes.petit_rouleur.tarificationResultat.objet">l'objet tarificationResultat</a>.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
@@ -2305,16 +2584,66 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "code":200,
         "message":"La demande a été traitée"
     },
-    "data": [
-    ]
+    "data": {
+      "bonusMalusActualise": "0.5",
+      "formuleExacteProduit" : "2",
+      "fracPaiementCotisation" : "3",
+      "zoneRisqueRetenu" : "31245",
+      "montantAnnuelAvecPacks" : "512.25",
+      "montantAnnuelSansPacks" : "512.25",
+      "niveauTarification" : "1",
+      "niveauReduc" : "0",
+      "modePaiementCotisation" : "0",
+      "garantiesCouvertes":[
+        { 
+      	 	"typeGarantie": "21",
+      	 	"libelleCommercial": "",
+      	 	"montantCapitalAssure": "1000.02",
+      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"montantFranchise": "654.12",
+      	 	"capitauxSelectionnable":[
+          	{ 
+      	 		"montantCapital": "541.56",
+      	 		"libelleInternaute": ""
+	  	}]
+	}],
+      "garantiesSouscriptibles":[
+        { 
+      	 	"typeGarantie": "7",
+      	 	"libelleCommercial": "",
+		"garantieChoisie": "O",
+      	 	"montantCapitalAssure": "1000.02",
+      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"montantFranchise": "654.12",
+      	 	"capitauxSelectionnable":[
+          	{ 
+      	 		"montantCapital": "541.56",
+      	 		"libelleInternaute": ""
+	  	}]
+	}],
+      "packs":[
+        { 
+      	 	"typePack": "1",
+      	 	"montantSouscriptionGarantiesChoisies": "4587.78",
+      		"garantiesSouscriptibles":[
+        		{ 
+      	 			"typeGarantie": "7",
+      	 			"libelleCommercial": "",
+				"garantieChoisie": "O",
+      	 			"montantCapitalAssure": "1000.02",
+      	 			"indBesoinChoixCapitalInternaute": "N",
+      	 			"montantFranchise": "654.12",
+      	 			"capitauxSelectionnable":[
+          			{ 
+      	 				"montantCapital": "541.56",
+      	 				"libelleInternaute": ""
+	  			}]
+			}]
+	}]
+}
 }
 </pre> </div>
-          </div>
-
-*******************************************************************************************
-
-
-            
+          </div>            
 
         <h1 id="methodes.petit_rouleur" name="methodes.petit_rouleur">Petit Rouleur</h1>
         <!-- WS Petit Rouleur-->
@@ -2327,26 +2656,26 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 contrat eligible</h3>
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
-                <dt>noSocietaire</dt>
+                <dt>no_societaire</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro sociétaire MAAF.</dd>
-                <dt>noContrat</dt>
+                <dt>no_contrat</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numero de contrat.</dd>
-                <dt>codeIntegrite</dt>
+                <dt>code_integrite</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Code intégrité. Clé technique sur le contrat, qui permet de vérifier qu'il n'y a pas eu de modification entre l'appel du WS d'éligibilité et celui de saisie du km. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.
               </dd>
-                <dt>noVehicule</dt>
+                <dt>no_vehicule</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro de véhicule. Clé technique pour identifier le véhicule. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
-                <dt>noSequence</dt>
+                <dt>no_sequence</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Numéro séquence dispositif. Clé technique pour le kilométrage. Cette donnée fait partie du trio de données techniques (code d'intégrité, numéro de véhicule, numéro de séquence dispositif) permettatn d'identifier de façon unique la déclaration de kilométrage.</dd>
-                <dt>datePrecedentReleve</dt>
+                <dt>date_precedent_releve</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Date du précédent relevé kilométrique au format SSAAMMDD</dd>
-                <dt>kmPrecedentReleve</dt>
+                <dt>km_precedent_releve</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                 Kilométrage compteur du précedent relevé</dd>
                 <dt>marque</dt>
@@ -2364,13 +2693,13 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 <span class="label label-info">Exemple d'objet</span>
               <pre class="prettyprint language-json">
 {
-    "noSocietaire":"",
-    "noContrat":"",
-    "codeIntegrite":"",
-    "noVehicule":"",
-    "noSequence":"",
-    "datePrecedentReleve":"20141215",
-    "kmPrecedentReleve":"",
+    "no_societaire":"",
+    "no_contrat":"",
+    "code_integrite":"",
+    "no_vehicule":"",
+    "no_sequence":"",
+    "date_precedent_releve":"20141215",
+    "km_precedent_releve":"",
     "marque":"",
     "modele":"",
     "immatriculation":""
@@ -2387,9 +2716,22 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>version</dt>
                <dd><span class="label label-danger">Obligatoire</span><br>
                   <a href="#api.versionning">Cf Versionning</a></dd>
-                <dt>noSocietaire</dt>
+                <dt>no_societaire</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Numero societaire MAAF.
+                </dd>
+                <dt>no_client_partenaire</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Numéro client partenaire.
+                </dd>
+                <dt>code_enseigne</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Code enseigne. Le code enseigne est le code établissement.  Il ne sera plus demandé en entrée des WebServices d'éligibilité et de saisie.
+                Cela ne pose pas de problème si le numéro de sociétaire est indiqué en entrée des WS (car il est unique et indépendant des BP).
+                Cela pose un problème si le numéro de client partenaire est mis en entrée du WS : il n'y aura pas d'unicité. L'unicité se fait sur le couple numéro de client partenaire (matricule) et code établissement.
+                NA mettra en entrée des WS, le numéro client présent sur le courrier, c'est à dire le numéro de sociétaire.
+                Cette problématique est en cours d'instruction par la MAAF.
+
                 </dd>
               </dl>
               <h4>Retour</h4>
@@ -2410,25 +2752,25 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
     },
     "data": [
         {
-          "noSocietaire":"",
-          "noContrat":"",
-          "codeIntegrite":"",
-          "noVehicule":"",
-          "noSequence":"",
-          "datePrecedentReleve":"20141215",
-          "kmPrecedentReleve":"",
+          "no_societaire":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20141215",
+          "km_precedent_releve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
         },
         {
           "no_societaire":"",
-          "noContrat":"",
-          "codeIntegrite":"",
-          "noVehicule":"",
-          "noSequence":"",
-          "datePrecedentReleve":"20140301",
-          "kmPrecedentReleve":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20140301",
+          "km_precedent_releve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
@@ -2456,7 +2798,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Date du relevé au format SSAAMMDD.
                 </dd>
-                <dt>soldeKilometrique</dt>
+                <dt>solde_kilometrique</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Solde kilométrique
                 </dd>
@@ -2473,7 +2815,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                     <li><code>N</code> : L'offre petit rouleur n'a pas été renouvelée.</li>
                   </ul>
                   </dd>
-               <dt>soldeKilometrique</dt>
+               <dt>solde_kilometrique</dt>
                <dd><span style="font-style: italic;">string</span><br>
                   Le solde kilométrique. Le solde kilométrique est généralement la différence entre le nouveau relevé de compteur et l'ancien relevé de compteur. Dans quelques cas particuliers (exemple : remplacement de véhicule), le calcul est plus complexe (cumul).
 
@@ -2489,19 +2831,19 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <pre>$ curl -H 'Content-Type: application/json' -X  https://context-root/etnamobile-web/rouler_serein/v1/declarer_km POST
     -d '{
       "contrat" : {
-          "noSocietaire":"",
-          "noContrat":"",
-          "codeIntegrite":"",
-          "noVehicule":"",
-          "noSequence":"",
-          "datePrecedentReleve":"20141215",
-          "kmPrecedentReleve":"",
+          "no_societaire":"",
+          "no_contrat":"",
+          "code_integrite":"",
+          "no_vehicule":"",
+          "no_sequence":"",
+          "date_precedent_releve":"20141215",
+          "km_precedent_releve":"",
           "marque":"",
           "modele":"",
           "immatriculation":""
         },
         "date":"20141216",
-        "soldeKilometrique":"6280"
+        "solde_kilometrique":"6280"
         }
      }'
 
@@ -2515,7 +2857,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
     },
     "data": [
         "indicateur":"O",
-        "soldeKilometrique":"6280"
+        "solde_kilometrique":"6280"
     ]
 }
 </pre> </div>
@@ -2593,6 +2935,21 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         });
         $("[id='methodes.simulation_devis.devis.objet.infoComplementaires_show']").click(function() {
                 $('.subelements23').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.garantiesCouvertes_show']").click(function() {
+                $('.subelements24').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.capitauxSelectionnable_show']").click(function() {
+                $('.subelements25').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.garantiesSouscriptibles_show']").click(function() {
+                $('.subelements26').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.capitauxSelectionnable_show']").click(function() {
+                $('.subelements27').slideToggle("fast");
+        });
+        $("[id='methodes.simulation_devis.devis.objet.packs_show']").click(function() {
+                $('.subelements28').slideToggle("fast");
         });
     }
 

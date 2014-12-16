@@ -101,7 +101,12 @@ h2 {
 .subelements20,
 .subelements21,
 .subelements22,
-.subelements23 {
+.subelements23,
+.subelements24,
+.subelements25,
+.subelements26,
+.subelements27,
+.subelements28 {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }
@@ -126,7 +131,12 @@ h2 {
 .subsubelements20,
 .subsubelements21,
 .subsubelements22,
-.subsubelements23 {
+.subsubelements23,
+.subsubelements24,
+.subsubelements25,
+.subsubelements26,
+.subsubelements27,
+.subsubelements28 {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }
