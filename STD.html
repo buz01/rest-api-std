@@ -164,8 +164,7 @@
         <h2><a id="api.signature" name="api.signature"></a>Signature</h2>
         <div class="row bg-danger" >
           <div class="col-xs-6">
-            <p class="bs-callout bs-callout-warning">28/11/2014 : Cette fonctionnalité est en attente d'arbitrage par NXS - Surement supprimée suite à la réunion technique du 02/12/2014.</p>
-            <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
+            <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DDoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
             <p>Ce système est basé sur une clé partagée entre le client (l'application mobile) et le service REST : <ol>
               <li>Le client construit l'URL du service REST à interroger,</li>
               <li>Le client calcule une somme de contrôle avec la clé partagée,
@@ -892,8 +891,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "message":"La demande a été traitée"
     },
     "data": [
-      {"libelle":"2004"},
       {"libelle":"2003"},
+      {"libelle":"2004"},
       {...},
       {...}
     ]
@@ -1761,7 +1760,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                     <li><code>3: Privé et Professionnel</code></li>
                     <li><code>4: Tournée régulère</code></li>
                  </ul></dd>
-              <dt>NiveauProtectionAssuranceSouhaite</dt>
+              <dt>niveauProtectionAssuranceSouhaite</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
 		Niveau de protection assurance souhaité. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
@@ -1911,7 +1910,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <dt>dateNaissance</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
 		Date de naissance du conducteur.</dd>
-              <dt>DatePermis</dt>
+              <dt>datePermis</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
 		Date de permis de conduire du conducteur permettant l’usage du véhicule à assurer.</dd>
               <dt>lienParente</dt>
@@ -1929,13 +1928,6 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                  <ul>
                     <li><code>0 : moins de 2 ans</code></li>
                     <li><code>1 : 2 ans ou plus</code></li>
-                 </ul></dd>
-              <dt>sexe</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-		Sexe du conducteur. La valeur peut être choisie parmi les valeurs suivantes :
-                 <ul>
-                    <li><code>0 : "MASCULIN"</code></li>
-                    <li><code>1 : "FEMININ"</code></li>
                  </ul></dd>
 	    </div>
      <dt>conducteurSecondaire</dt>
@@ -2068,7 +2060,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "proposition":
         { 
 		"usageVehicule": "4",
-		"NiveauProtectionAssuranceSouhaite": "1",
+		"niveauProtectionAssuranceSouhaite": "1",
 		"indOffrePetitRouleur": "N",
 		"indTarifFonctionnaire": "N",
       		"tarification":
@@ -2103,18 +2095,16 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "conducteurPrincipal":
         { 
 		"dateNaissance": "19850407",
-		"DatePermis": "20050407",
+		"datePermis": "20050407",
 		"lienParente": "2",
 		"experience": "0",
-		"sexe": "0"
 	},
       "conducteurSecondaire":
         { 
 		"dateNaissance": "19890107",
-		"DatePermis": "20060407",
+		"datePermis": "20060407",
 		"lienParente": "3",
 		"experience": "1",
-		"sexe": "1"
 	},
       "vehicule":
         { 
@@ -2493,7 +2483,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "proposition":
         { 
 		"usageVehicule": "4",
-		"NiveauProtectionAssuranceSouhaite": "1",
+		"niveauProtectionAssuranceSouhaite": "1",
 		"indOffrePetitRouleur": "N",
 		"indTarifFonctionnaire": "N",
       		"tarification":
@@ -2528,18 +2518,16 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       "conducteurPrincipal":
         { 
 		"dateNaissance": "19850407",
-		"DatePermis": "20050407",
+		"datePermis": "20050407",
 		"lienParente": "2",
 		"experience": "0",
-		"sexe": "0"
 	},
       "conducteurSecondaire":
         { 
 		"dateNaissance": "19890107",
-		"DatePermis": "20060407",
+		"datePermis": "20060407",
 		"lienParente": "3",
 		"experience": "1",
-		"sexe": "1"
 	},
       "vehicule":
         { 
