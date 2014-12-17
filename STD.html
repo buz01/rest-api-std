@@ -121,6 +121,7 @@
                   <li><a href="#methodes.simulation_devis.devis.objet">L'objet devis</a></li>
                   <li><a href="#methodes.simulation_devis.tarificationResultat.objet">L'objet tarificationResultat</a></li>
                   <li><a href="#methodes.simulation_devis.tarification.demander_tarification">Demander une tarification</a></li>
+                  <li><a href="#methodes.simulation_devis.tarification.enregistrer">Enregistrer le devis</a></li>
                 </ul>
               </li>
             </ul>
@@ -165,6 +166,7 @@
         <h2><a id="api.signature" name="api.signature"></a>Signature</h2>
         <div class="row bg-danger" >
           <div class="col-xs-6">
+            <p class="bs-callout bs-callout-warning">17/12/2014 : Cette fonctionnalité a été désactivée pour la livraison du 19/12/2014. Elle sera activé la livraison suivante.</p>
             <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DDoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
             <p>Ce système est basé sur une clé partagée entre le client (l'application mobile) et le service REST : <ol>
               <li>Le client construit l'URL du service REST à interroger,</li>
@@ -367,7 +369,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -452,7 +454,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET
                     HTTP</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -543,7 +545,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -645,7 +647,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -753,7 +755,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -868,7 +870,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -985,7 +987,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -1141,7 +1143,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 Nom de la commune correspondant au code postal et au pays spécifié, en MAJUSCULE.</dd>
                 <dt>departement</dt>
                 <dd><span style="font-style: italic;">string</span><br>
-                Chaine de caractère représentant le numéro du département dans laquelle se trouve la commune.</dd>
+                Chaine de caractères représentant le numéro du département dans laquelle se trouve la commune.</dd>
                 <dt>codePays</dt>
                 <dd><span style="font-style: italic;">string</span><br>
                   Le code du pays dans lequel la commune est située. Ce code suit la norme <a href="http://fr.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1-apha-3</a> (3 caractères, exemple "FRA" pour France)
@@ -1182,7 +1184,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -1376,7 +1378,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>enseigne</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Chaine de caractère désignant l'enseigne. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>bp</code> pour l'enseigne Banque Populaire </li><li><code>cm</code> pour l'enseigne Crédit Maritime</li>
+                  Chaine de caractères désignant l'enseigne. La valeur transmise est choisie parmi la liste suivante : <ul><li><code>bp</code> pour l'enseigne Banque Populaire </li><li><code>cm</code> pour l'enseigne Crédit Maritime</li>
                 </dd>
                 <dt>plateforme</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
@@ -1585,7 +1587,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
@@ -2446,11 +2448,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
-                  Chaine de caractère optionnelle permettant de spécifier la
+                  Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
-                  comme null</dd>
+                  comme vide.</dd>
               </dl>
               <h4>Retour</h4>
               Retourne la tarification correspondant aux informations fournies en entrée. Cf <a href="#methodes.petit_rouleur.tarificationResultat.objet">l'objet tarificationResultat</a>.
@@ -2638,6 +2640,59 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 }
 </pre> </div>
           </div>            
+
+          <div class="row bg-danger">
+            <div class="col-xs-6">
+              <h3><a id="methodes.simulation_devis.tarification.enregistrer" name="methodes.simulation_devis.tarification.enregistrer"></a>Enregistrer le devis</h3>
+              <p>Permet d'enregistrer un devis sur le back office. L'enregistrement déclenche également un flux vers TDI et l'envoi d'un mail au client, contenant un PDF récapitulatif des éléments constituant sa simulation de devis.</p>
+              <h4>Attributs</h4>
+ <dl class="dl-horizontal">
+               <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>checksum</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
+                    défaut = null</span><br>
+                  Chaine de caractères optionnelle permettant de spécifier la
+                  signature de la requête. Cette signature est calculée pour une
+                  URL donnée avec ses arguments avec un algorithme de cryptage,
+                  Par défaut, si l'argument est omis, la chaine est considérée
+                  comme null</dd>
+              </dl>
+              <h4>Retour</h4>
+              <dl class="dl-horizontal">
+                <dt>dateEnregistrement</dt>
+               <dd><span style="font-style: italic;">string</span><br>
+                Date à laquelle la simulation de devis a été enregistrée côté back office. Le format est SSAAMMJJHHmmss.</dd>
+              </dl>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_enregister</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregister
+    -d '{
+      }'
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    },
+    "data": [
+        "dateEnregistrement":"20141215162010"
+    ]
+}
+</pre>
+               </div>
+          </div>            
+
+
+
+
+
+
 
         <h1 id="methodes.petit_rouleur" name="methodes.petit_rouleur">Petit Rouleur</h1>
         <!-- WS Petit Rouleur-->
