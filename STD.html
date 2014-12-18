@@ -1664,8 +1664,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
                 <dt>dateEffet</dt>
-                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
-                Date d'effet du devis</dd>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date. Format : AAAAMMJJ.</span><br>
+                Date d'effet du devis.</dd>
                 <dt>origineVehicule</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
                 Origine du v√©hicule. La valeur peut √™tre choisie parmi les valeurs suivantes :
@@ -1693,10 +1693,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
               <div class="subelements9" style="display:none;">
                 <dt>coeffBm</dt>
-                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
-                Coefficient bonus - malus</dd>
+                <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(1,2).</span><br>
+                Coefficient bonus - malus. Le Bonus doit se trouver dans l‚Äôintervalle [0.5 ; 3,5]</dd>
                 <dt>dateDerniereEcheance</dt>
-                <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">date</span><br>
+                <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">date. Format : AAAAMMJJ.</span><br>
                 Date du dernier calcul du coefficient BM. Donn√©e obligatoire si ant√©c√©dent = REPRISE. Sinon on met vide.</dd>
                 <dt>nbAnneesBmDemi</dt>
                 <dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">entier</span><br>
@@ -1725,10 +1725,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 	    <div class="subelements11" style="display:none;">
               <dt>dateSinistreResponsable</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date. Format : AAAAMMJJ.</span><br>
 		Date du sinistre responsable.</dd>
               <dt>tauxResponsabiliteSinistre</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(1,2).</span><br>
 		Taux de responsabilit√© du sinistre. D√©cimal [0 ; 1].</dd>
    	    </div>
                 <dt>syntheseDeuxAns</dt>
@@ -1739,13 +1739,13 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 	    <div class="subelements12" style="display:none;">
               <dt>nbSinistreBrisGlace</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier. Format N(3).</span><br>
 		Nombre de sinistres bris de glace.</dd>
               <dt>nbSinistreResponsable</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier. Format N(3).</span><br>
 		Nombre de sinistres responsables.</dd>
               <dt>nbSinistreTiersNonIdentifie</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier. Format N(3).</span><br>
 		Nombre de sinistres avec tiers non identifi√©.</dd>
     	    </div>
         </div>
@@ -1856,14 +1856,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
               </dd>
               <dt>indChoixGarantieClient</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-		Indicateur de choix de la garantie par le client.  La valeur peut √™tre choisie parmi les valeurs suivantes :
+		Indicateur de choix de la garantie par le client. La valeur peut √™tre choisie parmi les valeurs suivantes :
                  <ul>
                     <li><code>"O" : le client a choisi cette garantie</code></li>
                     <li><code>"N" sinon</code></li>
                  </ul>
               </dd>
               <dt>montantCapitalAssure</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
 		Montant du capital assur√© pour cette garantie.</dd>
 	    </div>
 	    <dt>garantiesCouvertesFormuleSouscrite</dt>
@@ -1903,7 +1903,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                  </ul>
               </dd>
               <dt>montantCapitalAssure</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+              <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
 		Montant du capital assur√© pour cette garantie.</dd>
 	    </div>
 	</div>
@@ -1916,10 +1916,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 	    <div class="subelements18" style="display:none;">
               <dt>dateNaissance</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date. Format : AAAAMMJJ.</span><br>
 		Date de naissance du conducteur.</dd>
               <dt>datePermis</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">date. Format : AAAAMMJJ.</span><br>
 		Date de permis de conduire du conducteur permettant l‚Äôusage du v√©hicule √† assurer.</dd>
               <dt>lienParente</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
@@ -1949,10 +1949,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 	<div class="subelements19" style="display:none;">
      		<dt>anneeCirculation</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">entier. Format N(4).</span><br>
      		Ann√©e de mise en circulation du v√©hicule.</dd>
      		<dt>nbKmCompteur</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(9,1).</span><br>
      		Nombre de Kilom√®tres au compteur du v√©hicule.</dd>
      		<dt>serie</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">serie</span><br>
@@ -1962,7 +1962,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 		<div class="subelements20" style="display:none;">
      			<dt>numSerieMaaf</dt>
-     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string. Format X(7).</span><br>
      			Num√©ro de s√©rie issue du catalogue de v√©hicule MAAF.</dd>
 		</div>
      		<dt>commune</dt>
@@ -1973,7 +1973,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 		<div class="subelements21" style="display:none;">
      			<dt>codeInsee</dt>
-     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string. Format X(5).</span><br>
      			Code INSEE de la commune.</dd>
 		</div>
 	</div>
@@ -2161,7 +2161,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
               <h4>Attributs</h4>
               <dl class="dl-horizontal">
      		<dt>bonusMalusActualise</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(1,2).</span><br>
      		Bonus malus actualis√©. Le Bonus doit se trouver dans l‚Äôintervalle [0.5 ; 3,5].</dd>
      		<dt>formuleExacteProduit</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
@@ -2181,13 +2181,13 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                     <li><code>3 : "DOUZE_FOIS"</code></li>
                  </ul></dd>
      		<dt>zoneRisqueRetenu</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string. Format X(5).</span><br>
      		Zone de risque retenu.</dd>
      		<dt>montantAnnuelAvecPacks</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant annuel TTC en consid√©rant les packs choisis.</dd>
      		<dt>montantAnnuelSansPacks</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant annuel TTC sans consid√©rer les packs choisis.</dd>
      		<dt>niveauTarification</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
@@ -2251,13 +2251,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
      		Libell√© commercial de la garantie.</dd>
      		<dt>montantCapitalAssure</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant du capital assur√© pour cette garantie.</dd>
      		<dt>indBesoinChoixCapitalInternaute</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Indicateur besoin choix capital Internaute.</dd>
+     		Indicateur besoin choix capital Internaute. La valeur peut √™tre choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>O</code></li>
+                    <li><code>N</code></li>
+                 </ul></dd>
      		<dt>montantFranchise</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant de la Franchise pour cette garantie.</dd>
 		<dt>capitauxSelectionnable</dt>
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">capitauxSelectionnable[]</span><br>
@@ -2267,7 +2271,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 		<div class="subelements25" style="display:none;">
      			<dt>montantCapital</dt>
-     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      			Montant du capital.</dd>
      			<dt>libelleInternaute</dt>
      			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
@@ -2320,13 +2324,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                     <li><code>N</code></li>
                  </ul></dd>
      		<dt>montantCapitalAssure</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant du capital assur√© pour cette garantie.</dd>
      		<dt>indBesoinChoixCapitalInternaute</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Indicateur besoin choix capital Internaute.</dd>
+     		Indicateur besoin choix capital Internaute. La valeur peut √™tre choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>O</code></li>
+                    <li><code>N</code></li>
+                 </ul></dd>
      		<dt>montantFranchise</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant de la Franchise pour cette garantie.</dd>
 		<dt>capitauxSelectionnable</dt>
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">capitauxSelectionnable[]</span><br>
@@ -2336,7 +2344,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 
 		<div class="subelements27" style="display:none;">
      			<dt>montantCapital</dt>
-     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      			Montant du capital.</dd>
      			<dt>libelleInternaute</dt>
      			<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
@@ -2359,7 +2367,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                     <li><code>2 : "SERENITE_PRO"</code></li>
                  </ul></dd>
      		<dt>montantSouscriptionGarantiesChoisies</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant pour la souscription aux garanties choisies dans le pack.</dd>
      		<dt>garantiesSouscriptibles</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">garantiesSouscriptibles[]</span><br>
