@@ -1777,18 +1777,18 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                     <li><code>2 : BRONZE</code></li>
                  </ul></dd>
               <dt>indOffrePetitRouleur</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">String</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">boolean</span><br>
 		Indicateur de l'offre petit Rouleur.  La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>"O" : le conducteur souhaite adhérer à l'offre petit Rouleur</code></li>
-                    <li><code>"N" sinon</code></li>
+                    <li><code>true</code> : le conducteur souhaite adhérer à l'offre petit Rouleur</li>
+                    <li><code>false</code> sinon</li>
                  </ul></dd>
               <dt>indTarifFonctionnaire</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">String</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">boolean</span><br>
 		Indicateur du tarif fonctionnaire.  La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>"O" : le conducteur souhaite adhérer à l'offre fonctionnaire</code></li>
-                    <li><code>"N" sinon</code></li>
+                    <li><code>true</code> : le conducteur souhaite adhérer à l'offre fonctionnaire</li>
+                    <li><code>false</code> sinon</li>
                  </ul></dd>
                 <dt>tarification</dt>
                 <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">tarification</span><br>
@@ -1855,11 +1855,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                  </ul>
               </dd>
               <dt>indChoixGarantieClient</dt>
-              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+              <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">boolean</span><br>
 		Indicateur de choix de la garantie par le client. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>"O" : le client a choisi cette garantie</code></li>
-                    <li><code>"N" sinon</code></li>
+                    <li><code>true</code> : le client a choisi cette garantie</li>
+                    <li><code>false</code> sinon</li>
                  </ul>
               </dd>
               <dt>montantCapitalAssure</dt>
@@ -1925,17 +1925,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
 		Lien de parenté entre le conducteur et le souscripteur. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>0 : "SOUSCRIPTEUR"</code></li>
-                    <li><code>1 : "CONJOINT"</code></li>
-                    <li><code>2 : "ENFANT"</code></li>
-                    <li><code>3 : "AUTRE (Exclusion)"</code></li>
+                    <li><code>0</code> : "SOUSCRIPTEUR"</li>
+                    <li><code>1</code> : "CONJOINT"</li>
+                    <li><code>2</code> : "ENFANT"</li>
+                    <li><code>3</code> : "AUTRE (Exclusion)"</li>
                  </ul></dd>
               <dt>experience</dt>
               <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
 		Expérience de conduite du conducteur. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>0 : moins de 2 ans</code></li>
-                    <li><code>1 : 2 ans ou plus</code></li>
+                    <li><code>0</code> : moins de 2 ans</li>
+                    <li><code>1</code> : 2 ans ou plus</li>
                  </ul></dd>
 	    </div>
      <dt>conducteurSecondaire</dt>
@@ -2069,8 +2069,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         { 
 		"usageVehicule": "4",
 		"niveauProtectionAssuranceSouhaite": "1",
-		"indOffrePetitRouleur": "N",
-		"indTarifFonctionnaire": "N",
+		"indOffrePetitRouleur": false,
+		"indTarifFonctionnaire": false,
       		"tarification":
         	{
 			"garantiesDisponibles":[
@@ -2079,7 +2079,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 				"garantiesOptSous":[
         		  	  {
 					"codeGarantie": "11",
-					"indChoixGarantieClient": "N",
+					"indChoixGarantieClient": false,
 					"montantCapitalAssure": "100.22"
         		  	  }
 				]
@@ -2088,7 +2088,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 			"garantiesOptSansNotionPack":[
         		  {
 				"codeGarantie": "18",
-				"indChoixGarantieClient": "O",
+				"indChoixGarantieClient": true,
 				"montantCapitalAssure": "990.23"
         		  }
       			],
@@ -2254,11 +2254,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant du capital assuré pour cette garantie.</dd>
      		<dt>indBesoinChoixCapitalInternaute</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">boolean</span><br>
      		Indicateur besoin choix capital Internaute. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>O</code></li>
-                    <li><code>N</code></li>
+                    <li><code>true</code></li>
+                    <li><code>false</code></li>
                  </ul></dd>
      		<dt>montantFranchise</dt>
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
@@ -2320,18 +2320,18 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
      		<dd><span class="label labeldanger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
      		Garantie choisie ou non. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>O</code></li>
-                    <li><code>N</code></li>
+                    <li><code>true</code> : la garantie a été choisie</li>
+                    <li><code>false</code> : la garantie n'a pas été choisie</li>
                  </ul></dd>
      		<dt>montantCapitalAssure</dt>
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
      		Montant du capital assuré pour cette garantie.</dd>
      		<dt>indBesoinChoixCapitalInternaute</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">boolean</span><br>
      		Indicateur besoin choix capital Internaute. La valeur peut être choisie parmi les valeurs suivantes :
                  <ul>
-                    <li><code>O</code></li>
-                    <li><code>N</code></li>
+                    <li><code>true</code></li>
+                    <li><code>false</code></li>
                  </ul></dd>
      		<dt>montantFranchise</dt>
      		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">decimal. Format N(12,2).</span><br>
@@ -2394,7 +2394,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       	 	"typeGarantie": "21",
       	 	"libelleCommercial": "",
       	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"indBesoinChoixCapitalInternaute": false,
       	 	"montantFranchise": "654.12",
       	 	"capitauxSelectionnable":[
           	{ 
@@ -2406,9 +2406,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         { 
       	 	"typeGarantie": "7",
       	 	"libelleCommercial": "",
-		"garantieChoisie": "O",
+		"garantieChoisie": true,
       	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"indBesoinChoixCapitalInternaute": false,
       	 	"montantFranchise": "654.12",
       	 	"capitauxSelectionnable":[
           	{ 
@@ -2424,9 +2424,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         		{ 
       	 			"typeGarantie": "7",
       	 			"libelleCommercial": "",
-				"garantieChoisie": "O",
+				"garantieChoisie": true,
       	 			"montantCapitalAssure": "1000.02",
-      	 			"indBesoinChoixCapitalInternaute": "N",
+      	 			"indBesoinChoixCapitalInternaute": false,
       	 			"montantFranchise": "654.12",
       	 			"capitauxSelectionnable":[
           			{ 
@@ -2500,8 +2500,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         { 
 		"usageVehicule": "4",
 		"niveauProtectionAssuranceSouhaite": "1",
-		"indOffrePetitRouleur": "N",
-		"indTarifFonctionnaire": "N",
+		"indOffrePetitRouleur": false,
+		"indTarifFonctionnaire": false,
       		"tarification":
         	{
 			"garantiesDisponibles":[
@@ -2510,7 +2510,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 				"garantiesOptSous":[
         		  	  {
 					"codeGarantie": "11",
-					"indChoixGarantieClient": "N",
+					"indChoixGarantieClient": false,
 					"montantCapitalAssure": "100.22"
         		  	  }
 				]
@@ -2519,7 +2519,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 			"garantiesOptSansNotionPack":[
         		  {
 				"codeGarantie": "18",
-				"indChoixGarantieClient": "O",
+				"indChoixGarantieClient": true,
 				"montantCapitalAssure": "990.23"
         		  }
       			],
@@ -2603,7 +2603,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
       	 	"typeGarantie": "21",
       	 	"libelleCommercial": "",
       	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"indBesoinChoixCapitalInternaute": false,
       	 	"montantFranchise": "654.12",
       	 	"capitauxSelectionnable":[
           	{ 
@@ -2615,9 +2615,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         { 
       	 	"typeGarantie": "7",
       	 	"libelleCommercial": "",
-		"garantieChoisie": "O",
+		"garantieChoisie": true,
       	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": "N",
+      	 	"indBesoinChoixCapitalInternaute": false,
       	 	"montantFranchise": "654.12",
       	 	"capitauxSelectionnable":[
           	{ 
@@ -2633,9 +2633,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         		{ 
       	 			"typeGarantie": "7",
       	 			"libelleCommercial": "",
-				"garantieChoisie": "O",
+				"garantieChoisie": true,
       	 			"montantCapitalAssure": "1000.02",
-      	 			"indBesoinChoixCapitalInternaute": "N",
+      	 			"indBesoinChoixCapitalInternaute": false,
       	 			"montantFranchise": "654.12",
       	 			"capitauxSelectionnable":[
           			{ 
@@ -2852,11 +2852,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               Retourne les éléments suivants :
                <dl class="dl-horizontal">
                <dt>indicateur</dt>
-               <dd><span style="font-style: italic;">string</span><br>
+               <dd><span style="font-style: italic;">boolean</span><br>
                   L'indicateur. L'indicateur de réduction permettra de savoir si l'offre petit rouleur a été renouvelée suite à la saisie du kilométrage. Il pourra prendre deux valeurs : 
                   <ul>
-                    <li><code>O</code> : L'offre petit rouleur a été renouvelée.</li>
-                    <li><code>N</code> : L'offre petit rouleur n'a pas été renouvelée.</li>
+                    <li><code>true</code> : L'offre petit rouleur a été renouvelée.</li>
+                    <li><code>false</code> : L'offre petit rouleur n'a pas été renouvelée.</li>
                   </ul>
                   </dd>
                <dt>soldeKilometrique</dt>
@@ -2896,7 +2896,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "message":"La demande a été traitée"
     },
     "data": [
-        "indicateur":"O",
+        "indicateur":true,
         "soldeKilometrique":"6280"
     ]
 }
