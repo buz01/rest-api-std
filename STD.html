@@ -137,6 +137,16 @@
               </li>
             </ul>
           </li>
+           <li> <a href="#methodes.divers">Divers</a>
+            <ul class="nav nav-stacked ">
+              <li> <a href="#methodes.divers.mail">Mail</a>
+                <ul class="nav">
+                  <li><a href="#methodes.divers.mail.objet">L'objet mail</a></li>
+                  <li><a href="#methodes.divers.mail.envoyer_mail">Envoyer un mail</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!--Main Content -->
@@ -2904,6 +2914,91 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
           </div>
 
 
+
+        <h1 id="methodes.divers" name="methodes.divers">Divers</h1>
+        <!-- WS Divers-->
+        <div id="methodes.divers.mail">
+          <h2>Mail</h2>
+          <p>Ce service permet d'envoyer un mail.</p>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <h3><a id="methodes.divers.mail.envoyer_mail" name="methodes.divers.mail.envoyer_mail"></a>Envoyer le mail</h3>
+              <p>Envoie un mail avec les informations fournies.</p>
+              <h4>Arguments</h4>
+              <dl class="dl-horizontal">
+                <dt>version</dt>
+               <dd><span class="label label-danger">Obligatoire</span><br>
+                  <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>destinataire</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  L'adresse mail destinataire du mail.
+                </dd>
+                <dt>replyTo</dt>
+                <dd><span class="label label-warning">Optionnel</span><br>
+                  L'adresse mail qui sera utilisée pour la réponse à ce mail.
+                </dd>
+                <dt>objet</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  L'objet du mail.
+                </dd>
+                <dt>message</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Le message du mail.
+                </dd>
+                <dt>client</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Les informations relatives au client
+                </dd>
+               
+               <button type="button" class="btn btn-default btn-xs btn-block " id="methodes.divers.mail.envoyer_mail.client_show">Montrer les sous-éléments</button>
+                <div class="subelements29" style="display:none;">
+
+                <dt>nom</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Le nom du client.
+                </dd>
+                <dt>prenom</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Le prénom du client.
+                </dd>
+                <dt>email</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  l'email du client.
+                </dd>                                                                                   </div> 
+              </dl>
+              <h4>Retour</h4>
+              Pas de retour spécifique.
+              <br>
+            </div>
+            <div class="col-xs-6"> <span class="label label-info">Definition</span>
+              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/mail</pre>
+              <span class="label label-info">Exemple de requête (CURL)</span>
+              <pre>$ curl -X POST POST https://context-root/etnamobile-web/rouler_serein/v1/mail
+  -d '{
+        "destinataire":"adresse@destinataire.com",
+        "replyTo":"adresse@destinataire.com",
+        "objet":"[Test] ceci est un test",
+        "message":"Le message",
+        "client":{
+          "nom":"Laperna",
+          "prenom":"Lucas",
+          "email":"lucas.laperna@email.com"
+        }
+      }'
+              </pre>
+              <span class="label label-info">Exemple de réponse</span>
+              <pre class="prettyprint language-json">
+{
+    "status":{
+        "code":200,
+        "message":"La demande a été traitée"
+    }
+}
+</pre> </div>
+          </div>
+        </div>
+
       </div>
     </div>
     <script>
@@ -2990,6 +3085,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         });
         $("[id='methodes.simulation_devis.devis.objet.packs_show']").click(function() {
                 $('.subelements28').slideToggle("fast");
+        });
+        $("[id='methodes.divers.mail.envoyer_mail.client_show']").click(function() {
+                $('.subelements29').slideToggle("fast");
         });
     }
 
