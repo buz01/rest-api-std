@@ -1594,7 +1594,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                   Informations de la pr√©d√©claration. <a href="#methodes.sinistre.predeclaration.objet">cf l'objet pr√©-d√©claration.</a>
                 </dd>
                 <dt>checksum</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     d√©faut = null</span><br>
                   Chaine de caract√®res optionnelle permettant de sp√©cifier la
                   signature de la requ√™te. Cette signature est calcul√©e pour une
@@ -1613,7 +1613,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/predeclarer_sinistre</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/predeclarer_sinistre
+              <pre>$ curl -H 'Content-Type: application/json' \ 
+    -X POST \
     -d '{
       "nature": "accident",
       "date" : "20141215",
@@ -1646,7 +1647,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
           "base64":"iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtJJREFUeNrMV09r1EAUf/nnYduypWARaUEQ2+LJPehR1w8gevWi+wFavBTBm55EQVQUr3a/QUXwJu0qXuph48ltPdhqq6IVtrpsW5PMOJOdZGeymZ1JWqUPHpkMk/d+8/4HQE5lwpg9b7J19Ix4gVtfIvwxca4MCjJBTfcJX2XrRcJz3LrKnXtK+BhkJB0ApzjBvNIaB6ZJeFjybbkfMB0A5wnfUpxxGZgHKdajbqrIPrQUgrfYrekN19ia318lbDBrUJC73Lk1tl/jzh48MpIb6xcmKlzQ7TdVx56vzPEbdsqhpk765KSHyQ0ZAG0aOmIpz+xsIfC2caps83/4GQXZ6oD7D7G4yiBkgYhjhFMlcK4/TpXmOA4Ui0Wptva9CvjLS9D6HgBGACQAjcwuwJvfcl83+Py+IwNlL8WLXQBfcwPA7d+pMlVZ0Je8u9OAGvVwTcueociC4A/O1YyEdMGfPuxHADazWOAd6+8dANutOFqN8RMxasMwwR49JDH/LxIDjaTMvbvAvnxNyIKCJAt89yW0n8wQF+SbB4TOhZnPs2VAo69MlQVEACQT0HIviMCyIRgZ7N5mbAqMwpDoCoxzARAVvXkRck9GUAFcFgzMVsGaOC2kYOApXKpjAb4aUkt4d6bV9X+9oVXiU2OAlEzp9GKSLJCOV+z2ggsCHMls5nYBbre6L4VBcGZuh8UI1V+DNT5CFJ8Be1JUjjY3lJ1QBcBlU21PITJLZ0N2rszCgCQN0c8NrQ5r6lYuVH+lnYK0BoTf+Fg55GgXIu/Rje7tSVCakyWA4yfjnA9WlkjrfRsrV3VBHQC1tNmQWiKyhn/4KFijdtLcMll7s0Cqn398AWRZicLT6YD+DlZ2Qp0gjAOxLxCfKiRu2sWAPCyTo/dfkDKeDbPOeI49hX9A0hCTvl5lwwc1+7ws/7UBpACKfjgvcjFCFT6jT6Iw01D7V4ABALvsF7lgQK5jAAAAAElFTkSuQmCC"
         }
       ]
-    }'
+    }' \
+    https://context-root/etnamobile-web/rouler_serein/v1/predeclarer_sinistre
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
               <pre class="prettyprint language-json">
@@ -2049,116 +2051,100 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 <span class="label label-info">Exemple d'objet Devis</span>
               <pre class="prettyprint language-json">
 {
-      "dateEffet": "20140107",
-      "origineVehicule" : "2",
-      "antecedentsAuto":
-        {
-      	 "bonusMalus":
-          { 
-		"coeffBm": "0.52",
-		"dateDerniereEcheance": "20130107",
-		"nbAnneesBmDemi": "3"
-	  }, 
-      	 "sinistre":
-          {  
-      	 	"sinistreResp":
-          	{ 
-			"dateSinistreResponsable": "20130407",
-			"tauxResponsabiliteSinistre": "0"
-	  	},
-      	 	"syntheseDeuxAns":
-          	{ 
-			"nbSinistreBrisGlace": "3",
-			"nbSinistreResponsable": "4",
-			"nbSinistreTiersNonIdentifie": "1"
-	  	}
-	  }
-        },
-      "proposition":
-        { 
-		"usageVehicule": "4",
-		"niveauProtectionAssuranceSouhaite": "1",
-		"indOffrePetitRouleur": false,
-		"indTarifFonctionnaire": false,
-      		"tarification":
-        	{
-			"garantiesDisponibles":[
-        		  {
-				"idPackGaranties": "0",
-				"garantiesOptSous":[
-        		  	  {
-					"codeGarantie": "11",
-					"indChoixGarantieClient": false,
-					"montantCapitalAssure": "100.22"
-        		  	  }
-				]
-        		  }
-      			],
-			"garantiesOptSansNotionPack":[
-        		  {
-				"codeGarantie": "18",
-				"indChoixGarantieClient": true,
-				"montantCapitalAssure": "990.23"
-        		  }
-      			],
-			"garantiesCouvertesFormuleSouscrite":[
-        		  {
-				"codeGarantie": "3",
-				"montantCapitalAssure": "555.55"
-        		  }
-      			]
-		}
-	},
-      "conducteurPrincipal":
-        { 
-		"dateNaissance": "19850407",
-		"datePermis": "20050407",
-		"lienParente": "2",
-		"experience": "0",
-	},
-      "conducteurSecondaire":
-        { 
-		"dateNaissance": "19890107",
-		"datePermis": "20060407",
-		"lienParente": "3",
-		"experience": "1",
-	},
-      "vehicule":
-        { 
-		"anneeCirculation": "2000",
-		"nbKmCompteur": "100000.45",
-      	 	"serie":
-          	{ 
-			"numSerieMaaf": "0016045"
-	  	},
-      	 	"zoneCirculation":
-          	{ 
-			"codeInsee": "31245"
-	  	}
-	},
-      "souscripteur":
-        { 
-      	 	"commune":
-          	{ 
-			"codeInsee": "31245"
-	  	},
-      	 	"infoComplementaires":
-          	{ 
-			"nom": "Martin",
-			"prenom": "Nicolas",
-			"civilite": "2",
-			"email": "nicolas_martin@gmail.com",
-			"telephone": "0564841532",
-			"adresse1": "74 Rue de Loan",
-			"adresse2": "Batiment C",
-			"adresse3": "Appartement 782",
-			"codePostal": "31245",
-			"ville": "L'Union",
-			"matriculeBp": "003"
-	  	}
-	}
+  "dateEffet": "20140107",
+  "origineVehicule" : "2",
+  "antecedentsAuto": {
+    "bonusMalus": { 
+      "coeffBm": "0.52",
+      "dateDerniereEcheance": "20130107",
+      "nbAnneesBmDemi": "3"
+    }, 
+    "sinistre": {  
+      "sinistreResp": { 
+        "dateSinistreResponsable": "20130407",
+        "tauxResponsabiliteSinistre": "0"
+      },
+      "syntheseDeuxAns": { 
+        "nbSinistreBrisGlace": "3",
+        "nbSinistreResponsable": "4",
+        "nbSinistreTiersNonIdentifie": "1"
+      }
     }
-
+  },
+  "proposition":{ 
+    "usageVehicule": "4",
+    "niveauProtectionAssuranceSouhaite": "1",
+    "indOffrePetitRouleur": false,
+    "indTarifFonctionnaire": false,
+    "tarification": {
+      "garantiesDisponibles":[
+        {
+          "idPackGaranties": "0",
+          "garantiesOptSous":[
+            {
+              "codeGarantie": "11",
+              "indChoixGarantieClient": false,
+              "montantCapitalAssure": "100.22"
+            }
+          ]
+        }
+      ],
+      "garantiesOptSansNotionPack":[
+        {
+          "codeGarantie": "18",
+          "indChoixGarantieClient": true,
+          "montantCapitalAssure": "990.23"
+        }
+      ],
+      "garantiesCouvertesFormuleSouscrite":[
+        {
+          "codeGarantie": "3",
+          "montantCapitalAssure": "555.55"
+        }
+      ]
+    }
+  },
+  "conducteurPrincipal": { 
+    "dateNaissance": "19850407",
+    "datePermis": "20050407",
+    "lienParente": "2",
+    "experience": "0",
+  },
+  "conducteurSecondaire": { 
+    "dateNaissance": "19890107",
+    "datePermis": "20060407",
+    "lienParente": "3",
+    "experience": "1",
+  },
+  "vehicule": { 
+    "anneeCirculation": "2000",
+    "nbKmCompteur": "100000.45",
+    "serie": { 
+      "numSerieMaaf": "0016045"
+    },
+    "zoneCirculation": { 
+      "codeInsee": "31245"
+    }
+  },
+  "souscripteur": { 
+    "commune": { 
+      "codeInsee": "31245"
+    },
+    "infoComplementaires": { 
+      "nom": "Martin",
+      "prenom": "Nicolas",
+      "civilite": "2",
+      "email": "nicolas_martin@gmail.com",
+      "telephone": "0564841532",
+      "adresse1": "74 Rue de Loan",
+      "adresse2": "Batiment C",
+      "adresse3": "Appartement 782",
+      "codePostal": "31245",
+      "ville": "L'Union",
+      "matriculeBp": "003"
+    }
+  }
+}
 </pre>      
             </div>
           </div>
@@ -2389,61 +2375,68 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
 <span class="label label-info">Exemple d'objet tarificationResultat</span>
               <pre class="prettyprint language-json">
 {
-      "bonusMalusActualise": "0.5",
-      "formuleExacteProduit" : "2",
-      "fracPaiementCotisation" : "3",
-      "zoneRisqueRetenu" : "31245",
-      "montantAnnuelAvecPacks" : "512.25",
-      "montantAnnuelSansPacks" : "512.25",
-      "niveauTarification" : "1",
-      "niveauReduc" : "0",
-      "modePaiementCotisation" : "0",
-      "garantiesCouvertes":[
+  "bonusMalusActualise": "0.5",
+  "formuleExacteProduit" : "2",
+  "fracPaiementCotisation" : "3",
+  "zoneRisqueRetenu" : "31245",
+  "montantAnnuelAvecPacks" : "512.25",
+  "montantAnnuelSansPacks" : "512.25",
+  "niveauTarification" : "1",
+  "niveauReduc" : "0",
+  "modePaiementCotisation" : "0",
+  "garantiesCouvertes":[
+    { 
+      "typeGarantie": "21",
+      "libelleCommercial": "",
+      "montantCapitalAssure": "1000.02",
+      "indBesoinChoixCapitalInternaute": false,
+      "montantFranchise": "654.12",
+      "capitauxSelectionnable":[
         { 
-      	 	"typeGarantie": "21",
-      	 	"libelleCommercial": "",
-      	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": false,
-      	 	"montantFranchise": "654.12",
-      	 	"capitauxSelectionnable":[
-          	{ 
-      	 		"montantCapital": "541.56",
-      	 		"libelleInternaute": ""
-	  	}]
-	}],
+          "montantCapital": "541.56",
+          "libelleInternaute": ""
+        }
+      ]
+    }
+  ],
+  "garantiesSouscriptibles":[
+    { 
+      "typeGarantie": "7",
+      "libelleCommercial": "",
+      "garantieChoisie": true,
+      "montantCapitalAssure": "1000.02",
+      "indBesoinChoixCapitalInternaute": false,
+      "montantFranchise": "654.12",
+      "capitauxSelectionnable":[
+        { 
+          "montantCapital": "541.56",
+          "libelleInternaute": ""
+        }
+      ]
+    }
+  ],
+  "packs":[
+    { 
+      "typePack": "1",
+      "montantSouscriptionGarantiesChoisies": "4587.78",
       "garantiesSouscriptibles":[
         { 
-      	 	"typeGarantie": "7",
-      	 	"libelleCommercial": "",
-		"garantieChoisie": true,
-      	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": false,
-      	 	"montantFranchise": "654.12",
-      	 	"capitauxSelectionnable":[
-          	{ 
-      	 		"montantCapital": "541.56",
-      	 		"libelleInternaute": ""
-	  	}]
-	}],
-      "packs":[
-        { 
-      	 	"typePack": "1",
-      	 	"montantSouscriptionGarantiesChoisies": "4587.78",
-      		"garantiesSouscriptibles":[
-        		{ 
-      	 			"typeGarantie": "7",
-      	 			"libelleCommercial": "",
-				"garantieChoisie": true,
-      	 			"montantCapitalAssure": "1000.02",
-      	 			"indBesoinChoixCapitalInternaute": false,
-      	 			"montantFranchise": "654.12",
-      	 			"capitauxSelectionnable":[
-          			{ 
-      	 				"montantCapital": "541.56",
-      	 				"libelleInternaute": ""
-	  			}]
-			}]
-	}]
+          "typeGarantie": "7",
+          "libelleCommercial": "",
+          "garantieChoisie": true,
+          "montantCapitalAssure": "1000.02",
+          "indBesoinChoixCapitalInternaute": false,
+          "montantFranchise": "654.12",
+          "capitauxSelectionnable":[
+            { 
+              "montantCapital": "541.56",
+              "libelleInternaute": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 </pre>      
 </div>
@@ -2463,7 +2456,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                   Informations du devis pour la tarification. <a href="#methodes.simulation_devis.devis.objet">cf l'objet devis.</a>
                 </dd>
                 <dt>checksum</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     d√©faut = null</span><br>
                   Chaine de caract√®res optionnelle permettant de sp√©cifier la
                   signature de la requ√™te. Cette signature est calcul√©e pour une
@@ -2478,117 +2471,104 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_obtenir_tarification</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_obtenir_tarification
+              <pre>$ curl -H 'Content-Type: application/json' \
+    -X POST \
     -d '{
       "dateEffet": "20140107",
       "origineVehicule" : "2",
-      "antecedentsAuto":
-        {
-      	 "bonusMalus":
-          { 
-		"coeffBm": "0.52",
-		"dateDerniereEcheance": "20130107",
-		"nbAnneesBmDemi": "3"
-	  }, 
-      	 "sinistre":
-          {  
-      	 	"sinistreResp":
-          	{ 
-			"dateSinistreResponsable": "20130407",
-			"tauxResponsabiliteSinistre": "0"
-	  	},
-      	 	"syntheseDeuxAns":
-          	{ 
-			"nbSinistreBrisGlace": "3",
-			"nbSinistreResponsable": "4",
-			"nbSinistreTiersNonIdentifie": "1"
-	  	}
-	  }
+      "antecedentsAuto": {
+        "bonusMalus": { 
+          "coeffBm": "0.52",
+          "dateDerniereEcheance": "20130107",
+          "nbAnneesBmDemi": "3"
+        }, 
+        "sinistre": {  
+          "sinistreResp": { 
+            "dateSinistreResponsable": "20130407",
+            "tauxResponsabiliteSinistre": "0"
+          },
+          "syntheseDeuxAns": { 
+            "nbSinistreBrisGlace": "3",
+            "nbSinistreResponsable": "4",
+            "nbSinistreTiersNonIdentifie": "1"
+          }
+        }
+      },
+      "proposition": { 
+        "usageVehicule": "4",
+        "niveauProtectionAssuranceSouhaite": "1",
+        "indOffrePetitRouleur": false,
+        "indTarifFonctionnaire": false,
+        "tarification": {
+          "garantiesDisponibles":[
+            {
+              "idPackGaranties": "0",
+              "garantiesOptSous":[
+                {
+                  "codeGarantie": "11",
+                  "indChoixGarantieClient": false,
+                  "montantCapitalAssure": "100.22"
+                }
+              ]
+            }
+          ],
+          "garantiesOptSansNotionPack":[
+            {
+              "codeGarantie": "18",
+              "indChoixGarantieClient": true,
+              "montantCapitalAssure": "990.23"
+            }
+          ],
+          "garantiesCouvertesFormuleSouscrite":[
+            {
+              "codeGarantie": "3",
+              "montantCapitalAssure": "555.55"
+            }
+          ]
+        }
+      },
+      "conducteurPrincipal": { 
+        "dateNaissance": "19850407",
+        "datePermis": "20050407",
+        "lienParente": "2",
+        "experience": "0",
+      },
+      "conducteurSecondaire": { 
+        "dateNaissance": "19890107",
+        "datePermis": "20060407",
+        "lienParente": "3",
+        "experience": "1",
+      },
+      "vehicule": { 
+        "anneeCirculation": "2000",
+        "nbKmCompteur": "100000.45",
+        "serie": { 
+          "numSerieMaaf": "0016045"
         },
-      "proposition":
-        { 
-		"usageVehicule": "4",
-		"niveauProtectionAssuranceSouhaite": "1",
-		"indOffrePetitRouleur": false,
-		"indTarifFonctionnaire": false,
-      		"tarification":
-        	{
-			"garantiesDisponibles":[
-        		  {
-				"idPackGaranties": "0",
-				"garantiesOptSous":[
-        		  	  {
-					"codeGarantie": "11",
-					"indChoixGarantieClient": false,
-					"montantCapitalAssure": "100.22"
-        		  	  }
-				]
-        		  }
-      			],
-			"garantiesOptSansNotionPack":[
-        		  {
-				"codeGarantie": "18",
-				"indChoixGarantieClient": true,
-				"montantCapitalAssure": "990.23"
-        		  }
-      			],
-			"garantiesCouvertesFormuleSouscrite":[
-        		  {
-				"codeGarantie": "3",
-				"montantCapitalAssure": "555.55"
-        		  }
-      			]
-		}
-	},
-      "conducteurPrincipal":
-        { 
-		"dateNaissance": "19850407",
-		"datePermis": "20050407",
-		"lienParente": "2",
-		"experience": "0",
-	},
-      "conducteurSecondaire":
-        { 
-		"dateNaissance": "19890107",
-		"datePermis": "20060407",
-		"lienParente": "3",
-		"experience": "1",
-	},
-      "vehicule":
-        { 
-		"anneeCirculation": "2000",
-		"nbKmCompteur": "100000.45",
-      	 	"serie":
-          	{ 
-			"numSerieMaaf": "0016045"
-	  	},
-      	 	"zoneCirculation":
-          	{ 
-			"codeInsee": "31245"
-	  	}
-	},
-      "souscripteur":
-        { 
-      	 	"commune":
-          	{ 
-			"codeInsee": "31245"
-	  	},
-      	 	"infoComplementaires":
-          	{ 
-			"nom": "Martin",
-			"prenom": "Nicolas",
-			"civilite": "2",
-			"email": "nicolas_martin@gmail.com",
-			"telephone": "0564841532",
-			"adresse1": "74 Rue de Loan",
-			"adresse2": "Batiment C",
-			"adresse3": "Appartement 782",
-			"codePostal": "31245",
-			"ville": "L'Union",
-			"matriculeBp": "003"
-	  	}
-	}
-    }'
+        zoneCirculation": { 
+          "codeInsee": "31245"
+        }
+      },
+      "souscripteur": { 
+        "commune": { 
+          "codeInsee": "31245"
+        },
+        "infoComplementaires":{ 
+          "nom": "Martin",
+          "prenom": "Nicolas",
+          "civilite": "2",
+          "email": "nicolas_martin@gmail.com",
+          "telephone": "0564841532",
+          "adresse1": "74 Rue de Loan",
+          "adresse2": "Batiment C",
+          "adresse3": "Appartement 782",
+          "codePostal": "31245",
+          "ville": "L'Union",
+          "matriculeBp": "003"
+        }
+      }
+    }' \
+    https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_obtenir_tarification    
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
               <pre class="prettyprint language-json">
@@ -2609,52 +2589,59 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
       "modePaiementCotisation" : "0",
       "garantiesCouvertes":[
         { 
-      	 	"typeGarantie": "21",
-      	 	"libelleCommercial": "",
-      	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": false,
-      	 	"montantFranchise": "654.12",
-      	 	"capitauxSelectionnable":[
-          	{ 
-      	 		"montantCapital": "541.56",
-      	 		"libelleInternaute": ""
-	  	}]
-	}],
+          "typeGarantie": "21",
+          "libelleCommercial": "",
+          "montantCapitalAssure": "1000.02",
+          "indBesoinChoixCapitalInternaute": false,
+          "montantFranchise": "654.12",
+          "capitauxSelectionnable":[
+            { 
+              "montantCapital": "541.56",
+              "libelleInternaute": ""
+            }
+          ]
+        }
+      ],
       "garantiesSouscriptibles":[
         { 
-      	 	"typeGarantie": "7",
-      	 	"libelleCommercial": "",
-		"garantieChoisie": true,
-      	 	"montantCapitalAssure": "1000.02",
-      	 	"indBesoinChoixCapitalInternaute": false,
-      	 	"montantFranchise": "654.12",
-      	 	"capitauxSelectionnable":[
-          	{ 
-      	 		"montantCapital": "541.56",
-      	 		"libelleInternaute": ""
-	  	}]
-	}],
+          "typeGarantie": "7",
+          "libelleCommercial": "",
+          "garantieChoisie": true,
+          "montantCapitalAssure": "1000.02",
+          "indBesoinChoixCapitalInternaute": false,
+          "montantFranchise": "654.12",
+          "capitauxSelectionnable":[
+            { 
+              "montantCapital": "541.56",
+              "libelleInternaute": ""
+            }
+          ]
+        }
+      ],
       "packs":[
         { 
-      	 	"typePack": "1",
-      	 	"montantSouscriptionGarantiesChoisies": "4587.78",
-      		"garantiesSouscriptibles":[
-        		{ 
-      	 			"typeGarantie": "7",
-      	 			"libelleCommercial": "",
-				"garantieChoisie": true,
-      	 			"montantCapitalAssure": "1000.02",
-      	 			"indBesoinChoixCapitalInternaute": false,
-      	 			"montantFranchise": "654.12",
-      	 			"capitauxSelectionnable":[
-          			{ 
-      	 				"montantCapital": "541.56",
-      	 				"libelleInternaute": ""
-	  			}]
-			}]
-	}]
-}
-}
+          "typePack": "1",
+          "montantSouscriptionGarantiesChoisies": "4587.78",
+          "garantiesSouscriptibles":[
+            { 
+              "typeGarantie": "7",
+              "libelleCommercial": "",
+              "garantieChoisie": true,
+              "montantCapitalAssure": "1000.02",
+              "indBesoinChoixCapitalInternaute": false,
+              "montantFranchise": "654.12",
+              "capitauxSelectionnable":[
+                { 
+                  "montantCapital": "541.56",
+                  "libelleInternaute": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
 </pre> </div>
           </div>            
 
@@ -2668,7 +2655,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                <dd><span class="label label-danger">Obligatoire</span><br>
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>checksum</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param POST</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     d√©faut = null</span><br>
                   Chaine de caract√®res optionnelle permettant de sp√©cifier la
                   signature de la requ√™te. Cette signature est calcul√©e pour une
@@ -2686,9 +2673,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_enregister</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregister
+              <pre>$ curl -H 'Content-Type: application/json' \
+    -X POST \
     -d '{
-      }'
+    }' \
+    https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregister      
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
               <pre class="prettyprint language-json">
@@ -2827,7 +2816,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
           "marque":"",
           "modele":"",
           "immatriculation":""
-        },
+        }
     ]
 }
 </pre> </div>
@@ -2879,7 +2868,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/declarer_km</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' -X POST https://context-root/etnamobile-web/rouler_serein/v1/declarer_km
+              <pre>$ curl -H 'Content-Type: application/json' \
+    -X POST \
     -d '{
       "contrat" : {
           "noSocietaire":"",
@@ -2893,8 +2883,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
         },
         "date":"20141216",
         "soldeKilometrique":"6280"
-        }
-     }'
+      }
+    }'
+    https://context-root/etnamobile-web/rouler_serein/v1/declarer_km
 
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
@@ -2974,7 +2965,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/mail</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -X POST https://context-root/etnamobile-web/rouler_serein/v1/mail
+              <pre>$ curl -H "Content-type: application/json" \
+  -X POST \
   -d '{
         "destinataire":"adresse@destinataire.com",
         "objet":"[Test] ceci est un test",
@@ -2982,10 +2974,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
         "client":{
           "nom":"Laperna",
           "prenom":"Lucas",
-          "telephone":"0605482788",
-          "email":"lucas.laperna@email.com"
+          "email":"lucas.laperna@email.com",
+          "telephone":"0605482788"
         }
-      }'
+      }' \
+    https://context-root/etnamobile-web/rouler_serein/v1/mail
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
               <pre class="prettyprint language-json">
