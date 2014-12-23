@@ -2933,10 +2933,6 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   L'adresse mail destinataire du mail.
                 </dd>
-                <dt>replyTo</dt>
-                <dd><span class="label label-warning">Optionnel</span><br>
-                  L'adresse mail qui sera utilisée pour la réponse à ce mail.
-                </dd>
                 <dt>objet</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   L'objet du mail.
@@ -2964,7 +2960,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>email</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   l'email du client.
-                </dd>                                                                                   </div> 
+                </dd>                      
+                <dt>telephone</dt>
+                <dd><span class="label label-warning">Optionnel</span><br>
+                  Le téléphone du client.
+                </dd>
+                </div> 
               </dl>
               <h4>Retour</h4>
               Pas de retour spécifique.
@@ -2976,12 +2977,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <pre>$ curl -X POST https://context-root/etnamobile-web/rouler_serein/v1/mail
   -d '{
         "destinataire":"adresse@destinataire.com",
-        "replyTo":"adresse@destinataire.com",
         "objet":"[Test] ceci est un test",
         "message":"Le message",
         "client":{
           "nom":"Laperna",
           "prenom":"Lucas",
+          "telephone":"0605482788",
           "email":"lucas.laperna@email.com"
         }
       }'
