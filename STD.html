@@ -460,8 +460,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                 </dd>
                
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET
-                    HTTP</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     d√©faut = null</span><br>
                   Chaine de caract√®res optionnelle permettant de sp√©cifier la
                   signature de la requ√™te. Cette signature est calcul√©e pour une
@@ -1580,7 +1579,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             </div>
           </div>
          
-          <div class="row">
+          <div class="row bg-danger">
             <div class="col-xs-6">
               <h3><a id="methodes.sinistre.predeclaration.predeclarer_sinistre" name="methodes.sinistre.predeclaration.predeclarer_sinistre"></a>Pr√©d√©clarer un sinistre</h3>
               <p>Permet d'envoyer les informations n√©cessaires pour la pr√©-d√©calration d'un sinistre.</p>
@@ -1613,7 +1612,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/predeclarer_sinistre</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' \ 
+              <pre>$ curl -H "Content-Type: application/json" \ 
     -X POST \
     -d '{
       "nature": "accident",
@@ -2471,7 +2470,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_obtenir_tarification</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' \
+              <pre>$ curl -H "Content-Type: application/json" \
     -X POST \
     -d '{
       "dateEffet": "20140107",
@@ -2531,13 +2530,13 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
         "dateNaissance": "19850407",
         "datePermis": "20050407",
         "lienParente": "2",
-        "experience": "0",
+        "experience": "0"
       },
       "conducteurSecondaire": { 
         "dateNaissance": "19890107",
         "datePermis": "20060407",
         "lienParente": "3",
-        "experience": "1",
+        "experience": "1"
       },
       "vehicule": { 
         "anneeCirculation": "2000",
@@ -2545,7 +2544,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
         "serie": { 
           "numSerieMaaf": "0016045"
         },
-        zoneCirculation": { 
+        "zoneCirculation": { 
           "codeInsee": "31245"
         }
       },
@@ -2563,7 +2562,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
           "adresse2": "Batiment C",
           "adresse3": "Appartement 782",
           "codePostal": "31245",
-          "ville": "L'Union",
+          "ville": "L\u0027Union",
           "matriculeBp": "003"
         }
       }
@@ -2673,7 +2672,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_enregister</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' \
+              <pre>$ curl -H "Content-Type: application/json" \
     -X POST \
     -d '{
     }' \
@@ -2783,7 +2782,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/eligibilite/{NO_SOCIETAIRE}</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/0001457
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/000001457
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
               <pre class="prettyprint language-json">
@@ -2794,7 +2793,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
     },
     "data": [
         {
-          "noSocietaire":"",
+          "noSocietaire":"000001457",
           "noContrat":"",
           "codeIntegrite":"",
           "noVehicule":"",
@@ -2806,7 +2805,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
           "immatriculation":""
         },
         {
-          "noSocietaire":"",
+          "noSocietaire":"000001457",
           "noContrat":"",
           "codeIntegrite":"",
           "noVehicule":"",
@@ -2868,11 +2867,11 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
               <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/declarer_km</pre>
               <span class="label label-info">Exemple de requ√™te (CURL)</span>
-              <pre>$ curl -H 'Content-Type: application/json' \
+              <pre>$ curl -H "Content-Type: application/json" \
     -X POST \
     -d '{
       "contrat" : {
-          "noSocietaire":"",
+          "noSocietaire":"000000000",
           "noVehicule":"",
           "noSequence":"",
           "datePrecedentReleve":"20141215",
@@ -2884,8 +2883,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
         "date":"20141216",
         "soldeKilometrique":"6280"
       }
-    }'
-    https://context-root/etnamobile-web/rouler_serein/v1/declarer_km
+    }' \
+    https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/declarer_km
 
               </pre>
               <span class="label label-info">Exemple de r√©ponse</span>
@@ -2959,7 +2958,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l‚Ä
                 </div> 
               </dl>
               <h4>Retour</h4>
-              Pas de retour sp√©cifique.
+              Pas de retour sp√©cifique. 
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
