@@ -107,7 +107,9 @@ h2 {
 .subelements26,
 .subelements27,
 .subelements28,
-.subelements29 {
+.subelements29,
+.subelements30,
+.subelements31 {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }
@@ -138,7 +140,9 @@ h2 {
 .subsubelements26,
 .subsubelements27,
 .subsubelements28,
-.subsubelements29 {
+.subsubelements29,
+.subsubelements30,
+.subsubelements31, {
     border-left: 4px solid #CCCCCC;
     padding-left: 40px;  
 }
