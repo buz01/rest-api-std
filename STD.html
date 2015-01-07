@@ -2031,51 +2031,6 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
      		<dt>commune</dt>
      		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">commune</span><br>
      		Adresse du souscripteur.</dd>
-     		<dt>infoComplementaires</dt>
-     		<dd><span class="label label-primary">Conditionnel</span> <span style="font-style: italic;">infoComplementaires</span><br>
-     		Informations complémentaires du souscripteur s'il souhaite être recontacté. Uniquement utilisé par TDI si l'utilisateur a fourni ses infos.</dd>
-
-<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.infoComplementaires_show">Montrer l'objet infoComplementaires</button>
-
-	<div class="subelements23" style="display:none;">
-     		<dt>nom</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Nom du souscripteur.</dd>
-     		<dt>prenom</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Prénom du souscripteur.</dd>
-     		<dt>civilite</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Prénom du souscripteur. La valeur peut être choisie parmi les valeurs suivantes :
-                 <ul>
-                    <li><code>0 : "Monsieur"</code></li>
-                    <li><code>1 : "Madame"</code></li>
-                 </ul></dd>
-     		<dt>email</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Email du souscripteur.</dd>
-     		<dt>telephone</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Téléphone du souscripteur.</dd>
-     		<dt>adresse1</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		adresse1 du souscripteur.</dd>
-     		<dt>adresse2</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		adresse2 du souscripteur.</dd>
-     		<dt>adresse3</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		adresse3 du souscripteur.</dd>
-     		<dt>codePostal</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Code postal du souscripteur.</dd>
-     		<dt>ville</dt>
-     		<dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
-     		Ville du souscripteur.</dd>
-     		<dt>matriculeBp</dt>
-     		<dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
-     		Matricule BP du souscripteur s'il est déjà client BP.</dd>
-	</div>
      </div>
 
 </dl>
@@ -2162,19 +2117,6 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   "souscripteur": { 
     "commune": { 
       "codeInsee": "31245"
-    },
-    "infoComplementaires": { 
-      "nom": "Martin",
-      "prenom": "Nicolas",
-      "civilite": "2",
-      "email": "nicolas_martin@gmail.com",
-      "telephone": "0564841532",
-      "adresse1": "74 Rue de Loan",
-      "adresse2": "Batiment C",
-      "adresse3": "Appartement 782",
-      "codePostal": "31245",
-      "ville": "L'Union",
-      "matriculeBp": "003"
     }
   }
 }
@@ -2507,97 +2449,86 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <pre>$ curl -H "Content-Type: application/json" \
     -X POST \
     -d '{
-      "dateEffet": "20140107",
-      "origineVehicule" : "2",
-      "antecedentsAuto": {
-        "bonusMalus": { 
-          "coeffBm": "0.52",
-          "dateDerniereEcheance": "20130107",
-          "nbAnneesBmDemi": "3"
-        }, 
-        "sinistre": {  
-          "sinistreResp": { 
-            "dateSinistreResponsable": "20130407",
-            "tauxResponsabiliteSinistre": "0"
-          },
-          "syntheseDeuxAns": { 
-            "nbSinistreBrisGlace": "3",
-            "nbSinistreResponsable": "4",
-            "nbSinistreTiersNonIdentifie": "1"
+      "devis":{
+        "dateEffet": "20140107",
+        "origineVehicule" : "2",
+        "antecedentsAuto": {
+          "bonusMalus": { 
+            "coeffBm": "0.52",
+            "dateDerniereEcheance": "20130107",
+            "nbAnneesBmDemi": "3"
+          }, 
+          "sinistre": {  
+            "sinistreResp": { 
+              "dateSinistreResponsable": "20130407",
+              "tauxResponsabiliteSinistre": "0"
+            },
+            "syntheseDeuxAns": { 
+              "nbSinistreBrisGlace": "3",
+              "nbSinistreResponsable": "4",
+              "nbSinistreTiersNonIdentifie": "1"
+            }
           }
-        }
-      },
-      "proposition": { 
-        "usageVehicule": "4",
-        "niveauProtectionAssuranceSouhaite": "1",
-        "indOffrePetitRouleur": false,
-        "indTarifFonctionnaire": false,
-        "tarification": {
-          "garantiesDisponibles":[
-            {
-              "idPackGaranties": "0",
-              "garantiesOptSous":[
-                {
-                  "codeGarantie": "11",
-                  "indChoixGarantieClient": false,
-                  "montantCapitalAssure": "100.22"
-                }
-              ]
-            }
-          ],
-          "garantiesOptSansNotionPack":[
-            {
-              "codeGarantie": "18",
-              "indChoixGarantieClient": true,
-              "montantCapitalAssure": "990.23"
-            }
-          ],
-          "garantiesCouvertesFormuleSouscrite":[
-            {
-              "codeGarantie": "3",
-              "montantCapitalAssure": "555.55"
-            }
-          ]
-        }
-      },
-      "conducteurPrincipal": { 
-        "dateNaissance": "19850407",
-        "datePermis": "20050407",
-        "lienParente": "2",
-        "experience": "0"
-      },
-      "conducteurSecondaire": { 
-        "dateNaissance": "19890107",
-        "datePermis": "20060407",
-        "lienParente": "3",
-        "experience": "1"
-      },
-      "vehicule": { 
-        "anneeCirculation": "2000",
-        "nbKmCompteur": "100000.4",
-        "serie": { 
-          "numSerieMaaf": "0016045"
         },
-        "zoneCirculation": { 
-          "codeInsee": "31245"
-        }
-      },
-      "souscripteur": { 
-        "commune": { 
-          "codeInsee": "31245"
+        "proposition": { 
+          "usageVehicule": "4",
+          "niveauProtectionAssuranceSouhaite": "1",
+          "indOffrePetitRouleur": false,
+          "indTarifFonctionnaire": false,
+          "tarification": {
+            "garantiesDisponibles":[
+              {
+                "idPackGaranties": "0",
+                "garantiesOptSous":[
+                  {
+                    "codeGarantie": "11",
+                    "indChoixGarantieClient": false,
+                    "montantCapitalAssure": "100.22"
+                  }
+                ]
+              }
+            ],
+            "garantiesOptSansNotionPack":[
+              {
+                "codeGarantie": "18",
+                "indChoixGarantieClient": true,
+                "montantCapitalAssure": "990.23"
+              }
+            ],
+            "garantiesCouvertesFormuleSouscrite":[
+              {
+                "codeGarantie": "3",
+                "montantCapitalAssure": "555.55"
+              }
+            ]
+          }
         },
-        "infoComplementaires":{ 
-          "nom": "Martin",
-          "prenom": "Nicolas",
-          "civilite": "2",
-          "email": "nicolas_martin@gmail.com",
-          "telephone": "0564841532",
-          "adresse1": "74 Rue de Loan",
-          "adresse2": "Batiment C",
-          "adresse3": "Appartement 782",
-          "codePostal": "31245",
-          "ville": "L\u0027Union",
-          "matriculeBp": "003"
+        "conducteurPrincipal": { 
+          "dateNaissance": "19850407",
+          "datePermis": "20050407",
+          "lienParente": "2",
+          "experience": "0"
+        },
+        "conducteurSecondaire": { 
+          "dateNaissance": "19890107",
+          "datePermis": "20060407",
+          "lienParente": "3",
+          "experience": "1"
+        },
+        "vehicule": { 
+          "anneeCirculation": "2000",
+          "nbKmCompteur": "100000.4",
+          "serie": { 
+            "numSerieMaaf": "0016045"
+          },
+          "zoneCirculation": { 
+            "codeInsee": "31245"
+          }
+        },
+        "souscripteur": { 
+          "commune": { 
+            "codeInsee": "31245"
+          }
         }
       }
     }' \
@@ -2678,7 +2609,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 </pre> </div>
           </div>            
 
-          <div class="row bg-danger">
+          <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.simulation_devis.tarification.enregistrer" name="methodes.simulation_devis.tarification.enregistrer"></a>Enregistrer le devis</h3>
               <p>Permet d'enregistrer un devis sur le back office. L'enregistrement déclenche également un flux vers TDI et l'envoi d'un mail au client, contenant un PDF récapitulatif des éléments constituant sa simulation de devis.</p>
@@ -2687,6 +2618,58 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                <dt>version</dt>
                <dd><span class="label label-danger">Obligatoire</span><br>
                   <a href="#api.versionning">Cf Versionning</a></dd>
+                <dt>devis</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Informations du devis pour la tarification. <a href="#methodes.simulation_devis.devis.objet">cf l'objet devis.</a>
+                </dd>
+                <dt>infosComplementaires</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Informations complémentaires nécessaires à l'enregistrement du devis.</dd>
+
+<button type="button" class="btn btn-default btn-xs btn-block " id="methodes.simulation_devis.devis.objet.infoComplementaires_show">Montrer l'objet infosComplementaires</button>
+
+  <div class="subelements23" style="display:none;">
+        <dt>nom</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Nom du souscripteur.</dd>
+        <dt>prenom</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Prénom du souscripteur.</dd>
+        <dt>civilite</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Prénom du souscripteur. La valeur peut être choisie parmi les valeurs suivantes :
+                 <ul>
+                    <li><code>0 : "Monsieur"</code></li>
+                    <li><code>1 : "Madame"</code></li>
+                 </ul></dd>
+        <dt>email</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Email du souscripteur.</dd>
+        <dt>telephone</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Téléphone du souscripteur.</dd>
+        <dt>adresse1</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        adresse1 du souscripteur.</dd>
+        <dt>adresse2</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        adresse2 du souscripteur.</dd>
+        <dt>adresse3</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        adresse3 du souscripteur.</dd>
+        <dt>codePostal</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Code postal du souscripteur.</dd>
+        <dt>ville</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Ville du souscripteur.</dd>
+        <dt>matriculeBp</dt>
+        <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
+        Matricule BP du souscripteur s'il est déjà client BP.</dd>
+  </div>
+
+
+                
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -2704,13 +2687,108 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               </dl>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
-              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_enregister</pre>
+              <pre>POST https://context-root/etnamobile-web/rouler_serein/{VERSION}/simu_devis_enregistrer</pre>
               <span class="label label-info">Exemple de requête (CURL)</span>
               <pre>$ curl -H "Content-Type: application/json" \
     -X POST \
     -d '{
+      "devis":{
+        "dateEffet": "20140107",
+        "origineVehicule" : "2",
+        "antecedentsAuto": {
+          "bonusMalus": { 
+            "coeffBm": "0.52",
+            "dateDerniereEcheance": "20130107",
+            "nbAnneesBmDemi": "3"
+          }, 
+          "sinistre": {  
+            "sinistreResp": { 
+              "dateSinistreResponsable": "20130407",
+              "tauxResponsabiliteSinistre": "0"
+            },
+            "syntheseDeuxAns": { 
+              "nbSinistreBrisGlace": "3",
+              "nbSinistreResponsable": "4",
+              "nbSinistreTiersNonIdentifie": "1"
+            }
+          }
+        },
+        "proposition": { 
+          "usageVehicule": "4",
+          "niveauProtectionAssuranceSouhaite": "1",
+          "indOffrePetitRouleur": false,
+          "indTarifFonctionnaire": false,
+          "tarification": {
+            "garantiesDisponibles":[
+              {
+                "idPackGaranties": "0",
+                "garantiesOptSous":[
+                  {
+                    "codeGarantie": "11",
+                    "indChoixGarantieClient": false,
+                    "montantCapitalAssure": "100.22"
+                  }
+                ]
+              }
+            ],
+            "garantiesOptSansNotionPack":[
+              {
+                "codeGarantie": "18",
+                "indChoixGarantieClient": true,
+                "montantCapitalAssure": "990.23"
+              }
+            ],
+            "garantiesCouvertesFormuleSouscrite":[
+              {
+                "codeGarantie": "3",
+                "montantCapitalAssure": "555.55"
+              }
+            ]
+          }
+        },
+        "conducteurPrincipal": { 
+          "dateNaissance": "19850407",
+          "datePermis": "20050407",
+          "lienParente": "2",
+          "experience": "0"
+        },
+        "conducteurSecondaire": { 
+          "dateNaissance": "19890107",
+          "datePermis": "20060407",
+          "lienParente": "3",
+          "experience": "1"
+        },
+        "vehicule": { 
+          "anneeCirculation": "2000",
+          "nbKmCompteur": "100000.4",
+          "serie": { 
+            "numSerieMaaf": "0016045"
+          },
+          "zoneCirculation": { 
+            "codeInsee": "31245"
+          }
+        },
+        "souscripteur": { 
+          "commune": { 
+            "codeInsee": "31245"
+          }
+        }
+      },
+      "infosComplementaires":{ 
+        "nom": "Martin",
+        "prenom": "Nicolas",
+        "civilite": "2",
+        "email": "nicolas_martin@gmail.com",
+        "telephone": "0564841532",
+        "adresse1": "74 Rue de Loan",
+        "adresse2": "Batiment C",
+        "adresse3": "Appartement 782",
+        "codePostal": "31245",
+        "ville": "L\u0027Union",
+        "matriculeBp": "003"
+      }
     }' \
-    https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregister      
+    https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregistrer      
               </pre>
               <span class="label label-info">Exemple de réponse</span>
               <pre class="prettyprint language-json">
