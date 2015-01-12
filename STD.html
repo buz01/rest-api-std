@@ -16,6 +16,7 @@
           <li> <a href="#api">API</a>
             <ul class="nav nav-stacked ">
               <li><a href="#api.introduction">Introduction</a></li>
+              <li><a href="#api.jsonp">Format : JSON ou JSONP</a></li>
               <li><a href="#api.authentification">Authentification</a></li>
               <li><a href="#api.signature">Signature</a></li>
               <li><a href="#api.reponses">Réponses</a></li>
@@ -162,6 +163,42 @@
           </div>
           <div class="col-xs-6"></div>
         </div>
+        <!-- Format JSON ou JSONP -->
+        <h2><a id="api.jsonp" name="api.jsonp"></a>Format : JSON ou JSONP</h2>
+        <div class="row" >
+          <div class="col-xs-6">
+            <p>Grâce à une déclinaison nommée JSONP (JSON with padding), une requête inter-domaine est possible par l'utilisation d'une fonction JavaScript de callback. Celle-ci est renvoyée par le serveur au client, qui l'exécute au retour, autorisant ce même client à charger des données JSON depuis un domaine externe, et donc à notifier l'objet appelant avec cette fonction de callback. </p>
+            <p>Ainsi, pour obtenir en retour des appels des WS REST du JSONP, il suffit de spécifier un paramètre dans la requête HTTP, indiquant la fonction à appeler en callback.</p>
+<h4>Attributs</h4>
+            <dl class="dl-horizontal">
+              <dt>callback</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler.</dd>
+            </dl>
+          </div>
+          <div class="col-xs-6">
+          <span class="label label-info">Exemple de requête JSONP</span>
+          <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3&callback=ma_fonction"</pre>
+        
+ <span class="label label-info">Exemple de réponse JSONP</span>
+            <pre class="prettyprint language-json">
+ma_fonction({"status":{"code":200,"message":"La demande a été traitée"},"data": ...})
+</pre> 
+          <span class="label label-info">Exemple de requête JSON</span>
+          <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques?checksum=A4654FDS3"</pre>
+        
+ <span class="label label-info">Exemple de réponse JSON</span>
+            <pre class="prettyprint language-json">
+{
+ "status":{
+    "code":200,
+    "message":"La demande a été traitée"
+  },
+  "data": ...
+}
+</pre> 
+        </div>
+        </div>
+
         <!-- Authentification -->
         <h2><a id="api.authentification" name="api.authentification"></a>Authentification</h2>
         <div class="row bg-danger" >
