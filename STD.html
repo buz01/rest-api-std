@@ -172,7 +172,7 @@
 <h4>Attributs</h4>
             <dl class="dl-horizontal">
               <dt>callback</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler.</dd>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
             </dl>
           </div>
           <div class="col-xs-6">
@@ -228,6 +228,7 @@ ma_fonction({"status":{"code":200,"message":"La demande a été traitée"},"data
 
 <h4>Attributs</h4>
             <dl class="dl-horizontal">
+              
               <dt>checksum:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Contient la somme de contrôle calculée par le client (mobile). Cet élément est optionnel si le contrôle par signature n'a pas été activé.</dd>
             </dl>
@@ -414,13 +415,16 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>version:</dt>
                <dd><span class="label label-danger">Obligatoire</span><br>
                   <a href="#api.versionning">Cf Versionning</a></dd>
-                <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <br>
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
+              <dt>checksum:</dt>
+                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                 
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les marques de véhicules assurables.
@@ -496,7 +500,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                     <li>20 : véhicule ayant 20 ans et plus</li>
                   </ul>
                 </dd>
-               
+               <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -505,6 +510,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                  
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les modèles de véhicules assurables,
@@ -587,7 +593,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   Chaine de caractères désignant le modèle du véhicule. Cette
                   valeur est celle retournée par le service "<a href="#methodes.vehiculier.modeles.lister_modeles">Lister
                     les modèles de véhicules</a>".</dd>
-                
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -596,6 +603,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                  
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les énergies disponibles pour les
@@ -690,7 +698,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 
                     href="#methodes.vehiculier.energies.lister_energies">Lister les
                     énergies de véhicules</a>".</dd>
-                <dt>checksum:</dt>
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
+              <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
@@ -698,6 +708,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                 
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les énergies disponibles pour les
@@ -797,7 +808,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 
                     href="#methodes.vehiculier.puissances_fiscales.lister_puissances_fiscales">Lister
                     les puissances fiscales</a>".</dd>
-               
+               <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -806,6 +818,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                  
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les les variantes disponibles pour les
@@ -912,7 +925,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   véhicule. Cette valeur est celle retournée par le service "<a
                     href="#methodes.vehiculier.versions.lister_versions">Lister
                     les versions d'un véhicule</a>".</dd>
-             
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -921,6 +935,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+                 
               </dl>
               <h4>Retour</h4>
               Retourne une liste de toutes les années de mise en circulation disponibles pour les
@@ -1029,7 +1044,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   véhicule. Cette valeur est celle retournée par le service "<a
                     href="#methodes.vehiculier.annees_mec.lister_annees_mec">Lister
                     les années de mises en circulation</a>".</dd>
-                
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -1038,6 +1054,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   URL donnée avec ses arguments avec un algorithme de cryptage,
                   Par défaut, si l'argument est omis, la chaine est considérée
                   comme null</dd>
+
               </dl>
               <h4>Retour</h4>
               Retourne le code MAAF du véhicule, c'est-à-dire l'identifiant unique pour la MAAF de ce véhicule, correspondant à la marque, la tranche d'âge, le modèle, l'énergie, la puissance
@@ -1227,6 +1244,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Code postal de la ville.
                 </dd>
+<dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>                
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -1647,6 +1666,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Informations de la prédéclaration. <a href="#methodes.sinistre.predeclaration.objet">cf l'objet pré-déclaration.</a>
                 </dd>
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
@@ -2451,7 +2472,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Informations du devis pour la tarification. <a href="#methodes.simulation_devis.devis.objet">cf l'objet devis.</a>
                 </dd>
-                <dt>checksum</dt>
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
+                <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
@@ -2690,8 +2713,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   </div>
 
 
-                
-                <dt>checksum</dt>
+                <dt>callback:</dt>
+              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
+                <dt>checksum:</dt>
                 <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
