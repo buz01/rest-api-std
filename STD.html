@@ -17,12 +17,12 @@
             <ul class="nav nav-stacked ">
               <li><a href="#api.introduction">Introduction</a></li>
               <li><a href="#api.jsonp">Format : JSON ou JSONP</a></li>
-              <li><a href="#api.authentification">Authentification</a></li>
+             <!--<li><a href="#api.authentification">Authentification</a></li>-->
               <li><a href="#api.signature">Signature</a></li>
               <li><a href="#api.reponses">Réponses</a></li>
-              <li><a href="#api.pagination">Pagination</a></li>
+              <!--<li><a href="#api.pagination">Pagination</a></li>-->
               <li><a href="#api.versionning">Versionning</a></li>
-              <li><a href="#api.metadata">Metadata</a></li>
+              <!--<li><a href="#api.metadata">Metadata</a></li>-->
             </ul>
           </li>
           <li> <a href="#methodes">METHODES</a></li>
@@ -200,6 +200,7 @@ ma_fonction({"status":{"code":200,"message":"La demande a été traitée"},"data
         </div>
 
         <!-- Authentification -->
+<!--
         <h2><a id="api.authentification" name="api.authentification"></a>Authentification</h2>
         <div class="row bg-danger" >
           <div class="col-xs-6">
@@ -207,17 +208,17 @@ ma_fonction({"status":{"code":200,"message":"La demande a été traitée"},"data
           </div>
           <div class="col-xs-6"></div>
         </div>
-
+-->
         <!-- Signature -->
         <h2><a id="api.signature" name="api.signature"></a>Signature</h2>
         <div class="row " >
           <div class="col-xs-6">
-            <p class="bs-callout bs-callout-warning">09/01/2015 : Cette fonctionnalité a été activée.<br/>17/12/2014 : Cette fonctionnalité a été désactivée pour la livraison du 19/12/2014.
+            <p class="bs-callout bs-callout-warning">09/01/2015 : Cette fonctionnalité a été activée.
             </p>
             <p>Un système de signature peut être mis en place afin de prévenir la modification de requêtes et de limiter les éventuelles attaques DDoS. Ce système permet à un utilisateur de rejouer la même requête, mais pas de modifier la requête. Ce système peut se montrer particulièrement intéressant dans le cas de services d'accès à un catalogue, comme les service du véhiculier par exemple, pouvant être utilisés par d'autres applications par exemple. </p>
             <p>Ce système est basé sur une clé partagée entre le client (l'application mobile) et le service REST : <ol>
               <li>Le client construit l'URL du service REST à interroger,</li>
-              <li>Le client calcule une somme de contrôle avec la clé partagée,
+              <li>Le client calcule une somme de contrôle avec la clé partagée (sans prendre en compte les paramètres query-param ni le point d'interrogation),
                 <li>Le client ajoute la valeur de la clé en paramètre (dans notre cas paramètre GET de la requête),</li>
               <li>Le client appelle le service REST</li>
               <li>Le service REST reçoit la requête</li>
@@ -230,7 +231,7 @@ ma_fonction({"status":{"code":200,"message":"La demande a été traitée"},"data
             <dl class="dl-horizontal">
               
               <dt>checksum:</dt>
-              <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Contient la somme de contrôle calculée par le client (mobile). Cet élément est optionnel si le contrôle par signature n'a pas été activé.</dd>
+              <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span><br>Contient la somme de contrôle calculée par le client (mobile). Cet élément est optionnel si le contrôle par signature n'a pas été activé. Le calcul ne doit pas prendre en compte les paramètres de requêtes (query-param), ni le point d'interrogation séparant l'URL des query-params.</dd>
             </dl>
 
 
@@ -344,6 +345,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 </div>
         </div>
         <!-- Pagination -->
+<!--
         <h2><a id="api.pagination" name="api.pagination"></a>Pagination</h2>
         <div class="row bg-danger">
           <div class="col-xs-6">
@@ -351,6 +353,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
           </div>
           <div class="col-xs-6"></div>
         </div>
+-->
         <!-- Versionning -->
         <h2><a id="api.versionning" name="api.versionning"></a>Versionning</h2>
         <div class="row ">
@@ -377,13 +380,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         </div>
 
         <!-- metadata -->
-        <h2><a id="api.metadata" name="api.metadata"></a>Metadata</h2>
+   <!--     <h2><a id="api.metadata" name="api.metadata"></a>Metadata</h2>
         <div class="row bg-danger">
           <div class="col-xs-6">
             <p>N/A</p>
           </div>
           <div class="col-xs-6"></div>
         </div>
+-->        
         <h1 id="methodes" name="methodes">METHODES</h1> 
         <h1 id="methodes.vehiculier" name="methodes.vehiculier">Véhiculier</h1>
         <!-- MARQUES-->
@@ -418,7 +422,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
               <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
                   URL donnée avec ses arguments avec un algorithme de cryptage,
@@ -503,7 +507,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -596,7 +600,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -701,7 +705,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
               <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -811,7 +815,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -928,7 +932,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -1047,7 +1051,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -1246,8 +1250,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 </dd>
 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>                
-                <dt>checksum</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dt>checksum:</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -1650,7 +1654,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
             </div>
           </div>
          
-          <div class="row bg-danger">
+          <div class="row">
             <div class="col-xs-6">
               <h3><a id="methodes.sinistre.predeclaration.predeclarer_sinistre" name="methodes.sinistre.predeclaration.predeclarer_sinistre"></a>Prédéclarer un sinistre</h3>
               <p class="bs-callout bs-callout-warning">Cette fonctionnalité sera livrée le 16/01/2015.
@@ -1668,8 +1672,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 </dd>
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
-                <dt>checksum</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dt>checksum:</dt>
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -2475,7 +2479,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
@@ -2716,7 +2720,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dt>callback:</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>.</dd>
                 <dt>checksum:</dt>
-                <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
+                <dd><span class="label label-danger">Obligatoire</span> <span class="label label-success">param GET</span> <span style="font-style: italic;">valeur par
                     défaut = null</span><br>
                   Chaine de caractères optionnelle permettant de spécifier la
                   signature de la requête. Cette signature est calculée pour une
