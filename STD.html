@@ -2919,6 +2919,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                   Numero societaire MAAF.
                 </dd>
+                <dt>code</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                  Code établissement de l'utilisateur (ex : 001 pour la BRED).
+                </dd>
                 <dt>callback</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>. Voir <a href="#api.jsonp">le chapitre Format</a>.</dd>
                 <dt>checksum</dt>
@@ -2932,9 +2936,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
-              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/eligibilite/{NO_SOCIETAIRE}</pre>
+              <pre>GET https://context-root/etnamobile-web/rouler_serein/{VERSION}/petit_rouleur/eligibilite/{NO_SOCIETAIRE}/{CODE}</pre>
               <span class="label label-info">Exemple de requête (CURL)</span>
-              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/000001457
+              <pre>$ curl -X GET https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/eligibilite/000001457/000
               </pre>
               <span class="label label-info">Exemple de réponse</span>
               <pre class="prettyprint language-json">
@@ -2995,6 +2999,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                 <dd><span class="label label-danger">Obligatoire</span><br>
                 Solde kilométrique
                 </dd>
+                <dt>code</dt>
+                <dd><span class="label label-danger">Obligatoire</span><br>
+                Code établissement de l'utilisateur (ex : 001 pour la BRED). 
+                </dd>
 <dt>callback</dt>
               <dd><span class="label label-warning">Optionnel</span> <span class="label label-success">param GET</span><br>Si spécifié, ce paramètre contient le nom de la fonction javascript à appeler. D'autre part le content-type de retour est <code>application/javascript</code>. Sinon le content-type de retour est <code>application/json</code>. Voir <a href="#api.jsonp">le chapitre Format</a>.</dd>
                 <dt>checksum</dt>
@@ -3040,7 +3048,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
           "immatriculation":""
         },
         "date":"20141216",
-        "soldeKilometrique":"6280"
+        "soldeKilometrique":"6280",
+        "code":"000"
       }
     }' \
     https://context-root/etnamobile-web/rouler_serein/v1/petit_rouleur/declarer_km
