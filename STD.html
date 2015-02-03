@@ -2989,7 +2989,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   <a href="#api.versionning">Cf Versionning</a></dd>
                 <dt>contrat</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
-                  Les informations concernant le <a href="#methodes.petit_rouleur.contrat_eligible.objet">contrat</a> sur lequel la déclaration de km doit être réalisée. Ces informations proviennent du service <a href="#methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles">lister les contrats éligibles</a>. 
+                  Les informations concernant le <a href="#methodes.petit_rouleur.contrat_eligible.objet">contrat</a> sur lequel la déclaration de km doit être réalisée. Ces informations proviennent du service <a href="#methodes.petit_rouleur.contrat_eligible.lister_contrats_eligibles">lister les contrats éligibles</a> hors numéro societaire.<br>
+				  <p class="bg-danger"><b>Attention !</b> <br>Pour alimenter le Numéro sociétaire (« noSocietaire ») de ce service, utiliser celui passé en entrée du service "lister les contrats éligibles" et non celui renvoyé en réponse de ce même service.
+				  </p>
                 </dd>
                 <dt>date</dt>
                 <dd><span class="label label-danger">Obligatoire</span><br>
