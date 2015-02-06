@@ -413,7 +413,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <h3><a id="methodes.vehiculier.marques.lister_toutes_les_marques" name="methodes.vehiculier.marques.lister_toutes_les_marques"></a>Lister
                 toutes les marques</h3>
               <p>Retourne une liste de toutes les marques de véhicules
-                assurables. Cette liste est triée par ordre alphabétique.&nbsp;</p>
+                assurables. Cette liste est formée comme suit :
+                <ul><li>éléments 1..n : il s'agit des n marques les plus communes, triées par ordre alphabétique.</li><li>éléments n+1..fin : les autres marques triées par ordre alphabétique.</li></ul>.</p>
+               <p class="bs-callout bs-callout-warning">06/02/2015 : le nombre n est fixé à 10, pour obtenir les 10 marques de voiture les plus communes.</p>
               <h4>Arguments</h4>
               <dl class="dl-horizontal">
                 <dt>version:</dt>
@@ -429,7 +431,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                  
               </dl>
               <h4>Retour</h4>
-              Retourne une liste de toutes les marques de véhicules assurables.
+              Retourne une liste de toutes les marques de véhicules assurables, avec le top n des marques en têtes triées par ordre alphabétique, et les autres marques ensuite triées par ordre alphabétique.
               <br>
             </div>
             <div class="col-xs-6"> <span class="label label-info">Definition</span>
@@ -444,7 +446,17 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "message":"La demande a été traitée"
     },
     "data":  [
-      {"libelle":"ALFA%20ROMEO"},
+      {"libelle":"AUDI"},
+      {"libelle":"BMW"},
+      {"libelle":"CITROEN"},
+      {"libelle":"FORD"},
+      {"libelle":"OPEL"},
+      {"libelle":"PEUGEOT"},
+      {"libelle":"RENAULT"},
+      {"libelle":"SEAT"},
+      {"libelle":"TOYOTA"},
+      {"libelle":"VOLKSWAGEN"},
+
       {"libelle":"ACL"},
       {"libelle":"ALFA ROMEO"},
       {...},
