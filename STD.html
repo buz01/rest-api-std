@@ -243,7 +243,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
 &lt;script type="text/javascript"&gt;
     const sharedKey = "48@!alsd"; // Connu côté client dès le début.
     var encryptedPassword = CryptoJS.SHA1(sharedKey);
-    var httpVerb = "GET";
+    var httpVerb = "GET";    // "POST" si formulaire en POST
     var url = "https://context-root/etnamobile-web/rouler_serein/v1/vehiculier/marques";
     var httpUrl = httpVerb + ":" + url;
     var checksum = CryptoJS.HmacSHA1(httpUrl,encryptedPassword).toString();
