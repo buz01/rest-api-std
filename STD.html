@@ -1360,6 +1360,10 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
               <dt>phone</dt>
               <dd><span style="font-style: italic;">string</span><br>Numéro de téléphone de l'établissement.
               </dd>
+              <dt>coutappel</dt>
+              <dd><span style="font-style: italic;">string</span><br>Coût de l'appel. Si cette donnée n'est pas renseignée, alors la valeur est <i>null</i>.
+              </dd>
+
               <dt>mail</dt>
               <dd><span style="font-style: italic;">string</span><br>Adresse mail de contact de l'établissement.
               </dd>
@@ -1401,12 +1405,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
        "code": "001",
        "label": "Antenne 001",
        "phone": "01 23 45 67 89",
+       "coutappel": "3,43€ par minute",
        "mail": "antenne001@bp.fr"
     },
     {
        "code": "002",
        "label": "Antenne 002",
        "phone": "01 23 45 67 89",
+       "coutappel": null,
        "mail": "antenne002@bp.fr"
     },
     { 
@@ -1416,7 +1422,7 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
   "numerosAssistanceSinistre": [
     {
        "region": "france",
-       "label": "France Sinistre",
+       "label": "France Sinistre",      
        "phone": "01 23 45 67 89"
     }, 
     {
@@ -1483,12 +1489,14 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
              "id": "001",
              "label": "Antenne 001",
              "phone": "01 23 45 67 89",
+             "coutappel": "3,43€ par minute",
              "mail": "antenne001@bp.fr"
           },
           {
              "id": "002",
              "label": "Antenne 002",
              "phone": "01 23 45 67 89",
+             "coutappel": null,
              "mail": "antenne002@bp.fr"
           },
           { 
