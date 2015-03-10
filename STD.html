@@ -2715,6 +2715,9 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         <dt>matriculeBp</dt>
         <dd><span class="label label-warning">Optionnel</span> <span style="font-style: italic;">string</span><br>
         Matricule BP du souscripteur s'il est déjà client BP.</dd>
+        <dt>code</dt>
+        <dd><span class="label label-danger">Obligatoire</span> <span style="font-style: italic;">string</span><br>
+        Le code de l'établissement bancaire que l'utilisateur a choisi pour lui envoyer son devis.</dd>        
   </div>
 
 
@@ -2833,7 +2836,8 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
         "adresse3": "Appartement 782",
         "codePostal": "31245",
         "ville": "L\u0027Union",
-        "matriculeBp": "003"
+        "matriculeBp": "003",
+        "code": "000"
       }
     }' \
     https://context-root/etnamobile-web/rouler_serein/v1/simu_devis_enregistrer      
@@ -3135,12 +3139,12 @@ Voici ce que pourrait donner le calcul de notre signature en javascript avec l�
                   Le prénom du client.
                 </dd>
                 <dt>email</dt>
-                <dd><span class="label label-danger">Obligatoire</span><br>
-                  l'email du client.
+                <dd><span class="label label-primary">Conditionnel</span><br>
+                  l'email du client. Doit être rempli si le <code>telephone</code> du client est vide.
                 </dd>                      
                 <dt>telephone</dt>
-                <dd><span class="label label-warning">Optionnel</span><br>
-                  Le téléphone du client.
+                <dd><span class="label label-primary">Conditionnel</span><br>
+                  Le téléphone du client. Doit être rempli si l'<code>email</code> du client est vide.
                 </dd>
                 </div> 
               <dt>callback</dt>
